@@ -1,0 +1,142 @@
+:root {
+    --primary-L: #e58aa2;
+    --primary-N: #FF016E;
+    --primary-S: #800022;
+    --primary-XS: #4d001480;
+    --secondary-L: #8ad9e5;
+    --secondary-N: #00c2e0;
+    --secondary-S: #006f80;
+    --secondary-XS: #00424d80;
+    --dark-L: #8b8eb1;
+    --dark-N: #0d124a;
+    --dark-S: #080b30;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--dark-N);
+    font-family: sans-serif;
+    color: white;
+}
+
+h3 {
+    padding: 8px 16px;
+    font-size: 16px;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+/* Header */
+    .header{
+        height: 80px;
+        width: 100%;
+        text-align: center;
+        font-family: sans-serif;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: var(--dark-N);
+    }
+
+    .header__text{
+        display: flex;
+        font-size: 16px;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: center;
+        margin-right: 40px;
+    }
+
+    .header__text a:hover{
+        color: var(--dark-L);
+    }
+
+    .logo{
+        margin: 15px 0 0 40px;
+        width: 162px;
+        height: 70px;
+    }
+
+/* Button */
+    .button__pink {
+        width: 140px;
+        height: 40px;
+        color: white;
+        background-color: var(--primary-N);
+        border-radius: 16px;
+        font-weight: bold;
+        font-size: 16px;
+        border: none;
+    }
+
+    .button__pink:hover{
+        cursor: pointer;
+        color: var(--dark-N);
+        background-color: var(--secondary-N);
+    }
+
+/* Footer */
+
+    .icons {
+        height: 40px;
+        width: 40px;
+        color: var(--secondary-N);
+        margin: 8px;
+    }
+
+    .footer{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .footer__links-container{
+        height: 184px;
+        width: 900px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, auto);
+        row-gap: 60px;
+        column-gap: 20px;
+        align-items: center;
+        justify-items: left;
+        margin: 8px;
+    }
+
+    .footer__links--a{
+        display: flex;
+        align-items: center;
+        font-size: 20px;
+        font-weight: bold;
+        color: var(--primary-N);
+    }
+
+    .footer__links--a:hover{
+        color: var(--dark-L);
+        .icons {
+            color: var(--primary-N);
+        }
+
+    }
+
+    .footer__2container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 36px;
+        margin: 40px 0 8px 0;
+    }
+
+    .footer__logo{
+        width: 352px;
+        height: 153px;
+    }
