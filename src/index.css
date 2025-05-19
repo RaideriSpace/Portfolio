@@ -39,6 +39,7 @@ h3 {
 a {
     text-decoration: none;
     color: white;
+    transition: color ease 240ms;
 }
 
 @media (max-width: 480px) {
@@ -113,6 +114,9 @@ a {
         font-weight: bold;
         font-size: 16px;
         border: none;
+        transition-property: background-color, color;
+        transition-timing-function: ease;
+        transition-duration: 240ms;
     }
 
     .button__pink:hover{
@@ -130,6 +134,9 @@ a {
         font-weight: bold;
         font-size: 16px;
         border: none;
+        transition-property: background-color, color;
+        transition-timing-function: ease;
+        transition-duration: 240ms;
     }
 
     .button__blue:hover{
@@ -190,7 +197,7 @@ a {
         }
 
         .about__text{
-            margin: 25px;
+            margin: 16px 8px 32px;
             line-height: 25px;
             font-size: 12px;
         }
@@ -261,13 +268,14 @@ a {
         width: 32px;
         color: var(--secondary-N);
         margin: 8px;
+        transition: color ease 240ms;
     }
 
     .footer{
         display: flex;
         align-items: center;
         flex-direction: column;
-        gap: 40px;
+        gap: 8px;
     }
 
     .footer__links-container{
@@ -289,6 +297,7 @@ a {
         font-size: 16px;
         font-weight: bold;
         color: var(--primary-N);
+        transition: color ease 240ms;
     }
 
     .footer__links--a:hover{
@@ -299,16 +308,9 @@ a {
 
     }
 
-    .footer__2container{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 36px;
-        margin: 40px 0 8px 0;
-    }
-
     .footer__logo{
         width: 300px;
+        margin: 40px 0 8px 0;
     }
 
     @media (max-width: 480px) {
@@ -323,8 +325,10 @@ a {
 
             .footer__links-container{
                 width: 100%;
-                grid-template-columns: repeat(2, 1fr);
-                grid-template-rows: repeat(3, auto);
+                height: auto;
+                grid-template-columns: repeat(1, 1fr);
+                grid-template-rows: repeat(1, auto);
+                justify-items: center;
                 row-gap: 16px;
                 column-gap: 16px;
                 margin: 16px;
@@ -339,7 +343,7 @@ a {
                 display: flex;
                 flex-direction: column;
                 align-items: center;
-                gap: 36px;
+                gap: 12px;
                 margin: 8px 0 8px 0;
             }
 

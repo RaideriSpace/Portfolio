@@ -34,10 +34,9 @@ const Footer = () => {
           <p>/RaideriSpace</p>
         </a>
       </div>
-      <div className='footer__2container'>
-        <button className='button__pink' onClick='/'>Contato</button>
-        <img className='footer__logo' src={logoRaiSpace} alt='Logo Raideri Space Art'  />
-      </div>
+      
+      <img className='footer__logo' src={logoRaiSpace} alt='Logo Raideri Space Art'  />
+      
     </div>
   )
 }
