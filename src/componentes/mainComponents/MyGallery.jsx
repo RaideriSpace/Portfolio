@@ -3,7 +3,7 @@ import React from 'react'
 
 const MyGallery = () => {
   return (
-    <div>Work In Progress</div>
+    <div className='gallery'>Work In Progress</div>
   )
 }
 
