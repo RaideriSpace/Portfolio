@@ -2,6 +2,7 @@ import React, { useRef } from 'react'
 import Header from './componentes/Header'
 import Main from './componentes/Main'
 import Footer from './componentes/Footer'
+import Carousel from './componentes/mainComponents/Carousel'
 
 const App = () => {
 
@@ -27,7 +28,7 @@ const App = () => {
         aboutRef={aboutRef}
         skillsRef={skillsRef} // Passa ambas as refs
       />
-      
+
       <Footer />
     </>
   )

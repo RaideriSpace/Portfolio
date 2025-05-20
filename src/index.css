@@ -3,13 +3,24 @@
     --primary-N: #FF016E;
     --primary-S: #800022;
     --primary-XS: #4d001480;
+    --primary-XS-O: hsla(344, 100%, 15%, 0.5);
+    --secondary-XL: #80eeff;
     --secondary-L: #8ad9e5;
     --secondary-N: #00c2e0;
     --secondary-S: #006f80;
     --secondary-XS: #00424d80;
+    --secondary-XS-O: hsla(189, 100%, 15%, 0.5);
     --dark-L: #8b8eb1;
     --dark-N: #0d124a;
     --dark-S: #080b30;
+}
+
+@font-face {
+    font-family: 'spaceregular';
+    src: url('./assets/fonts/space-regular-webfont.woff2') format('woff2'),
+         url('./assets/fonts/space-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
 }
 
 #root {
@@ -68,7 +79,7 @@ a {
         align-items: center;
         justify-content: space-between;
         background-color: var(--dark-N);
-        z-index: 9;
+        z-index: 19;
     }
 
     .header__text{
@@ -78,7 +89,7 @@ a {
         flex-wrap: nowrap;
         align-items: center;
         margin-right: 40px;
-        z-index: 10;
+        z-index: 20;
     }
 
     .header__text .button__common:hover{
@@ -87,20 +98,21 @@ a {
 
     .header_text.active {
         display: flex;
-        z-index: 10
+        z-index: 20
     }
 
     .hamburger {
         display: none;
         font-size: 2rem;
         cursor: pointer;
+        margin-right: 16px;
     }
 
     .logo{
         margin: 15px 0 0 40px;
         width: 162px;
         height: 70px;
-        z-index: 8;
+        z-index: 18;
     }
 
     .menu-overlay {
@@ -110,7 +122,7 @@ a {
         height: 100vh;
         width: 100vw;
         background-color: rgba(0,0,0,0.6);
-        z-index: 8;
+        z-index: 18;
         transition: opacity 300ms ease;
     }
 
@@ -211,7 +223,133 @@ a {
 
     }
 
-/* Gallery */
+/* Gallery / Carousel */
+    .gallery {
+        width: 100%;
+        height: auto;
+        background-image: url(/src/assets/img/carouselbg.svg);
+        display: flex;
+        padding: 16px;
+        margin-top: 4px;
+        gap: 16px;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        flex-wrap: nowrap;
+    }
+
+    .carousel__container {
+        width: 100%;
+        max-width: 1500px;
+        height: 600px;
+        margin: 16px auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        perspective: 1500px;
+    }
+
+    .carousel__cards-wrapper {
+        position: relative;
+        width: 100%;
+        height: 600px;
+        display: flex;
+        justify-content: center;
+        transform-style: preserve-3d;
+        align-items: center;
+    }
+
+    .carousel__card {
+        width: 440px;
+        height: 100%;
+        border-radius: 64px;
+        font-family: 'spaceregular', 'Space Grotesk', 'Inter', sans-serif;
+        padding: 50px;
+        font-size: 64px;
+        text-align: center;
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        cursor: pointer;
+        transform-style: preserve-3d;
+        backface-visibility: hidden;
+        transition: box-shadow 240ms ease, text-shadow 240ms ease
+    }
+
+    .card-blue {
+        box-shadow: 0 0 35px var(--secondary-XS);
+
+        p {
+            color: var(--secondary-XL);
+            text-shadow: 0px 0px 8px var(--secondary-S);
+        }
+    }
+
+    .card-pink {
+        box-shadow: 0 0 35px var(--primary-XS) ;
+
+        p {
+            color: var(--primary-N);
+            text-shadow: 0 0 8px var(--primary-S);
+        }
+    }
+
+   .card-blue:hover {
+        box-shadow: 0 0 35px var(--secondary-N);
+
+        p {
+            text-shadow: 0px 0px 5px var(--secondary-N);
+        }
+    }
+
+    .card-pink:hover {
+        box-shadow: 0 0 35px var(--primary-N) ;
+
+        p {
+            text-shadow: 0 0 8px var(--primary-N);
+        }
+    }
+
+    .carousel__arrow {
+        background: none;
+        border: none;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 40px;
+        color: var(--secondary-N);
+        position: absolute;
+        z-index: 10;
+        transition: color 240ms ease;
+    }
+
+    .carousel__arrow:hover {
+        color: var(--primary-N);
+        cursor: pointer;
+    }
+
+    .left-arrow {
+        left: 1%;
+    }
+
+    .right-arrow {
+        right: 1%;
+    }
+
+    .carousel__wave {
+        background-image: url(assets/img/carouselbgwave.svg);
+        background-repeat: repeat-x;
+        width: 100%;
+        height: 37px;
+        margin-top: -2px;
+    }
 
     .figma {
         display: flex;
@@ -219,19 +357,188 @@ a {
         align-items: center;
     }
 
-    @media (max-width: 480px){
-        .gallery{
-            margin-top: 60px;
+    @media (max-width: 1000px){
+        .gallery {
+            background-image: none;
+            padding: 8px 0;
+            margin-top: 4px;
+            gap: 8px 0;
+        }
+
+        .carousel__container {
+            height: 350px
+        }
+
+         .carousel__container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            width: 100px;
+            background: 
+                linear-gradient(to right, var(--dark-N) 50%, rgba(0,0,0,0) 100%);
+
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .carousel__container::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            width: 100px; /* Largura da área de fade */
+            
+            /* Gradiente sobre a IMAGEM DE FUNDO */
+            background: 
+                linear-gradient(to left, var(--dark-N) 50%, rgba(0,0,0,0) 100%);
+        }
+
+        .carousel__cards-wrapper {
+            width: 100%;
+            overflow: hidden;
+            height: 350px;
+            margin: 16px auto;
+            perspective: 350px;
+        }
+
+        .carousel__card {
+            width: 250px;
+            height: 350px;
+            border-radius: 24px;
+            font-size: 40px;
+        }
+
+        .carousel__wave {
+            background-image: none;
+            width: 100%;
+            height: 0;
+            margin-top: 0;
+        }
+
+        .left-arrow {
+        left: 6%;
+        }
+
+        .right-arrow {
+            right: 6%;
+        }
+
+    }
+
+    @media (max-width: 768px) {
+        .carousel-container {
+            max-width: 100%;
+            height: 350px;
+        }
+
+        .carrousel-card {
+            width: 250px;
+            height: 300px;
+        }
+
+        .carousel-card[style*="scale: 1"] {
+            width: 280px;
+            height: 330px;
+        }
+
+        .left-arrow {
+            left: 10px;
+        }
+
+        .right-arrow {
+            right: 10px;
         }
     }
 
+    @media (max-width: 480px){
+        .gallery {
+            background-image: none;
+            padding: 8px 0;
+            margin-top: 4px;
+            gap: 8px 0;
+        }
+
+        .carousel__container {
+            height: 350px
+        }
+
+         .carousel__container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            width: 100px;
+            background: 
+                linear-gradient(to right, var(--dark-N) 50%, rgba(0,0,0,0) 100%);
+
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .carousel__container::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            width: 100px; /* Largura da área de fade */
+            
+            /* Gradiente sobre a IMAGEM DE FUNDO */
+            background: 
+                linear-gradient(to left, var(--dark-N) 50%, rgba(0,0,0,0) 100%);
+        }
+
+        .carousel__cards-wrapper {
+            width: 100%;
+            overflow: hidden;
+            height: 350px;
+            margin: 16px auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            perspective: 350px;
+        }
+
+        .carousel__card {
+            width: 250px;
+            height: 350px;
+            border-radius: 24px;
+            font-size: 40px;
+        }
+
+        .carousel__wave {
+            background-image: none;
+            width: 100%;
+            height: 0;
+            margin-top: 0;
+        }
+
+        .WIP {
+            margin-top: 60px;
+            margin-bottom: -20px;
+        }
+
+    }
+
 /* About */
+
+    .about {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        margin: 0 157px;
+        padding: 48px 0px;
+    }
+
     .about__container{
         display: flex;
         width: 80%;
         height: auto;
         background-color: var(--dark-L);
-        margin: 85px 157px;
         padding: 16px 37px;
         border-radius: 120px 24px;
         color: var(--dark-N);
@@ -267,6 +574,11 @@ a {
     }
 
     @media (max-width: 480px){
+
+        .about {
+            padding-top: 48px;
+        }
+
         .about__container{
             width: 90%;
             margin: 16px 8px;
@@ -294,7 +606,7 @@ a {
         background-color: var(--secondary-N);
         width: 100%;
         height: auto;
-        padding-bottom: 32px;
+        padding: 32px 0;
         color: var(--dark-N);
         display: flex;
         flex-direction: column;
@@ -302,7 +614,7 @@ a {
     }
 
     .skills .subtitle {
-        margin-top: 24px;
+        margin-top: 16px;
     }
 
     .skills__container{
@@ -320,17 +632,18 @@ a {
         margin: 0 8px;
     }
 
-    .wave {
+    .skills__wave {
         background-image: url(assets/img/skillsbgwave.svg);
-        background-repeat: no-repeat;
+        background-repeat: repeat-x;
         width: 100%;
+        margin-top: -2px;
         height: 37px;
     }
 
     @media (max-width: 480px){ 
         .skills {
             height: auto;
-            padding: 16px 8px;
+            padding: 56px 8px 32px 8px;
         }
 
         .skills__container{
