@@ -12,8 +12,6 @@
     --dark-S: #080b30;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700&display=swap');
-
 #root {
   display: flex;
   flex-direction: column;
@@ -29,28 +27,22 @@
 
 body {
     background-color: var(--dark-N);
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: 'Space Grotesk', 'Inter', sans-serif;
     font-weight: 400;
     color: white;
 }
 
-h3 {
-    padding: 8px 16px;
-    font-size: 16px;
+button {
+    font-family: 'Space Grotesk', 'Inter', sans-serif;
 }
 
 a {
     text-decoration: none;
-    color: white;
-    transition: color 240ms ease;
 }
 
 @media (max-width: 480px) {
 
-    h3 {
-        padding: 8px 12px;
-        font-size: 12px;
-    }
+    
 }
 
 /* Global Class */
@@ -89,7 +81,7 @@ a {
         z-index: 10;
     }
 
-    .header__text a:hover{
+    .header__text .button__common:hover{
         color: var(--dark-L);
     }
 
@@ -157,6 +149,16 @@ a {
     }
 
 /* Buttons */
+    .button__common {
+        padding: 8px 16px;
+        font-size: 16px;
+        background-color: var(--dark-N);
+        border: none;
+        color: white;
+        transition: color 240ms ease;
+        cursor: pointer;
+    }
+
     .button__pink {
         width: 140px;
         height: 40px;
@@ -194,12 +196,18 @@ a {
     }
 
     @media (max-width: 480px) {
-    
+
+        .button__common {
+            padding: 8px 12px;
+            font-size: 12px;
+        }
+
         .button__pink {
             width: 100px;
             height: 40px;
             font-size: 12px;
         }
+
 
     }
 
@@ -236,14 +244,26 @@ a {
     }
 
     .about__text{
+        font-family: 'Inter', sans-serif;
         margin: 32px 37px 40px 32px;
         line-height: 27px;
         font-size: 16px;
     }
 
+    .about__container-photo{
+            display: flex;
+            align-items: center;
+    }
+
     .about__photo{
 
         border-radius: 120px 24px
+    }
+
+    @media (max-width: 1000px){
+        .about__photo{
+            display: none;
+        }
     }
 
     @media (max-width: 480px){
@@ -297,6 +317,7 @@ a {
 
     .skills__container em {
         color: var(--primary-N);
+        margin: 0 8px;
     }
 
     .wave {

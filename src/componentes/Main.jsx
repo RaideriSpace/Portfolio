@@ -1,15 +1,16 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import MyGallery from './mainComponents/MyGallery.jsx'
 import About from './mainComponents/About.jsx'
 import Skills from './mainComponents/Skills.jsx'
 
 
-const Main = () => {
+const Main = ({ aboutRef, skillsRef}) => {
+
   return (
     <> 
       <MyGallery />
-      <About />
-      <Skills />
+      <About ref={aboutRef} />
+      <Skills ref={skillsRef}/>
     </>
   )
 }

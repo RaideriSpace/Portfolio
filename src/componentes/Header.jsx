@@ -1,9 +1,9 @@
-import React, { useState, useEffect }from 'react'
+import React, { useState, useEffect, useRef }from 'react'
 import { AnimatePresence, motion } from 'framer-motion';
 import logoRaiSpace from '../assets/img/Logo.svg'
 import useIsMobile from '../hooks/useIsMobile';
 
-const Header = () => {
+const Header = ({ onAboutClick, onSkillsClick }) => {
   const [open,setOpen] = useState(false);
   const isMobile = useIsMobile();
   
@@ -26,6 +26,24 @@ const Header = () => {
     exit: { opacity: 0, x: '100%'},
    }
 
+   const handleAboutClick = () => {
+    if (onAboutClick){
+      onAboutClick();
+    }
+    if (isMobile){
+      closeMenu();
+    }
+   }
+
+   const handleSkillsClick = () => {
+    if (onSkillsClick){
+      onSkillsClick();
+    }
+    if (isMobile) {
+      closeMenu();
+    }
+   }
+
   return (
     <div className='header'>
         <img className='logo' src={logoRaiSpace} alt='Logo Raideri Space Art'  />
@@ -38,9 +56,9 @@ const Header = () => {
 
         {!isMobile && (
           <div className='header__text'>
-            <a href=''><h3>Portfólio</h3></a> 
-            <a href=''><h3>Sobre</h3></a>
-            <a href=''><h3>Competências</h3></a>
+            <button className='button__common' onClick={()=>window.location.href = '/'}>Portfólio</button> 
+            <button className='button__common' onClick={handleAboutClick}>Sobre</button>
+            <button className='button__common' onClick={handleSkillsClick}>Competências</button>
             <button className='button__pink' onClick={()=>window.location.href = '/'}>Contato</button>
           </div>
         )}
@@ -57,9 +75,9 @@ const Header = () => {
                 transition={{duration:0.24}}
               >
                 
-                <a href=''><h3>Portfólio</h3></a> 
-                <a href=''><h3>Sobre</h3></a>
-                <a href=''><h3>Competências</h3></a>
+                <button className='button__common' onClick={()=>window.location.href = '/'}>Portfólio</button> 
+                <button className='button__common' onClick={handleAboutClick}>Sobre</button>
+                <button className='button__common' onClick={handleSkillsClick}>Competências</button>
                 <button className='button__pink' onClick={()=>window.location.href = '/'}>Contato</button>
 
               </motion.div>
