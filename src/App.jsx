@@ -1,8 +1,10 @@
-import React, { useRef } from 'react'
+import React from 'react'
+import { useRef } from 'react'
+
+// Importa os componentes filhos estruturais
 import Header from './componentes/Header'
 import Main from './componentes/Main'
 import Footer from './componentes/Footer'
-import Carousel from './componentes/mainComponents/Carousel'
 
 const App = () => {
 
@@ -26,7 +28,7 @@ const App = () => {
       
       <Main 
         aboutRef={aboutRef}
-        skillsRef={skillsRef} // Passa ambas as refs
+        skillsRef={skillsRef}
       />
 
       <Footer />

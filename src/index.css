@@ -2,13 +2,13 @@
     --primary-L: #e58aa2;
     --primary-N: #FF016E;
     --primary-S: #800022;
-    --primary-XS: #4d001480;
+    --primary-XS: #4d0014;
     --primary-XS-O: hsla(344, 100%, 15%, 0.5);
     --secondary-XL: #80eeff;
     --secondary-L: #8ad9e5;
     --secondary-N: #00c2e0;
     --secondary-S: #006f80;
-    --secondary-XS: #00424d80;
+    --secondary-XS: #00424d;
     --secondary-XS-O: hsla(189, 100%, 15%, 0.5);
     --dark-L: #8b8eb1;
     --dark-N: #0d124a;
@@ -21,13 +21,14 @@
          url('./assets/fonts/space-regular-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
+    font-display: swap;
 }
 
 #root {
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-height: 100svh;
+  min-height: 100vh;
 }
 
 * {
@@ -40,11 +41,16 @@ body {
     background-color: var(--dark-N);
     font-family: 'Space Grotesk', 'Inter', sans-serif;
     font-weight: 400;
+    -webkit-font-smoothing: antialiase;
+    -moz-osx-font-smoothing: grayscale;
     color: white;
+    overflow-x: hidden;
 }
 
 button {
     font-family: 'Space Grotesk', 'Inter', sans-serif;
+    border: none;
+    background-color: none;
 }
 
 a {
@@ -82,6 +88,20 @@ a {
         z-index: 19;
     }
 
+    .header__left {
+        position: relative;
+        height: auto;
+        width: auto;
+        top: 8px;
+        left: 8px;
+    }
+
+    .header__logo-link{
+        margin-top: 8px;
+        height: 50px;
+        width: auto;
+    }
+
     .header__text{
         display: flex;
         font-size: 16px;
@@ -101,14 +121,7 @@ a {
         z-index: 20
     }
 
-    .hamburger {
-        display: none;
-        font-size: 2rem;
-        cursor: pointer;
-        margin-right: 16px;
-    }
-
-    .logo{
+    .header__logo{
         margin: 15px 0 0 40px;
         width: 162px;
         height: 70px;
@@ -133,6 +146,19 @@ a {
             position: fixed;
         }
 
+        .header__left{
+            
+        }
+
+        .header__menu-icon{
+            color: white;
+            background-color: var(--dark-N);
+            width: 50px;
+            height: 50px;
+            font-size: 1.9rem;
+            margin-right: 8px;
+        }
+
         .header__text{
             position: absolute;
             width: 160px;
@@ -151,13 +177,10 @@ a {
             display: block;
         }
 
-        .logo{
-            margin: 8px 0 0 8px;
+        .header__logo{
+            margin: -8px 0 0 8px;
             width: 100px;
         }
-
-
-
     }
 
 /* Buttons */
@@ -221,6 +244,17 @@ a {
         }
 
 
+    }
+
+/* Main */
+
+    .main-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: nowrap;
+        width: 100vw;
     }
 
 /* Gallery / Carousel */
@@ -353,6 +387,7 @@ a {
 
     .figma {
         display: flex;
+        margin-top: 8px;
         gap: 16px;
         align-items: center;
     }
@@ -519,7 +554,7 @@ a {
 
         .WIP {
             margin-top: 60px;
-            margin-bottom: -20px;
+            margin-bottom: 0;
         }
 
     }
@@ -743,6 +778,16 @@ a {
             }
 
             .footer__logo{
-                width: 300px;
+                width: 200px;
+                margin: 32px 0 8px 0;
             }
+    }
+
+    @media (max-width: 768px) {
+        .footer {
+            grid-template-columns: repeat(1, 1fr);
+            grid-template-rows: repeat(1, auto);
+            row-gap: 16px;
+            column-gap: 16px;
+        }
     }
