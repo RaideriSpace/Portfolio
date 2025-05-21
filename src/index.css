@@ -15,8 +15,8 @@
   --secondary-light: #8ad9e5;
   --secondary-normal: #00c2e0;
   --secondary-dark: #006f80;
-  --secondary-extra-small: #00424d;
-  --secondary-extra-small-opacity: hsla(189, 100%, 15%, 0.5);
+  --secondary-extra-strong: #00424d;
+  --secondary-extra-strong-opacity: hsla(189, 100%, 15%, 0.5);
 
   --dark-light: #8b8eb1;
   --dark-normal: #0d124a;
@@ -304,7 +304,7 @@ a {
 }
 
 .card-blue {
-  box-shadow: 0 0 35px var(--secondary-extra-small);
+  box-shadow: 0 0 35px var(--secondary-extra-strong);
 }
 .card-blue p {
   color: var(--secondary-extra-light);
@@ -312,11 +312,11 @@ a {
 }
 
 .card-pink {
-  box-shadow: 0 0 35px var(--primary-extra-small);
+  box-shadow: 0 0 35px var(--primary-extra-strong);
 }
 .card-pink p {
   color: var(--primary-normal);
-  text-shadow: 0 0 8px var(--primary-dark);
+  text-shadow: 0px 0px 8px var(--primary-dark);
 }
 
 .card-blue:hover {
