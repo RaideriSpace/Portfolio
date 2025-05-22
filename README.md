@@ -166,4 +166,4 @@ Este projeto não possui uma licença de código aberto explícita no repositór
 
 ---
 
-Feito com ❤️ por Lucas Alves Pinheiro. Deus abençõe.
+Feito com ❤️ por Lucas Alves Pinheiro. Deus abençoe.
