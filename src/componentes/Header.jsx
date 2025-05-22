@@ -5,7 +5,7 @@ import useIsMobile from '../hooks/useIsMobile'; // Hook personalizado para detec
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faXmark } from '@fortawesome/free-solid-svg-icons'; // Importa o ícone de menu (hamburguer) e o menu X.
 
-const Header = ({ onAboutClick, onSkillsClick }) => {
+const Header = ({ onAboutClick, onSkillsClick, onContactClick }) => {
 
   const [open,setOpen] = useState(false); // Estado para controlar a abertura/fechamento do menu mobile.
   const isMobile = useIsMobile(); // Hook para verificar se a tela é mobile.
@@ -57,16 +57,19 @@ const Header = ({ onAboutClick, onSkillsClick }) => {
     }
   }
 
-  const handlePortfolioClick = () => {
-    closeMenu(); // Fecha o menu antes de navegar
-    window.location.ref = '/' // Redireciona para a home por enquanto.
-  }
-
   const handleContactClick = () => {
-    closeMenu(); // Fecha o menu antes de navegar
-    window.location.ref = '/'; // Redireciona para a home por enquanto.
+    if (onContactClick) {
+      onContactClick()
+    } if (isMobile) {
+      closeMenu()
+    }
   }
-
+  
+  const handlePortfolioClick = () => {''
+    closeMenu();
+    window.location.ref = '/'
+  }
+  
 
   return (
 

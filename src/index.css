@@ -21,6 +21,7 @@
   --dark-light: #8b8eb1;
   --dark-normal: #0d124a;
   --dark-dark: #080b30;
+  --dark-dark-opacity: hsla(236, 71%, 11%, 0.5);
 
   /* Variáveis para espaçamento comum e tamanhos de fonte */
   --spacing-xxs: 4px;
@@ -120,6 +121,15 @@ a {
 .subtitle {
   font-size: var(--font-size-xl);
   margin-top: var(--spacing-s);
+}
+
+.gradient-text {
+    background: linear-gradient(45deg, var(--primary-normal), var(--secondary-normal));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    display: inline-block;
 }
 
 /*
@@ -229,7 +239,110 @@ a {
 
 /*
  * ========================================
- * 7. Main Content
+ * 7. Contact modal
+ * ========================================
+ */
+
+.contact-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.7); /* Fundo escuro com transparência */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.contact-modal {
+    width: 383px;
+    max-width: 90%;
+    height: 458px;
+    background-color: var(--dark-normal);
+    border-radius: 16px;
+    box-shadow: 0 0 35px var(--dark-normal);
+    position: relative;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.contact-modal__top {
+    background-image: url(./assets/img/contactmodal/contactmodalbg.svg);
+    width: 100%;
+    height: 60%;
+
+}
+
+.contact-modal__title {
+    background-color: var(--dark-dark-opacity);
+    height: auto;
+    justify-self: center;
+    width: 80%;
+    padding: 8px;
+    border-radius: 16px;
+    position: relative;
+    font-family: 'spaceregular';
+    color: var(--secondary-normal);
+    top: 80%;
+    font-size: 1.55em;
+}
+
+.contact-modal__bottom {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 8px;
+    justify-items: start;
+    padding: 0 var(--spacing-xs) var(--spacing-xs);
+}
+
+.contact-modal__links-box {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, auto);
+    row-gap: 8px;
+    column-gap: 0px; 
+    align-items: center;
+    justify-items: start;
+}
+
+.contact-modal__links {
+    display: flex;
+    align-items: center;
+    color: var(--primary-normal);
+    font-size: 0.9em;
+    font-weight: bold;
+    transition: color 240ms ease, background-color 240ms ease;
+    border-radius: 16px;
+    padding-right: 8px;
+}
+
+.contact-modal__links:hover, .contact-modal__links--email:hover {
+    color: var(--dark-light);
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.contact-modal__links .icons, .contact-modal__links--email .icons {
+    color: var(--secondary-normal);
+    font-size: 1.5em;
+    transition: color 0.2s ease;
+}
+
+.contact-modal__links:hover .icons, .contact-modal__links--email:hover .icons {
+    color: var(--primary-normal);
+}
+
+/*
+ * ========================================
+ * 8. Main Content
  * ========================================
  */
 
@@ -242,7 +355,7 @@ a {
 
 /*
  * ========================================
- * 8. Gallery / Carousel
+ * 9. Gallery / Carousel
  * ========================================
  */
 
@@ -375,7 +488,7 @@ a {
 
 /*
  * ========================================
- * 9. About Section
+ * 10. About Section
  * ========================================
  */
 
@@ -428,7 +541,7 @@ a {
 
 /*
  * ========================================
- * 10. Skills Section
+ * 11. Skills Section
  * ========================================
  */
 
@@ -473,9 +586,10 @@ a {
 
 /*
  * ========================================
- * 11. Footer
+ * 12. Footer
  * ========================================
  */
+
 .icons {
   height: var(--spacing-l);
   width: var(--spacing-l);
@@ -531,9 +645,7 @@ a {
 
 /*
  * ========================================
-
- * 12. Media Queries (Ordenadas do maior para o menor)
-
+ * 13. Media Queries (Ordenadas do maior para o menor)
  * ========================================
  */
 
@@ -745,14 +857,47 @@ a {
 
 /* Mobile Portrait (480px) */
 @media (max-width: 480px) {
- 
+
+    .contact-modal {
+        width: 300px;
+        height: auto;
+        overflow: hidden;
+        gap: 0px;
+    }
+
+    .contact-modal__top {
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        height: 200px;
+    }
+
+    .contact-modal__title {
+        width: 90%;
+        top: 70%;
+    }
+
+    .contact-modal__bottom {
+        align-items: center;
+        gap: 4px;
+        justify-items: center;
+        padding: 0 var(--spacing-xs) var(--spacing-xs);
+    }
+
+    .contact-modal__links-box {
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(1, auto);
+        row-gap: 4px;
+    }
+
+
   .carousel__card {
     border-radius: var(--spacing-m);
     font-size: var(--font-size-xxl);
   }
 
   .about {
-    padding-top: var(--spacing-xxl);
+    padding: var(--spacing-xxl) 0;
   }
 
   .about__container {
