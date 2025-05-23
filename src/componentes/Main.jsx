@@ -6,7 +6,7 @@ import About from './mainComponents/About.jsx'
 import Skills from './mainComponents/Skills.jsx'
 
 
-const Main = ({ aboutRef, skillsRef}) => {
+const Main = ({ aboutRef, skillsRef, onCvClick}) => {
 
   return (
 
@@ -16,7 +16,7 @@ const Main = ({ aboutRef, skillsRef}) => {
       <MyGallery />
 
        {/* Passa as refs para os componentes About e Skills. */}
-      <About ref={aboutRef} />
+      <About ref={aboutRef} onCvClick={onCvClick} />
       
       <Skills ref={skillsRef}/>
     </main>

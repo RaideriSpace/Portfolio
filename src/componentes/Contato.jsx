@@ -29,14 +29,13 @@ const Contato = ({ onClose }) => { // Adiciona as props
 
   return (
 
-    // AnimationPresence para controlar a animação
     <motion.div // Overlay para o shadow e para fechar ao clicar fora
-      className='contact-modal-overlay' 
+      className='modal-overlay' 
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       onClick={onClose} // Fecha ao clicar no overlay
-      key='contact-modal-overlay' // Key única
+      key='modal-overlay' // Key única
     >
       <motion.div // O modal
         className='contact-modal' 

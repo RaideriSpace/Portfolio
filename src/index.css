@@ -132,6 +132,19 @@ a {
     display: inline-block;
 }
 
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.7); /* Fundo escuro com transparência */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
 /*
  * ========================================
  * 5. Botões
@@ -242,19 +255,6 @@ a {
  * 7. Contact modal
  * ========================================
  */
-
-.contact-modal-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-color: rgba(0, 0, 0, 0.7); /* Fundo escuro com transparência */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-}
 
 .contact-modal {
     width: 383px;
@@ -538,6 +538,284 @@ a {
   max-width: 100%; /* Garante que a imagem não ultrapasse o container */
   height: auto; /* Mantém a proporção */
 }
+
+/*
+ * ========================================
+ * 10.1 About Section - CV Modal
+ * ========================================
+ */
+
+.cv-modal {
+  width: 90%;
+  max-width: 800px;
+  height: 600px;
+  max-height: 90vh;
+  position: fixed;
+  overflow: auto;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--dark-normal);
+  border-radius: 16px;
+  box-shadow: 0 0 35px var(--dark-normal);
+  z-index: 1001;
+  padding: 16px 16px 32px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.cv-modal__close-button {
+  position: absolute;
+  align-items: center;
+  right: 0px;
+  top: 0px;
+  height: 45px;
+  width: 45px;
+  font-size: 35px;
+  color: var(--dark-light);
+  transition: color 240ms ease;
+}
+
+.cv-modal__close-button:hover {
+  color: white;
+}
+
+.cv-modal__tabs {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-bottom: 8px;
+    flex-wrap: wrap;
+    border-bottom: 2px solid var(--dark-light);
+}
+
+.cv-modal__tab-button {
+  padding: 10px 16px;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--dark-light);
+  cursor: pointer;
+  transition: color 0.2s ease;
+  white-space: nowrap;
+}
+
+.cv-modal__tab-button:hover {
+  color: white;
+}
+
+.cv-modal__tab-button.active {
+  color: white;
+  font-weight: bold;
+}
+
+.cv-modal__content {
+  flex-grow: 1;
+  overflow: auto;
+  padding-right: 8px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--dark-light) var(--dark-normal);
+}
+
+/* Estilo para scrollbar baseado em webkit (Chrome, Edge, Safari) */
+.cv-modal__content::-webkit-scrollbar {
+  width: 8px;
+}
+
+.cv-modal__content::-webkit-scrollbar-track {
+  background: var(--dark-normal);
+  border-radius: 10px;
+}
+
+.cv-modal__content::-webkit-scrollbar-thumb {
+  background-color: var(--dark-normal);
+  border-radius: 10px;
+  border: 2px solid var(--dark-light);
+}
+
+.cv-modal__item,
+.cv-modal__list-item {
+  line-height: 1.6;
+  color: white;
+  font-size: 16px;
+}
+
+.cv-modal__item {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.cv-modal__item-type {
+  font-size: 0.75em;
+}
+
+.cv-modal__item-title {
+  font-weight: bold;
+  font-size: 1.12em;
+  margin-bottom: 4px;
+}
+
+.cv-modal__item-subtitle {
+  font-style: italic;
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+
+.cv-modal__item-period {
+  font-size: 14px;
+  color: white;
+  margin-bottom: 8px;
+}
+
+.cv-modal__item-description {
+  font-size: 16px;
+  color: var(--dark-N);
+}
+
+.cv-modal__list {
+  list-style: none;
+  padding-left: 18px;
+}
+
+.cv-modal__list-item {
+  margin-bottom: 16px;
+}
+
+/* Estilos para Experiência (Acordeão) */
+.cv-modal__experience-item {
+  border-radius: 8px;
+  margin-bottom: 16px;
+  overflow: hidden;
+}
+
+.cv-modal__experience-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  background-color: var(--dark-dark); /* Cor do cabeçalho da experiência */
+  cursor: pointer;
+  transition: background-color 260ms ease;
+}
+
+.cv-modal__experience-header:hover {
+  background-color: var(--secondary-extra-strong);
+}
+
+.cv-modal__experience-title {
+  font-weight: bold;
+  font-size: 18px;
+  color: white;
+  flex-grow: 1;
+}
+
+.cv-modal__experience-company {
+    font-size: 16px;
+    color: white;
+    margin-left: 10px;
+}
+
+.cv-modal__experience-period {
+    font-size: 14px;
+    color: var(--dark-light);
+    margin-left: 8px;
+}
+
+.cv-modal__experience-arrow {
+  font-size: 14px;
+  margin-left: 16px;
+  color: var(--dark-normal);
+  background-color: var(--primary-normal);
+  border-radius: 50%;
+  padding: 3px;
+  transition: rotate ease 240ms;
+}
+
+.cv-modal__experience-arrow.expanded {
+  rotate: 180deg;
+}
+
+.cv-modal__experience-details {
+  padding: 8px 24px 24px;
+  background-color: var(--dark-dark);
+}
+
+.cv-modal__experience-details h3 {
+  color: var(--dark-light);
+  font-size: 16px;
+}
+
+.cv-modal__experience-description {
+  font-size: 16px;
+  font-weight: lighter;
+  line-height: 25px;
+  color: white;
+  margin: 8px 16px 8px;
+}
+
+.cv-modal__languages-grid {
+  margin-top: 8%;
+  display: grid;
+  grid-template-columns: 1fr;
+  padding: 10px 0;
+}
+
+.cv-modal__language-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 24px;
+  gap: 16px;
+  padding: 24px 0;
+  border-bottom: 1px dashed var(--dark-light);
+}
+
+.cv-modal__language-item:last-child {
+  border-bottom: none;
+}
+
+.cv-modal__language-name {
+  width: 80px;
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+}
+
+.cv-modal__language-level {
+  font-size: 16px;
+  color: var(--secondary-normal);
+}
+
+.cv-modal__progress-bar-container {
+    width: 300px;
+    height: 31px;
+    background-color: var(--dark-light);
+    border-radius: 24px 4px;
+    overflow: hidden;
+    position: relative;
+}
+
+.cv-modal__progress-bar-fill {
+    height: 100%;
+    background: var(--secondary-normal);
+    border-radius: 6px;
+}
+
+.cv-modal__progress-percentage {
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    transform: translateY(-50%);
+    font-size: 14px;
+    font-weight: bold;
+    color: var(--dark-normal);
+    text-shadow: 0 0 10px var(--dark-dark);
+}
+
 
 /*
  * ========================================
@@ -845,6 +1123,11 @@ a {
     margin-bottom: 0;
   }
 
+  .cv-modal__item-title {
+    width: 150px;
+    text-wrap: wrap;
+  }
+
   .footer__links-container {
     grid-template-columns: repeat(1, 1fr);
     grid-template-rows: repeat(1, auto);
@@ -916,6 +1199,151 @@ a {
     font-size: var(--font-size-sm);
   }
 
+.cv-modal {
+  width: 85%;
+  z-index: 1001;
+  padding: 8px;
+  gap: 4px;
+}
+
+.cv-modal__close-button {
+  right: 4px;
+  height: 30px;
+  width: 30px;
+  font-size: 30px;
+}
+
+.cv-modal__tabs {
+    gap: 4px;
+    margin-bottom: 8px;
+}
+
+.cv-modal__tab-button {
+  padding: 4px 8px;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.cv-modal__content {
+  padding-right: 0px;
+}
+
+.cv-modal__item,
+.cv-modal__list-item {
+  line-height: 1.6;
+  font-size: 14px;
+}
+
+.cv-modal__item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.cv-modal__item-type {
+  display: none;
+}
+
+.cv-modal__item-title {
+  font-weight: bold;
+  width: 115px;
+  font-size: 1em;
+  margin-bottom: 4px;
+  padding-left: 4px;
+}
+
+.cv-modal__item-subtitle {
+  font-style: italic;
+  text-align: center;
+  width: 100px;
+  font-size: 12px;
+  margin-bottom: 4px;
+}
+
+.cv-modal__item-period {
+  font-size: 12px;
+  height: 40px;
+  width: 85px;
+  text-align: right;
+  margin-bottom: 8px;
+}
+
+.cv-modal__list {
+  padding-left: 10px;
+}
+
+
+/* Estilos para Experiência (Acordeão) */
+.cv-modal__experience-item {
+  border-radius: 8px;
+  margin-bottom: 16px;
+  overflow: hidden;
+}
+
+.cv-modal__experience-header {
+  padding: 16px 16px;
+}
+
+.cv-modal__experience-title {
+  font-size: 14px;
+}
+
+.cv-modal__experience-company {
+    font-size: 12px;
+    margin-left: 0px;
+    width: 80px;
+}
+
+.cv-modal__experience-period {
+    font-size: 12px;
+    margin-left: 0px;
+}
+
+.cv-modal__experience-arrow {
+  font-size: 12px;
+  margin-left: 8px;
+}
+
+.cv-modal__experience-details {
+  padding: 4px 12px 8px;
+}
+
+.cv-modal__experience-details h3 {
+  font-size: 14px;
+}
+
+.cv-modal__experience-description {
+  font-size: 14px;
+  margin: 8px;
+}
+
+.cv-modal__languages-grid {
+  margin-top: 0%;
+  padding: 4px 0;
+}
+
+.cv-modal__language-item {
+  flex-wrap: wrap;
+}
+
+.cv-modal__language-name {
+  width: 80px;
+  font-size: 14px;
+}
+
+.cv-modal__language-level {
+  font-size: 14px;
+}
+
+.cv-modal__progress-bar-container {
+    width: 250px;
+}
+
+.cv-modal__progress-percentage {
+    font-size: 12px;
+} 
   .skills {
     padding: 56px var(--spacing-xs) var(--spacing-l) var(--spacing-xs);
   }

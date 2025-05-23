@@ -1,11 +1,11 @@
-import React from 'react'
-import { useRef, useState } from 'react'
+import React, { useRef, useState } from 'react'
 
 // Importa os componentes filhos estruturais
 import Header from './componentes/Header'
 import Main from './componentes/Main'
 import Footer from './componentes/Footer'
 import Contato from './componentes/Contato'
+import CvModal from './componentes/CvModal'
 
 // Importar os hooks
 import useBodyScrollLock from './hooks/useBodyScrollLock'
@@ -15,9 +15,11 @@ const App = () => {
 
   const aboutRef = useRef(null);
   const skillsRef = useRef(null);
-  const [isContactModalOpen, setIsContactModalOpen] = useState(false) // Estado para controlar a visibilidade do modal
+  const [isContactModalOpen, setIsContactModalOpen] = useState(false) // Estado para controlar a visibilidade do modal Contato
+  const [isCvModalOpen, setIsCvModalOpen] = useState(false) // Estado para controlar a visibilidade do modal CV
 
-  useBodyScrollLock(isContactModalOpen);
+  // Scroll desabilitado quando um modal abre
+  useBodyScrollLock(isContactModalOpen || isCvModalOpen);
 
   // Função para fazer o scroll até o "Sobre"
   const handleAboutClick = () => {
@@ -38,6 +40,16 @@ const App = () => {
   const handleCloseContactModal = () => {
     setIsContactModalOpen(false);
   }
+
+  // Função para abrir o modal de CV
+  const handleOpenCvModal = () => {
+    setIsCvModalOpen(true);
+  };
+
+  // Função para fechar o modal de CV
+  const handleCloseCvModal = () => {
+    setIsCvModalOpen(false);
+  };
  
   return (
     <>
@@ -50,7 +62,8 @@ const App = () => {
       <Main 
         aboutRef={aboutRef}
         skillsRef={skillsRef}
-        onContactClick={handleOpenContactModal} 
+        onContactClick={handleOpenContactModal}
+        onCvClick={handleOpenCvModal}
       />
 
       <Footer />
@@ -62,6 +75,12 @@ const App = () => {
         )}
       </AnimatePresence>
 
+      {/* Renderiza o componente CV condicionalmente */}
+      <AnimatePresence>
+        {isCvModalOpen && (
+          <CvModal isOpen={isCvModalOpen} onClose={handleCloseCvModal} />
+        )}
+      </AnimatePresence>
     </>
   )
 }

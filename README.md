@@ -125,8 +125,8 @@ Certifique-se de ter o [Node.js](https://nodejs.org/en/) (versão 18 ou superior
     │   │   ├── Main.jsx
     │   │   ├── Footer.jsx
     │   │   ├── Contato.jsx
-    │   │   ├── CV.jsx (se houver)
-    │   │   └── mainComponents/ # Componentes específicos de cada seção principal
+    │   │   ├── CvModal.jsx
+    │   │   └── mainComponents/ # Componentes específicos da seção principal
     │   │       ├── About.jsx
     │   │       ├── Skills.jsx
     │   │       ├── MyGallery.jsx
@@ -136,7 +136,7 @@ Certifique-se de ter o [Node.js](https://nodejs.org/en/) (versão 18 ou superior
     │   │   └── cardsData.js
     │   ├── hooks/              # Custom Hooks React
     │   │   ├── useIsMobile.js
-    │   │   └── useBodyScrollLock.js (se criado)
+    │   │   └── useBodyScrollLock.js
     │   ├── App.jsx             # Componente raiz da aplicação
     │   ├── index.css           # Estilos globais
     │   ├── main.jsx            # Ponto de entrada da aplicação
