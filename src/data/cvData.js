@@ -43,7 +43,7 @@ export const experienceData = [
         title: 'Designer UX/UI Junior - Voluntário',
         company: 'Bike Anjo',
         period: '03/2025 → 06/2025',
-        description: [''],
+        description: ['Reuniões semanais com equipe, design de baixa-fidelidade no Figma, auxílio na elaboração do novo user flow, auxílio na definição de priorização de telas, criação fluxos de interatividade com o protótipo e comunicação com equipe de desenvolvimento.'],
         abilities: [ 
             'Redesign do site da Bike Anjo, com foco na melhoria da experiência do usuário.', 
             'Criação de user flows e mapeamento do site para otimizar a navegação e usabilidade.',
@@ -57,7 +57,7 @@ export const experienceData = [
         title: 'Designer UX/UI Junior - Voluntário',
         company: 'Sempre Design',
         period: '03/2025 → 06/2025',
-        description: [''],
+        description: ['Reunião semanal com equipe, auxilio na elaboração do contrato, auxilio na criação do padrão visual, auxilio nas entrevistas com usuários, criação de protótipos de baixa fidelidade com base nas limitações do Power BI. '],
         abilities: [ 
             'Apoio no desenvolvimento de interfaces e dashboards de BI, com base no Ciclo de UX.', 
             'Participação em entrevistas com usuários e colaboração na criação de soluções visuais alinhadas à experiência do usuário.',
