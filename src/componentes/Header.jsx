@@ -4,6 +4,8 @@ import logoRaiSpace from '../assets/img/Logo.svg'
 import useIsMobile from '../hooks/useIsMobile'; // Hook personalizado para detectar se é mobile.
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faXmark } from '@fortawesome/free-solid-svg-icons'; // Importa o ícone de menu (hamburguer) e o menu X.
+import { faFigma, faGithub } from '@fortawesome/free-brands-svg-icons'
+
 
 const Header = ({ onAboutClick, onSkillsClick, onContactClick }) => {
 
@@ -85,6 +87,36 @@ const Header = ({ onAboutClick, onSkillsClick, onContactClick }) => {
           {/* Imagem do logo. */}
           <img className='header__logo' src={logoRaiSpace} alt='Logo Raideri Space Art'  />
         </a>
+      </div>
+
+      <div className='WIP__Container'>
+        <p className='WIP'>Work In Progress</p>
+        <div className='WIP__Container--links'>
+          <a 
+            className='footer__links--a'
+            href='https://www.figma.com/proto/0MWjKzgncI7kq4UZDTAHPR/Portf%C3%B3lio---Lucas-Alves-Pinheiro?page-id=3009%3A714&node-id=3012-828&viewport=1748%2C-1064%2C0.76&t=nznWeCIX4YsBytc3-1&scaling=scale-down-width&content-scaling=fixed&starting-point-node-id=3012%3A828'
+            target='_blank' // Abrir em nova aba.
+            rel='noopener noreferrer' // Boa prática de segurança.
+          >
+            <div className='figma'>
+              <FontAwesomeIcon className='icons_temp' icon={faFigma} />
+              <p >Figma do projeto</p> 
+            </div>
+          </a>
+          
+          <a
+            className='footer__links--a'
+            href='https://github.com/RaideriSpace/Portfolio'
+            target='_blank'
+            rel='noopener noreferrer'
+          >
+            <div className='figma'>
+              <FontAwesomeIcon className='icons_temp' icon={faGithub} />
+              <p> Repositório no Github</p>
+            </div>
+
+          </a>
+        </div>
       </div>
 
       {/* Botão de menu hamburguer (visível apenas em mobile). */}

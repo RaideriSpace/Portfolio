@@ -166,6 +166,14 @@ a {
     z-index: 1000;
 }
 
+.icons {
+  height: var(--spacing-l);
+  width: var(--spacing-l);
+  color: var(--tertiary);
+  margin: var(--spacing-xs);
+  transition: color 240ms ease;
+}
+
 /*
  * ========================================
  * 5. Botões
@@ -222,16 +230,16 @@ a {
  */
 
 .header {
-  position: relative;
+  position: absolute;
   height: 80px;
   width: 100%;
   text-align: center;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: var(--dark);
-  z-index: 100; 
-  padding: 0 var(--spacing-l);
+  background: none;
+  z-index: 100;
+  padding: 0 var(--spacing-s);
 }
 
 .header__logo-link {
@@ -255,7 +263,7 @@ a {
   flex-direction: row;
   flex-wrap: nowrap;
   align-items: center;
-  margin-right: var(--spacing-xl);
+  margin-right: 40px;
   z-index: 20;
   gap: var(--spacing-s);
 }
@@ -269,6 +277,30 @@ a {
   background-color: rgba(0, 0, 0, 0.6);
   z-index: 18;
   transition: opacity 300ms ease;
+}
+
+.WIP__Container{
+  display: flex;
+  flex-direction: column;
+}
+
+.WIP__Container--links{
+  display: flex;
+  flex-direction: row;
+}
+
+.figma {
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+}
+
+.icons_temp {
+  height: 24px;
+  width: var(--spacing-l);
+  color: var(--tertiary);
+  margin: var(--spacing-xs);
+  transition: color 240ms ease;
 }
 
 /*
@@ -384,8 +416,9 @@ a {
   width: 100%;
   height: auto;
   background-image: url(/src/assets/img/carouselbg.svg);
+  background-repeat: no-repeat;
   display: flex;
-  padding: var(--spacing-s);
+  padding: 96px var(--spacing-s);
   margin-top: var(--spacing-xxs);
   gap: var(--spacing-s);
   align-items: center;
@@ -492,21 +525,6 @@ a {
   right: 3%;
 }
 
-.carousel__wave {
-  background-image: url(assets/img/carouselbgwave.svg);
-  background-repeat: repeat-x;
-  width: 100%;
-  height: 40px;
-  margin-top: -2px;
-}
-
-.figma {
-  display: flex;
-  margin-top: var(--spacing-xs);
-  gap: var(--spacing-s);
-  align-items: center;
-}
-
 /*
  * ========================================
  * 10. About Section
@@ -525,7 +543,7 @@ a {
   display: flex;
   max-width: 80%;
   height: auto;
-  background-color: var(--primary-ex-light);
+  background-color: var(--auxiliary2-light);
   padding: var(--spacing-s) var(--spacing-l);
   border-radius: 120px 24px;
   color: var(--dark);
@@ -845,7 +863,7 @@ a {
  */
 
 .skills {
-  background-color: var(--tertiary);
+  background-color: var(--auxiliary2-ex-dark);
   width: 100%;
   height: auto;
   padding: var(--spacing-l) 0; 
@@ -856,11 +874,12 @@ a {
 }
 
 .skills .subtitle {
+  color: var(--tertiary);
   margin-top: var(--spacing-s);
 }
 
 .skills__container {
-  background-color: var(--tertiary-light);
+  background-color: var(--auxiliary2-light);
   max-width: 95%; 
   font-size: var(--font-size-lg);
   text-align: center;
@@ -888,14 +907,6 @@ a {
  * 12. Footer
  * ========================================
  */
-
-.icons {
-  height: var(--spacing-l);
-  width: var(--spacing-l);
-  color: var(--tertiary);
-  margin: var(--spacing-xs);
-  transition: color 240ms ease;
-}
 
 .footer {
   display: flex;
@@ -933,7 +944,7 @@ a {
   color: var(--primary-ex-light);
 }
 
-.footer__links--a:hover .icons {
+.footer__links--a:hover .icons, .footer__links--a:hover .icons_temp {
   color: var(--secondary);
 }
 
@@ -952,6 +963,7 @@ a {
 @media (max-width: 1000px) {
   .header {
     padding: 0 var(--spacing-s);
+    background-color: var(--dark);
   }
 
   .header__logo {
@@ -963,9 +975,23 @@ a {
     gap: var(--spacing-xs); 
   }
 
+  .WIP {
+    font-size: 14px;
+    padding-bottom: 4px;
+  }
+
+  .figma p {
+    width: 90px;
+    text-align: start;
+  }
+
+  .icons_temp {
+    margin: 4px;
+  }
+
   .gallery {
     background-image: none;
-    padding: var(--spacing-xs) 0;
+    padding: var(--spacing-xl) 0;
     gap: var(--spacing-xs);
   }
 
@@ -1104,6 +1130,10 @@ a {
     width: 100px;
   }
 
+  .WIP__Container {
+    margin-bottom: 4px;
+  }
+
   .button__common {
     padding: var(--spacing-xs) var(--font-size-sm);
     font-size: var(--font-size-sm);
@@ -1139,11 +1169,6 @@ a {
     right: 10px;
   }
 
-  .WIP {
-    margin-top: 60px;
-    margin-bottom: 0;
-  }
-
   .cv-modal__item-title {
     width: 150px;
     text-wrap: wrap;
@@ -1162,38 +1187,50 @@ a {
 /* Mobile Portrait (480px) */
 @media (max-width: 480px) {
 
-    .contact-modal {
-        width: 300px;
-        height: auto;
-        overflow: hidden;
-        gap: 0px;
-    }
+  .figma p {
+    display: none;
+  }
 
-    .contact-modal__top {
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center;
-        height: 200px;
-    }
+  .WIP__Container--links {
+    justify-content: center;
+  }
 
-    .contact-modal__title {
-        width: 90%;
-        top: 70%;
-    }
+  .contact-modal {
+    width: 300px;
+    height: auto;
+    overflow: hidden;
+     gap: 0px;
+  }
 
-    .contact-modal__bottom {
-        align-items: center;
-        gap: 4px;
-        justify-items: center;
-        padding: 0 var(--spacing-xs) var(--spacing-xs);
-    }
+  .contact-modal__top {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 200px;
+  }
 
-    .contact-modal__links-box {
-        grid-template-columns: repeat(1, 1fr);
-        grid-template-rows: repeat(1, auto);
-        row-gap: 4px;
-    }
+  .contact-modal__title {
+    width: 90%;
+    top: 70%;
+  }
 
+  .contact-modal__bottom {
+    align-items: center;
+    gap: 4px;
+    justify-items: center;
+    padding: 0 var(--spacing-xs) var(--spacing-xs);
+  }
+
+  .contact-modal__links-box {
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(1, auto);
+    row-gap: 4px;
+  }
+
+  .carousel__container::before,
+  .carousel__container::after {
+    width: 50px;
+  }
 
   .carousel__card {
     border-radius: var(--spacing-m);
