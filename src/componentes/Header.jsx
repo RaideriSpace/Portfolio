@@ -52,7 +52,6 @@ const Header = ({ onAboutClick, onSkillsClick, onContactClick }) => {
     navigate('/'); // Navega para a home
     closeMenu();
   }
-
     
   // Funções de clique para os botões do menu.
   // Chamam as props de clique e fecham o menu se for mobile.
