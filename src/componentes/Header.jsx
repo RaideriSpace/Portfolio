@@ -1,5 +1,6 @@
 import React, { useState, useEffect }from 'react'
 import { AnimatePresence, motion } from 'framer-motion';
+import { useLocation, useNavigate } from 'react-router-dom';
 import logoRaiSpace from '../assets/img/Logo.svg'
 import useIsMobile from '../hooks/useIsMobile'; // Hook personalizado para detectar se é mobile.
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -11,6 +12,15 @@ const Header = ({ onAboutClick, onSkillsClick, onContactClick }) => {
 
   const [open,setOpen] = useState(false); // Estado para controlar a abertura/fechamento do menu mobile.
   const isMobile = useIsMobile(); // Hook para verificar se a tela é mobile.
+  const location = useLocation(); // Hook para acessar o objeto de localização atual
+  const navigate = useNavigate(); // Hook para navegação programática
+
+  // Verifica se a rota atual é a pagina inicial
+  const isHomePage = location.pathname === '/';
+
+  // Verifica se a rota atual é a página de portfólio
+  const isPortfolioPage = location.pathname === '/portfolio' || location.pathname === '/portfolioselected'; 
+
   
    // Alterna o estado 'open'.
   const toggleMenu = () => setOpen (!open);
@@ -36,6 +46,11 @@ const Header = ({ onAboutClick, onSkillsClick, onContactClick }) => {
     hidden: { opacity: 0, x: '100%' }, // Estado inicial (escondido, fora da tela à direita).
     visible: { opacity: 1, x: '0%' }, // Estado visível (na tela).
     exit: { opacity: 0, x: '100%'}, // Estado de saída (voltando para fora da tela).
+  }
+
+  const handleHomeClick = () => {
+    navigate('/'); // Navega para a home
+    closeMenu();
   }
 
     
@@ -68,8 +83,8 @@ const Header = ({ onAboutClick, onSkillsClick, onContactClick }) => {
   }
   
   const handlePortfolioClick = () => {''
-    closeMenu();
-    window.location.ref = '/'
+    navigate('/portfolio'); // Navega para a página de portfólio
+    closeMenu()
   }
   
 
@@ -129,11 +144,20 @@ const Header = ({ onAboutClick, onSkillsClick, onContactClick }) => {
        {/* Menu desktop: visível apenas se não for mobile. */}
       {!isMobile && (
         <nav className='header__text'>
+
           <button className='button__common' onClick={handlePortfolioClick}> Portfólio </button> 
-          <button className='button__common' onClick={handleAboutClick}> Sobre </button>
-          <button className='button__common' onClick={handleSkillsClick}> Competências </button>
+
+          {/* Renderização Condicional dos botões */}
+          {isPortfolioPage ? ( // Se estiver na página do portfólio
+            <button className='button__common' onClick={handleHomeClick}> Home </button>
+          ) : ( // Se estiver na página inicial
+            <>
+              <button className='button__common' onClick={handleAboutClick}> Sobre </button>
+              <button className='button__common' onClick={handleSkillsClick}> Competências </button>
+            </>
+          )}
           <button className='button__pink' onClick={handleContactClick}> Contato </button>
-         </nav>
+        </nav>
       )}
 
       {/* Animação do menu mobile com Framer Motion. */}
@@ -150,10 +174,18 @@ const Header = ({ onAboutClick, onSkillsClick, onContactClick }) => {
               variants={mobileMenuVariants}
               transition={{duration:0.24}}
             >
-                
-              <button className='button__common' onClick={handlePortfolioClick}> Portfólio </button> 
-              <button className='button__common' onClick={handleAboutClick}> Sobre </button>
-              <button className='button__common' onClick={handleSkillsClick}> Competências </button>
+
+              <button className='button__common' onClick={handlePortfolioClick}> Portfólio </button>
+              {/* Renderização condicional dos botões no menu mobile */}
+              {isPortfolioPage ? (
+                <button className='button__common' onClick={handleHomeClick}> Home </button>
+              ) : (
+                <>
+                  <button className='button__common' onClick={handleAboutClick}> Sobre </button>
+                  <button className='button__common' onClick={handleSkillsClick}> Competências </button>
+                </>
+              )}
+
               <button className='button__pink' onClick={handleContactClick}> Contato </button>
 
             </motion.nav>

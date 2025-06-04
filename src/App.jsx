@@ -1,4 +1,5 @@
 import React, { useRef, useState } from 'react'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 
 // Importa os componentes filhos estruturais
 import Header from './componentes/Header'
@@ -6,6 +7,7 @@ import Main from './componentes/Main'
 import Footer from './componentes/Footer'
 import Contato from './componentes/Contato'
 import CvModal from './componentes/CvModal'
+import Portfolio from './pages/Portfolio'
 
 // Importar os hooks
 import useBodyScrollLock from './hooks/useBodyScrollLock'
@@ -52,19 +54,31 @@ const App = () => {
   };
  
   return (
-    <>
+    <Router>
       <Header 
         onAboutClick={handleAboutClick} 
         onSkillsClick={handleSkillsClick} 
         onContactClick={handleOpenContactModal} 
       />
-      
-      <Main 
-        aboutRef={aboutRef}
-        skillsRef={skillsRef}
-        onContactClick={handleOpenContactModal}
-        onCvClick={handleOpenCvModal}
-      />
+      <Routes>
+        {/* Rota para a página Home */}
+        <Route
+          path='/'
+          element={
+            <Main
+              aboutRef={aboutRef}
+              skillsRef={skillsRef}
+              onContactClick={handleOpenContactModal}
+              onCvClick={handleOpenCvModal}
+            />
+          }
+        />
+
+        {/* Rota para a página de Portfólio */}
+        <Route path='/portfolio' element={<Portfolio />} />
+
+        {/* Futuras rotas aqui */}
+      </Routes>
 
       <Footer />
 
@@ -81,7 +95,7 @@ const App = () => {
           <CvModal isOpen={isCvModalOpen} onClose={handleCloseCvModal} />
         )}
       </AnimatePresence>
-    </>
+    </Router>
   )
 }
 

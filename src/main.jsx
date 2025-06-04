@@ -1,6 +1,6 @@
 import { StrictMode } from 'react' // Importa o StrictMode do React.
 import { createRoot } from 'react-dom/client' // Importa createRoot para o modo de renderização concorrente do React 18+.
-import './index.css' // Importa o arquivo CSS global.
+import '../src/styles/index.css' // Importa o arquivo CSS global.
 import App from './App.jsx' // Importa o componente principal da aplicação.
 
 // Seleciona o elemento DOM onde o aplicativo React será montado.

@@ -4,63 +4,7 @@
  * ========================================
  */
 
-:root {
-  --primary-ex-light: #8c73b5;
-  --primary-light: #583989;
-  --primary: #3f2667;
-  --primary-dark: #281645;
-  --primary-ex-dark: #120920;
-
-  --secondary-ex-light: #ebadca;
-  --secondary-light: #e15194;
-  --secondary: #e01f79;
-  --secondary-dark: #B91360;
-  --secondary-ex-dark: #610530;
-  --secondary-ex-dark-opacity: #ebadca50;
-
-  --tertiary-ex-light: #84e7f5;
-  --tertiary-light: #1addf9;
-  --tertiary: #00c5e2;
-  --tertiary-dark: #0097ad;
-  --tertiary-ex-dark: #003e47;
-  --tertiary-ex-dark-opacity: #003e4750;
-
-  --auxiliary1-ex-light:#9dacc3;
-  --auxiliary1-light:#5274a7;
-  --auxiliary1:#3d5b8a;
-  --auxiliary1-dark:#29436a;
-  --auxiliary1-ex-dark:#0b1423;
-
-  --auxiliary2-ex-light:#d3d4df;
-  --auxiliary2-light:#8f94bd;
-  --auxiliary2:#6870b0;
-  --auxiliary2-dark:#49539c;
-  --auxiliary2-ex-dark:#22295d;
-
-  --dark-ex-light: #535181;
-  --dark-light: #262447;
-  --dark: #121125;
-  --dark-dark: #020104;
-  --dark-dark-opacity: #02010450;
-  --dark-ex-dark: #000000;
-
-  /* Variáveis para espaçamento comum e tamanhos de fonte */
-  --spacing-xxs: 4px;
-  --spacing-xs: 8px;
-  --spacing-s: 16px;
-  --spacing-m: 24px;
-  --spacing-l: 32px;
-  --spacing-xl: 40px;
-  --spacing-xxl: 48px;
-  --spacing-xxxl: 64px;
-
-  --font-size-sm: 12px;
-  --font-size-md: 16px;
-  --font-size-lg: 24px;
-  --font-size-xl: 32px;
-  --font-size-xxl: 40px;
-  --font-size-xxxl: 64px;
-}
+@import './variables.css';
 
 /*
  * ========================================
@@ -70,8 +14,8 @@
 
 @font-face {
   font-family: 'spaceregular';
-  src: url('./assets/fonts/space-regular-webfont.woff2') format('woff2'),
-    url('./assets/fonts/space-regular-webfont.woff') format('woff');
+  src: url('../assets/fonts/space-regular-webfont.woff2') format('woff2'),
+    url('../assets/fonts/space-regular-webfont.woff') format('woff');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -251,7 +195,7 @@ a {
 }
 
 .header__logo {
-  margin: 15px 0 0 40px;
+  margin: 15px 0 0 24px;
   width: 162px;
   height: 70px;
   z-index: 18;
@@ -263,7 +207,7 @@ a {
   flex-direction: row;
   flex-wrap: nowrap;
   align-items: center;
-  margin-right: 40px;
+  margin: 0 24px;
   z-index: 20;
   gap: var(--spacing-s);
 }

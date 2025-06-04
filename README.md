@@ -113,7 +113,7 @@ Certifique-se de ter o [Node.js](https://nodejs.org/en/) (versão 18 ou superior
     
     A estrutura do projeto segue uma organização modular para facilitar o desenvolvimento e a manutenção:
 
-        .
+    .
     ├── public/                 # Arquivos estáticos (favicon, etc.)
     ├── src/
     │   ├── assets/             # Imagens, fontes, outros recursos
@@ -132,13 +132,16 @@ Certifique-se de ter o [Node.js](https://nodejs.org/en/) (versão 18 ou superior
     │   │       ├── MyGallery.jsx
     │   │       ├── Carousel.jsx
     │   │       └── ...
+    │   ├── styles/             # Folhas de estilos e variáveis 
+    │   │   ├── index.css
+    │   │   ├── porfolio.css
+    │   │   └── variables.css
     │   ├── data/               # Dados estáticos (ex: cardsData.js)
     │   │   └── cardsData.js
     │   ├── hooks/              # Custom Hooks React
     │   │   ├── useIsMobile.js
     │   │   └── useBodyScrollLock.js
     │   ├── App.jsx             # Componente raiz da aplicação
-    │   ├── index.css           # Estilos globais
     │   ├── main.jsx            # Ponto de entrada da aplicação
     │   └── ...
     ├── .eslintrc.cjs           # Configuração do ESLint (ou eslint.config.js)
