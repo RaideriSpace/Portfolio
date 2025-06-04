@@ -269,7 +269,7 @@ a {
 }
 
 .contact-modal__top {
-    background-image: url(./assets/img/contactmodal/contactmodalbg.svg);
+    background-image: url(../assets/img/contactmodal/contactmodalbg.svg);
     width: 100%;
     height: 60%;
 
@@ -359,7 +359,7 @@ a {
 .gallery {
   width: 100%;
   height: auto;
-  background-image: url(/src/assets/img/carouselbg.svg);
+  background-image: url(../src/assets/img/carouselbg.svg);
   background-repeat: no-repeat;
   display: flex;
   padding: 96px var(--spacing-s);
@@ -839,7 +839,7 @@ a {
 }
 
 .skills__wave {
-  background-image: url(assets/img/skillsbgwave.svg);
+  background-image: url(../assets/img/skillsbgwave.svg);
   background-repeat: repeat-x;
   width: 100%;
   margin-top: -2px;
