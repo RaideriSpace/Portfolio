@@ -1,8 +1,10 @@
 import React, { useState, useEffect }from 'react'
 import { AnimatePresence, motion } from 'framer-motion';
 import { useLocation, useNavigate } from 'react-router-dom';
+
 import logoRaiSpace from '../assets/img/Logo.svg'
 import useIsMobile from '../hooks/useIsMobile'; // Hook personalizado para detectar se é mobile.
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faXmark } from '@fortawesome/free-solid-svg-icons'; // Importa o ícone de menu (hamburguer) e o menu X.
 import { faFigma, faGithub } from '@fortawesome/free-brands-svg-icons'
@@ -96,7 +98,7 @@ const Header = ({ onAboutClick, onSkillsClick, onContactClick }) => {
       <div className='header__left'>
 
         {/* Link do logo para a página inicial. */}
-        <a href='/' className='header__logo-link'>
+        <a onClick={handleHomeClick} className='header__logo-link'>
 
           {/* Imagem do logo. */}
           <img className='header__logo' src={logoRaiSpace} alt='Logo Raideri Space Art'  />

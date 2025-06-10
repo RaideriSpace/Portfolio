@@ -192,6 +192,7 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
 }
 
 .header__logo {
@@ -359,7 +360,7 @@ a {
 .gallery {
   width: 100%;
   height: auto;
-  background-image: url(../src/assets/img/carouselbg.svg);
+  background-image: url(../assets/img/carouselbg.svg);
   background-repeat: no-repeat;
   display: flex;
   padding: 96px var(--spacing-s);

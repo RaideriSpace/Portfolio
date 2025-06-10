@@ -9,7 +9,7 @@ import {
   experienceData,
   complementaryCoursesData,
   languagesData,
- } from '../data/cvData';
+} from '../data/cvData';
 
 const CvModal = ({ isOpen, onClose }) => {
 
@@ -25,7 +25,7 @@ const CvModal = ({ isOpen, onClose }) => {
 
   // Ref para a seção de idiomas para usar o useInView
   const languagesSectionRef = useRef(null);
- 
+
   const isInView = true
 
   // Adicionar/remover no body o "no scroll" quando estiver aberto

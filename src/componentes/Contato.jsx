@@ -58,19 +58,19 @@ const Contato = ({ onClose }) => { // Adiciona as props
                         <FontAwesomeIcon className="icons" icon={faWhatsapp} />
                         <p>(11) 98915-7255</p>
             </a>
-              
+            
             {/* Link para o LinkedIn. */}
             <a className="contact-modal__links" href='https://www.linkedin.com/in/lucasalvespinheiro/' target='_blank' rel='noopener noreferrer'>
                         <FontAwesomeIcon className="icons" icon={faLinkedin} />
                         <p>/lucasalvespinheiro</p>
             </a>
-              
+            
             {/* Link para o Behance. */}
             <a className="contact-modal__links" href='https://www.behance.net/raideri' target='_blank' rel='noopener noreferrer'>
                         <FontAwesomeIcon className="icons" icon={faBehance} />
                         <p>/raideri</p>
             </a>
-                     
+            
             {/* Link para o GitHub. */}
             <a className="contact-modal__links" href='https://github.com/RaideriSpace' target='_blank' rel='noopener noreferrer'>
                         <FontAwesomeIcon className="icons" icon={faGithub} />

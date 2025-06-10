@@ -55,6 +55,33 @@ const App = () => {
  
   return (
     <Router>
+
+
+      <svg width="500" height="700" style={{ position: 'absolute' }}>
+        <defs>
+          <clipPath id="clipPathUX">
+            
+            <polygon points="50 0, 100% 50%, 80% 100%, 0 100%" />
+          </clipPath>
+          <clipPath id="clipPathUI">
+            <polygon points="20% 0, 100% 0, 80% 100%, 0 100%" />
+          </clipPath>
+          <clipPath id="clipPathDev">
+            <polygon points="20% 0, 100% 0, 100% 100%, 0 100%" />
+          </clipPath>
+          <clipPath id="clipPathDesign">
+            <polygon points="20% 0, 100% 0, 100% 100%, 0 100%" />
+          </clipPath>
+          <clipPath id="clipPathPaper">
+            <polygon points="20% 0, 100% 0, 100% 100%, 0 100%" />
+          </clipPath>
+          <clipPath id="clipPath3D">
+            <polygon points="20% 0, 100% 0, 100% 100%, 0 100%" />
+          </clipPath>
+          {/* Adicione mais clipPaths conforme suas categorias e ângulos */}
+        </defs>
+      </svg>
+
       <Header 
         onAboutClick={handleAboutClick} 
         onSkillsClick={handleSkillsClick} 

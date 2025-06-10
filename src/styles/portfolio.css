@@ -8,10 +8,190 @@
 
 /*
  * ========================================
- * 2. Variáveis CSS (Custom Properties)
+ * 2. Sub-navbar
  * ========================================
 */
 
- .portfolio-page {
-    margin: 200px 0;
+ .sub-navbar {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   background-color: var(--dark-dark);
+   width: 100vw;
+   height: 40px;
+   margin: 90px 0 10px 0;
+   font-size: 14px;
+   z-index: 1001;
  }
+
+
+ .sub-navbar__list {
+   display: flex;
+   flex-direction: row;
+   width: 90vw;
+   justify-content: space-between;
+ }
+
+ .sub-navbar__list .sub-navbar__list-pink, .sub-navbar__list .sub-navbar__list-blue {
+   height: 100%;
+   width: 70%;
+   margin: 0 4px;
+   text-align: center;
+   transition: color 240ms ease;
+ }
+
+ .sub-navbar__list .sub-navbar__list-pink {
+   color: var(--secondary);
+ }
+
+ .sub-navbar__list .sub-navbar__list-blue {
+   color: var(--tertiary);
+ }
+
+ .sub-navbar__list .sub-navbar__list-pink:hover {
+   color: var(--secondary-ex-light);
+   font-weight: bold;
+ }
+
+ .sub-navbar__list .sub-navbar__list-blue:hover {
+   color: var(--tertiary-ex-light);
+   font-weight: bold;
+ }
+
+/*
+ * ========================================
+ * 3. Banner
+ * ========================================
+*/
+
+ /* src/styles/portfolio.css */
+
+.portfolio-page {
+  padding: var(--spacing-lg) 0; /* Ajuste o padding, sem padding lateral se os banners forem de ponta a ponta */
+  text-align: center;
+  background-color: var(--color-background-dark); /* Fundo escuro para contrastar */
+  min-height: calc(100vh - var(--header-height) - var(--footer-height));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  overflow: hidden; /* Importante para esconder partes dos banners que saem */
+}
+
+.portfolio-page h1 {
+  /* ... estilos ... */
+  margin-bottom: var(--spacing-xl);
+  color: var(--color-text-light);
+}
+
+.portfolio-banners-container {
+  display: flex; /* Para os banners ficarem lado a lado */
+  width: 100%; /* Ocupa toda a largura disponível */
+  max-width: 1920px; /* Limite a largura máxima */
+  height: 350px; /* Altura do container dos banners */
+  position: relative; /* Para controlar z-index */
+  z-index: 1; /* Para sobrepor outros elementos se necessário */
+}
+
+/* ------------------------------------------ */
+
+ .portfolio-banner {
+  position: relative; /* Para posicionar a imagem e o overlay */
+  height: 350px; /* Altura padrão dos banners */
+  flex-grow: 1; /* Permite que os banners ocupem o espaço disponível */
+  flex-shrink: 1;
+  flex-basis: 300px; /* Largura base */
+  overflow: hidden; /* Importante para o clip-path */
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  transition: flex-basis 0.5s ease-in-out, flex-grow 0.5s ease-in-out; /* Transição para a expansão */
+}
+
+/* Aplica o clip-path a cada banner, referenciando o ID correto */
+#banner-ux {
+  clip-path: url(#clipPathUX);
+  -webkit-clip-path: url(#clipPathUX);
+}
+
+#banner-ui {
+  clip-path: url(#clipPathUI);
+  -webkit-clip-path: url(#clipPathUI);
+  /* Para o banner do meio, pode precisar de um margin-left negativo para sobrepor */
+  margin-left: -50px; /* Ajuste este valor para sobreposição */
+  z-index: 2; /* Para garantir que fique sobreposto corretamente */
+}
+
+#banner-frontend {
+  clip-path: url(#clipPathFrontend);
+  -webkit-clip-path: url(#clipPathFrontend);
+  margin-left: -50px; /* Ajuste este valor para sobreposição */
+  z-index: 1;
+}
+
+/* Imagem de fundo */
+.portfolio-banner__image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Garante que a imagem preencha o espaço */
+  filter: brightness(0.6); /* Escurece a imagem para o texto ser legível */
+  transition: filter 0.5s ease-in-out; /* Transição para o brilho */
+}
+
+/* Overlay de cor ou gradiente */
+.portfolio-banner__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, rgba(0,0,0,0.4), rgba(0,0,0,0.1));
+  transition: background 0.5s ease-in-out;
+}
+
+/* Texto do título */
+.portfolio-banner__title {
+  position: relative; /* Para ficar acima do overlay */
+  z-index: 3; /* Para garantir que o texto esteja visível */
+  color: var(--color-text-light); /* Ex: #f5f5f5 */
+  font-size: var(--font-size-heading-2);
+  pointer-events: none; /* Garante que o clique seja no container */
+  transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+/* Estado ativo/expandido */
+.portfolio-banner.active {
+  flex-basis: 700px; /* Largura expandida */
+  flex-grow: 3; /* Ocupa mais espaço */
+  z-index: 10; /* Para ficar acima dos outros */
+}
+
+.portfolio-banner.active .portfolio-banner__image {
+  filter: brightness(0.9); /* Imagem mais clara quando ativo */
+}
+
+.portfolio-banner.active .portfolio-banner__overlay {
+  background: linear-gradient(to right, rgba(0,0,0,0.1), rgba(0,0,0,0.05)); /* Overlay mais suave */
+}
+
+/* Opcional: Efeito nos banners inativos */
+.portfolio-banner:not(.active) {
+  /* Pode adicionar um efeito de desfoque ou opacidade leve nos inativos */
+  filter: brightness(0.7);
+}
+
+.portfolio-banner:not(.active):hover {
+  filter: brightness(0.8); /* Um leve brilho ao passar o mouse, mesmo inativo */
+}
+
+
+/* -- Classes de Cores (ex: para o texto "UX Design", "UI Design") -- */
+.color-ux { color: #87CEFA; } /* LightSkyBlue */
+.color-ui { color: #90EE90; } /* LightGreen */
+.color-frontend { color: #FFD700; } /* Gold */
+/* Adicione mais cores se tiver mais categorias */
