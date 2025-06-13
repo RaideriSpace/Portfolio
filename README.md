@@ -12,6 +12,7 @@ Este portfólio foi desenvolvido com foco em:
 * **Animações Suaves:** Utiliza `framer-motion` para transições e interações fluidas e elegantes.
 * **Modularidade:** Estruturado em componentes React para facilitar a manutenção e escalabilidade.
 * **Acessibilidade:** Preocupação em criar interfaces utilizáveis por todos.
+* **Performance Otimizada:** Ferramentas modernas de build e boas práticas de código garantem um carregamento rápido e uma execução eficiente.
 
 ## 🎨 Design
 
@@ -124,27 +125,36 @@ Certifique-se de ter o [Node.js](https://nodejs.org/en/) (versão 18 ou superior
     │   │   ├── Header.jsx
     │   │   ├── Main.jsx
     │   │   ├── Footer.jsx
-    │   │   ├── Contato.jsx
-    │   │   ├── CvModal.jsx
-    │   │   └── mainComponents/ # Componentes específicos da seção principal
-    │   │       ├── About.jsx
-    │   │       ├── Skills.jsx
-    │   │       ├── MyGallery.jsx
-    │   │       ├── Carousel.jsx
+    │   │   ├── mainComponents/ # Componentes específicos da seção principal (Main.jsx)
+    │   │   │   ├── About.jsx
+    │   │   │   ├── Skills.jsx
+    │   │   │   ├── MyGallery.jsx
+    │   │   │   ├── Carousel.jsx
+    │   │   │   └── ...
+    │   │   ├── portfolioComponents/ # Componentes específicos da página de portfólio
+    │   │   │   ├── SubHeader.jsx
+    │   │   │   ├── PortfolioBanner.jsx  
+    │   │   │   ├── PortfolioOpen.jsx  
+    │   │   │   └── ...
+    │   │   └── modalComponents/ # Componentes de modal
+    │   │       ├── CvModal.jsx
+    │   │       ├── Contato.jsx
     │   │       └── ...
     │   ├── styles/             # Folhas de estilos e variáveis 
     │   │   ├── index.css
-    │   │   ├── porfolio.css
+    │   │   ├── portfolio.css
     │   │   └── variables.css
-    │   ├── data/               # Dados estáticos (ex: cardsData.js)
-    │   │   └── cardsData.js
+    │   ├── data/               # Dados estáticos ou mocks de dados
+    │   │   ├── cardsData.js
+    │   │   └── cvData.js
     │   ├── hooks/              # Custom Hooks React
     │   │   ├── useIsMobile.js
-    │   │   └── useBodyScrollLock.js
+    │   │   ├── useBodyScrollLock.js
+    │   │   └── useScrollToTop.js
     │   ├── App.jsx             # Componente raiz da aplicação
     │   ├── main.jsx            # Ponto de entrada da aplicação
     │   └── ...
-    ├── .eslintrc.cjs           # Configuração do ESLint (ou eslint.config.js)
+    ├── .eslintrc.cjs           # Configuração do ESLint
     ├── .gitignore              # Arquivos e pastas a serem ignorados pelo Git
     ├── index.html              # Arquivo HTML principal
     ├── package.json            # Metadados do projeto e dependências
@@ -165,8 +175,12 @@ Certifique-se de ter o [Node.js](https://nodejs.org/en/) (versão 18 ou superior
 
 ## 📝 Licença
 
-Este projeto não possui uma licença de código aberto explícita no repositório. Todos os direitos são reservados a Lucas Alves Pinheiro.
+Este projeto não possui uma licença de código aberto explícita no repositório no momento. Todos os direitos de design e código são reservados a Lucas Alves Pinheiro. Para uso comercial ou distribuição, por favor, entre em contato.
 
 ---
 
-Feito com ❤️ por Lucas Alves Pinheiro. Deus abençoe.
+Feito com ❤️ por Lucas Alves Pinheiro. 
+Deus abençoe.
+
+
+Este projeto está em constante evolução. Novas funcionalidades e melhorias serão adicionadas futuramente.

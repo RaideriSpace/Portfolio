@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import '../styles/portfolio.css'
 
 import SubHeader from '../componentes/portfolioComponents/SubHeader'
-import PortfolioBanner from '../componentes/portfolioComponents/PortfolioBanner'
 
 import bannerUX from '../assets/img/UX/Banner.png'
 import bannerUI from '../assets/img/UI/Banner.png'
@@ -75,34 +74,6 @@ const Portfolio = () => {
       <div className='portfolio-page'>
         <h1> Meu Porfólio </h1>
         <p> Em Breve, meus projetos incríveis</p>
-
-        <div className='portfolio-banners-container'>
-          {banners.map((banner) => (
-            <PortfolioBanner 
-              key={banner.id}
-              id={banner.id}
-              title={banner.title}
-              image={banner.image}
-              clipPathId={banner.clipPathId}
-              isActive={activeBanner === banner.id}
-              onClick={handleBannerClick}
-              colorClass={banner.colorClass}
-            />
-          ))}
-        </div>
-
-        {/* Aqui você adicionaria o conteúdo detalhado do portfólio
-            que apareceria ao expandir um banner, se for o caso.
-            Pode ser um componente renderizado condicionalmente com base em `activeBanner`.
-        */}
-        {activeBanner && (
-          <div className="portfolio-detail-section">
-            {/* Renderizar detalhes com base em activeBanner. Ex: */}
-            <h2>Detalhes de {banners.find(b => b.id === activeBanner)?.title}</h2>
-            <p>Conteúdo específico para esta categoria...</p>
-          </div>
-        )}
-
       </div>
     </>
   )

@@ -13,6 +13,11 @@ export default function useIsMobile(breakpoint = 768) {
   // Efeito colateral para adicionar e remover o event listener de 'resize'.
   useEffect(() => {
 
+    // Para que seja executado apenas no navegador.
+    if (typeof window === 'undefined') {
+      return;
+    }
+
     // Função que atualiza o estado 'isMobile' quando a janela é redimensionada.
     const handleResize = () => {
       setIsMobile(window.innerWidth <= breakpoint);
@@ -23,7 +28,9 @@ export default function useIsMobile(breakpoint = 768) {
 
     // Função de limpeza: remove o event listener quando o componente é desmontado
     // ou quando as dependências do useEffect mudam.
-    return () => window.removeEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
   }, [breakpoint]); // A dependência 'breakpoint' garante que o listener seja reconfigurado se o breakpoint mudar.
 
   return isMobile; // Retorna o valor booleano indicando se a tela é mobile.

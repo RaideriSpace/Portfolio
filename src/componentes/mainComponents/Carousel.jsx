@@ -1,44 +1,35 @@
-import React, { useState } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
-import cardsCarousel from '../../data/cardsData' // Importa os dados do carrossel.
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faAngleRight, faAngleLeft } from '@fortawesome/free-solid-svg-icons'
+import React, { useState, useCallback, useMemo } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import cardsCarousel from '../../data/cardsData'; // Importa os dados do carrossel.
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faAngleRight, faAngleLeft } from '@fortawesome/free-solid-svg-icons';
 
 const Carousel = () => {
-    const [currentIndex, setCurrentIndex] = useState(0);
-    const totalItems = cardsCarousel.length;
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const totalItems = cardsCarousel.length;
 
-    // Função para avançar um item no carrossel.
-    const goToNext = () => {
-        setCurrentIndex((prevIndex) => 
-            (prevIndex + 1) % totalItems
-        );
-    };
+  // Função para atualizar o indice, garantindo o loop.
+  const updateIndex = useCallback(
+      (step) => {
+        setCurrentIndex((prevIndex) => {
+          const newIndex = (prevIndex + step) % totalItems;
+          // Garante que o índice nunca seja negativo, mesmo com stpes negativos.
+          return newIndex < 0 ? totalItems + newIndex : newIndex;
+        });
+      }, 
+      [totalItems] // Sói é recriada se totalItems mudar.
+  )
 
-    // Função para avançar dois itens no carrossel.
-    const goTo2Next = () => {
-        setCurrentIndex((prevIndex) =>
-            (prevIndex + 2) % totalItems
-        );
-    };
+  // Funções de navegação otimizadas com useCallback.
+  const goToNext = useCallback(() => updateIndex(1), [updateIndex]);
+  const goTo2Next = useCallback(() => updateIndex(2), [updateIndex]);
+  const goToPrev = useCallback(() => updateIndex(-1), [updateIndex]);
+  const goTo2Prev = useCallback(() => updateIndex(-2), [updateIndex]);
 
-    // Função para voltar um item no carrossel.
-    const goToPrev = () => {
-        setCurrentIndex((prevIndex) => 
-            prevIndex === 0 ? totalItems - 1 : prevIndex - 1
-        ); 
-    };
-
-    // Função para voltar dois itens no carrossel.
-    const goTo2Prev = () => {
-        setCurrentIndex((prevIndex) =>
-        prevIndex === 0 ? totalItems - 2 : prevIndex - 2
-        );
-    };
-
-    // Lógica para determinar qual cartão foi clicado e ajustar o currentIndex.
-    const handleCardClick = (clickedIndex) => {
-
+  // Lógica para determinar qual cartão foi clicado e ajustar o currentIndex.
+  const handleCardClick = useCallback(
+      (clickedIndex) => {
+        // Normaliza para que a diferença seja sempre positiva dentro do totalItems.
         const diff = (clickedIndex - currentIndex + totalItems) % totalItems;
 
         if (diff === 1) { // Clicar no próximo (direita)
@@ -49,16 +40,17 @@ const Carousel = () => {
             goTo2Next();
         } else if (diff === totalItems - 2) { // Clicou no segundo anterior (mais fundo da esquerda)
             goTo2Prev();
+        } else if (diff === 0){
+          console.log('Cartão central foi clicado: ', cardsCarousel[currentIndex]);
         }
-    
-        //Ação para Card Central ainda não faz nada
+    }, [currentIndex, totalItems, goToNext, goToPrev, goTo2Next, goTo2Prev]);
 
-    };
-
-    // Função para calcular as propriedades de transformação (posição, escala, opacidade) para cada cartão.
+  // Função para calcular as propriedades de transformação (posição, escala, opacidade) para cada cartão.
     // Baseado no índice atual e no índice do item.
-    const getCardTransform = (index) => {
+  const getCardTransform = useCallback(
+      (index) => {
         const offset = (index - currentIndex + totalItems) % totalItems; // Distância do item atual.
+        // Valores padrão.
         let x = 0; // Posição horizontal.
         let scale = 1; // Escala.
         let zIndex = 0; // Z-index para sobreposição.
@@ -68,134 +60,137 @@ const Carousel = () => {
         let isClickable = true; // Se o cartão é clicável.
 
         // Define as propriedades baseadas na posição relativa ao currentIndex.
-        if (offset === 0){ // Cartão Central
-            x = '0%',
-            scale = 1,
-            zIndex = 4,
-            rotateY = 0,
-            opacity = 1,
-            textOpacity = 1,
-            !isClickable; // O cartão ativo não deve ser clicável para navegação por enquanto.
+        if (offset === 0){ 
+          // Cartão Central
+          x = '0%',
+          scale = 1,
+          zIndex = 4,
+          rotateY = 0,
+          opacity = 1,
+          textOpacity = 1,
+          !isClickable; // O cartão ativo não deve ser clicável para navegação por enquanto.
 
-        } else if (offset === 1) { //  Pirmeiro da Direita
-            x = '60%',
-            scale = 0.8,
-            zIndex = 3,
-            rotateY = -15,
-            opacity = 1,
-            textOpacity = 0.8;
-            isClickable;
+        } else if (offset === 1) { 
+          // Pirmeiro da Direita
+          x = '60%',
+          scale = 0.8,
+          zIndex = 3,
+          rotateY = -15,
+          opacity = 1,
+          textOpacity = 0.8;
+          isClickable;
 
-        } else if (offset === totalItems - 1) { // Primeiro da Esquerda
-            x = '-60%',
-            scale = 0.8,
-            zIndex = 3,
-            rotateY = 15,
-            opacity = 1,
-            textOpacity = 0.8,
-            isClickable;
+        } else if (offset === totalItems - 1) { 
+          // Primeiro da Esquerda
+          x = '-60%',
+          scale = 0.8,
+          zIndex = 3,
+          rotateY = 15,
+          opacity = 1,
+          textOpacity = 0.8,
+          isClickable;
 
-        } else if (offset === 2) { // Último da direita saindo de vista
-            x = '95%',
-            scale = 0.6,
-            zIndex = 2,
-            rotateY = -30,
-            opacity = 1, 
-            textOpacity = 0.6,
-            isClickable;
+        } else if (offset === 2) { 
+          // Último da direita saindo de vista
+          x = '95%',
+          scale = 0.6,
+          zIndex = 2,
+          rotateY = -30,
+          opacity = 1, 
+          textOpacity = 0.6,
+          isClickable;
 
-        } else if (offset === totalItems - 2 ){ // Último da esquerda aparecendo
-            x = '-95%',
-            scale = 0.6,
-            zIndex = 2,
-            rotateY = 30,
-            opacity = 1,
-            textOpacity = 0.6,
-            isClickable;
+        } else if (offset === totalItems - 2 ){ 
+          // Último da esquerda aparecendo
+          x = '-95%',
+          scale = 0.6,
+          zIndex = 2,
+          rotateY = 30,
+          opacity = 1,
+          textOpacity = 0.6,
+          isClickable;
 
-        } else { //Os demais fora de vista
-            x = '0%',
-            scale = 0,
-            zIndex = 0,
-            rotateY = 0,
-            opacity = 0,
-            textOpacity = 0.6,
-            isClickable;
-        };
+        } else { 
+          // Os demais fora de vista
+          x = '0%',
+          scale = 0,
+          zIndex = 0,
+          rotateY = 0,
+          opacity = 0,
+          textOpacity = 0.6,
+          isClickable;
+        }
 
         return { x, scale, zIndex, rotateY, opacity, textOpacity, isClickable };
-    };
+      },
+      [currentIndex, totalItems] 
+  );
 
-    return (
-        <>
-            <div className='carousel__container'>
-                <button className='carousel__arrow left-arrow' onClick={goToPrev}>
-                    <FontAwesomeIcon icon={faAngleLeft} />
-                </button>
+  return (
+      <>
+        <div className='carousel__container'>
+          <button className='carousel__arrow left-arrow' onClick={goToPrev} aria-label='Voltar no carrossel'>
+            <FontAwesomeIcon icon={faAngleLeft} />
+          </button>
 
-                <div className='carousel__cards-wrapper'>
-
-                    <AnimatePresence initial={false}>  {/* AnimatePresence para animar entrada e saída de elementos. */}
-                        {cardsCarousel.map((item, index) => {
-                            const transformProps = getCardTransform(index);
-                            const isClickable = transformProps.isClickable;
-
-                            const isVisible = 
-                                transformProps.opacity > 0 ||
-                                Math.abs(index - currentIndex) <= 2 ||
-                                (index === 0 && currentIndex === cardsCarousel.length -1) ||
-                                (index === cardsCarousel.length -1 && currentIndex === 0); 
-
-                            const cardStyleClass = index % 2 === 0 ? 'card-pink' : 'card-blue'
-
-                            return (
-                                isVisible && (
-                                    <motion.div
-                                        key={item.id}
-                                        className={ `carousel__card ${cardStyleClass}`}
-                                        initial={{ opacity: 0, scale: 0.5 }} // Animação inicial.
-                                        animate={{ // Propriedades animadas.
-                                            x: transformProps.x,
-                                            scale: transformProps.scale,
-                                            zIndex: transformProps.zIndex,
-                                            rotateY: transformProps.rotateY,
-                                            opacity: transformProps.opacity,
-                                            transition: {
-                                                type: 'spring',
-                                                stiffness: 300,
-                                                damping: 30,
-                                                mass: 1,
-                                            },
-                                        }}
-                                        exit={{ opacity:0, scale: 0.5, transition: { duration: 0.24 } }} // Animação de saída.
-                                        style={{ 
-                                            backgroundImage: `url(${item.src})`, // Fundo da imagem.
-                                            cursor: isClickable ? 'pointer' : 'default' // Cursor muda se for clicável.
-                                        }}
-
-                                        onClick={isClickable ? () => handleCardClick(index) : undefined}
-                                    >
-                                        {/* Título do cartão, animado para mostrar/esconder com a opacidade. */}
-                                        <motion.p
-                                            animate = {{opacity: transformProps.textOpacity }}
-                                            transition={{ duration: 0.24 }}
-                                        > 
-                                            {item.title} 
-                                            
-                                        </motion.p>
-                                    </motion.div>
-                                )
-                            );
-                        })}
-                    </AnimatePresence>
-                </div>
+          <div className='carousel__cards-wrapper'>
+            <AnimatePresence initial={false}>  
+              {/* AnimatePresence para animar entrada e saída de elementos. */}
+              {cardsCarousel.map((item, index) => {
+                const transformProps = getCardTransform(index);
+                const { isClickable, ...animationProps } = transformProps;
                 
-                <button className='carousel__arrow right-arrow' onClick={goToNext}>
-                    <FontAwesomeIcon icon={faAngleRight} />
-                </button>
-            </div>
-        </>
-    );
+                // Renderizar condicionalmente com 'opacity > 0' ou outro threshold.
+                if (animationProps.opacity === 0 && animationProps.scale === 0) {
+                  return null; // Não renderiza itens que não estão visíveis ou próximos.
+                }
+                
+                const cardStyleClass = index % 2 === 0 ? 'card-pink' : 'card-blue';
+
+                return (
+                  <motion.div
+                    key={item.id}
+                    className={ `carousel__card ${cardStyleClass}`}
+                    initial={{ opacity: 0, scale: 0.5 }} // Animação inicial.
+                    animate={{ // Propriedades animadas.
+                      ...animationProps, // Espalha s propriedades de animação
+                      transition: {
+                        type: 'spring',
+                        stiffness: 300,
+                        damping: 30,
+                        mass: 1,
+                      },
+                    }}
+                    exit={{ opacity:0, scale: 0.5, transition: { duration: 0.24 } }} // Animação de saída.
+                    style={{ 
+                      backgroundImage: `url(${item.src})`, // Fundo da imagem.
+                      cursor: isClickable ? 'pointer' : 'default' // Cursor muda se for clicável.
+                    }}
+
+                    onClick={isClickable ? () => handleCardClick(index) : undefined}
+                    role='button'
+                    arial-label={`Visualizar ${item.title}`}
+                  >
+                    {/* Título do cartão, animado para mostrar/esconder com a opacidade. */}
+                    <motion.p
+                      animate = {{opacity: transformProps.textOpacity }}
+                      transition={{ duration: 0.24 }}
+                    > 
+                      {item.title} 
+                                            
+                    </motion.p>
+                  </motion.div>
+                );
+              })}
+            </AnimatePresence>
+          </div>
+                
+          <button className='carousel__arrow right-arrow' onClick={goToNext} aria-label='Avançar no carrossel'>
+            <FontAwesomeIcon icon={faAngleRight} />
+          </button>
+        </div>
+      </>
+  );
 };
 
-export default Carousel
+export default Carousel;

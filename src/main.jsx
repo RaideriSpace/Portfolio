@@ -7,7 +7,7 @@ import App from './App.jsx' // Importa o componente principal da aplicação.
 const rootElement = document.getElementById('root');
 
 // Verifica se o elemento root realmente existe antes de criar a raiz.
-rootElement ? (
+if (rootElement){
 
   // Cria uma raiz React usando a API de renderização concorrente.
   createRoot(rootElement).render(
@@ -15,7 +15,8 @@ rootElement ? (
       <App />
     </StrictMode>,
   )
-) : (
+  
+} else {
   // Adiciona um log de erro se o elemento root não for encontrado.
   console.error('Elemento com ID "root" não encontrado no DOM. O aplicativo React não pode ser montado.')
-)
+}

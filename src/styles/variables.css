@@ -1,4 +1,9 @@
 :root {
+  /* ========================================
+   * Cores
+   * ========================================
+   */
+
   --primary-ex-light: #8c73b5;
   --primary-light: #583989;
   --primary: #3f2667;
@@ -10,26 +15,26 @@
   --secondary: #e01f79;
   --secondary-dark: #B91360;
   --secondary-ex-dark: #610530;
-  --secondary-ex-dark-opacity: #ebadca50;
+  --secondary-ex-dark-opacity: rgba(var(--secondary-ex-light-rgb), 0.5);
 
   --tertiary-ex-light: #84e7f5;
   --tertiary-light: #1addf9;
   --tertiary: #00c5e2;
   --tertiary-dark: #0097ad;
   --tertiary-ex-dark: #003e47;
-  --tertiary-ex-dark-opacity: #003e4750;
+  --tertiary-ex-dark-opacity: rgba(var(--tertiary-ex-dark-rgb), 0.5);
 
-  --auxiliary1-ex-light:#9dacc3;
-  --auxiliary1-light:#5274a7;
-  --auxiliary1:#3d5b8a;
-  --auxiliary1-dark:#29436a;
-  --auxiliary1-ex-dark:#0b1423;
+  --auxiliary1-ex-light: #9dacc3;
+  --auxiliary1-light: #5274a7;
+  --auxiliary1: #3d5b8a;
+  --auxiliary1-dark: #29436a;
+  --auxiliary1-ex-dark: #0b1423;
 
-  --auxiliary2-ex-light:#d3d4df;
-  --auxiliary2-light:#8f94bd;
-  --auxiliary2:#6870b0;
-  --auxiliary2-dark:#49539c;
-  --auxiliary2-ex-dark:#22295d;
+  --auxiliary2-ex-light: #d3d4df;
+  --auxiliary2-light: #8f94bd;
+  --auxiliary2: #6870b0;
+  --auxiliary2-dark: #49539c;
+  --auxiliary2-ex-dark: #22295d;
 
   --dark-ex-light: #535181;
   --dark-light: #262447;
@@ -38,7 +43,10 @@
   --dark-dark-opacity: #02010450;
   --dark-ex-dark: #000000;
 
-  /* Variáveis para espaçamento comum e tamanhos de fonte */
+  /* ========================================
+   * Espaçamento (Padding, Margin, Gap)
+   * ========================================
+   */
   --spacing-xxs: 4px;
   --spacing-xs: 8px;
   --spacing-s: 16px;
@@ -48,10 +56,73 @@
   --spacing-xxl: 48px;
   --spacing-xxxl: 64px;
 
+  /* ========================================
+   * Tamanhos de Fonte
+   * ========================================
+   */
   --font-size-sm: 12px;
   --font-size-md: 16px;
   --font-size-lg: 24px;
   --font-size-xl: 32px;
   --font-size-xxl: 40px;
   --font-size-xxxl: 64px;
+
+  /* ========================================
+   * Border Radius
+   * ========================================
+   */
+
+  --border-radius-xs: 4px;
+  --border-radius-s: 8px;
+  --border-radius-m: 16px;
+  --border-radius-l: 24px;
+  --border-radius-xl: 32px;
+  --border-radius-xxl: 48px;
+  --border-radius-xxxl: 64px;
+  --border-radius-circle: 50%;
+
+  /* ========================================
+   * Transições
+   * ========================================
+   */
+
+  --transition-speed-fast: 150ms;
+  --transition-speed-normal: 240ms;
+  --transition-speed-slow: 300ms;
+  --transition-ease: ease;
+  --transition-ease-in-out: ease-in-out;
+
+  /* ========================================
+   * Z-Index
+   * ========================================
+   */
+
+  --z-index-base: 1;
+  --z-index-menu-overlay: 18;
+  --z-index-menu-mobile-icon: 20;
+  --z-index-header: 100;
+  --z-index-modal-overlay: 1000;
+  --z-index-modal: 1001;
+
+  /* ========================================
+   * Larguras e Alturas Comuns (Valores fixos recorrentes)
+   * ========================================
+   */
+
+  --header-height-desktop: 80px;
+  --header-height-mobile: 60px;
+  --button-width-md: 140px;
+  --button-height-md: 40px;
+  --carousel-card-width-desktop: 440px;
+  --carousel-card-height-desktop: 600px;
+  --carousel-container-height-mobile: 350px;
+  --carousel-card-width-mobile: 250px;
+  --carousel-card-height-mobile: 350px;
+  --carousel-card-height-mobile-sm: 300px;
+  --contact-modal-width: 383px;
+  --contact-modal-height: 458px;
+  --cv-modal-max-width: 800px;
+  --cv-modal-height: 600px;
+  --progress-bar-width: 300px;
+  --progress-bar-height: 31px;
 }

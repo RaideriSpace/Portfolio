@@ -1,22 +1,33 @@
-import React from 'react'
+import React from 'react';
 
-const Skills = React.forwardRef((props, ref) => {
+const skillsData = [
+  'HTML', 'CSS', 'JavaScript', 'ECMAScript', 'React', 'jQuery', 'Bootstrap', 'Tailwind CSS', 'AJAX', 'Figma', 'Versionamento de código', 'Photoshop', 'Illustrator', 'SketchUp', 'Blender', 'Scrum', 'Metodologias Ágeis', 'Git', 'Node.js', 'PHP', 'MySQL', 'Python', 'C++', 'Pacote Office'
+];
+
+const Skills = React.forwardRef((_, ref) => {
 
   return (
     <>
       {/* Contêiner principal da seção de habilidades. A ref é atribuída a esta div. */}
       <section ref={ref}>
         <div className='skills'>
-            <h2 className='subtitle'>
-              Competências
-            </h2>
+          <h2 className='subtitle'>
+            Competências
+          </h2>
 
-            <div className='skills__container'>
-              HTML <em>•</em> CSS <em>•</em> JavaScript <em>•</em> ECMAScript <em>•</em> React <em>•</em> jQuery <em>•</em> BootStrap <em>•</em> Tailwind CSS <em>•</em> AJAX <em>•</em> Figma <em>•</em> Versionamento de código <em>•</em>  Photoshop <em>•</em> Illustrator <em>•</em>  SketchUp <em>•</em> Blender <em>•</em> Scrum <em>•</em> Metodologias Ágeis <em>•</em> Git <em>•</em> Node.js <em>•</em> PHP <em>•</em> MySQL <em>•</em> Python <em>•</em> C++ <em>•</em> Pacote Office
-            </div>
+          <div className='skills__container'>
+            <ul className='skills__list'>
+              {skillsData.map((skill, index) => (
+                <li key={index} className='skills__list-item'>
+                  {skill} {index < skillsData.length - 1 && <em> • </em>}
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
         
-        <div className='skills__wave'></div> {/* Elemento para onda/divisória visual. */}
+        {/* Elemento para onda/divisória visual. */}
+        <div className='skills__wave'></div> 
       </section>
     </>
   )

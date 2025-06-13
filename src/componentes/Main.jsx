@@ -1,15 +1,13 @@
-import React from 'react'
+import React from 'react';
 
 // Importa os componentes filhos da pasta mainComponents.
-import MyGallery from './mainComponents/MyGallery.jsx'
 import About from './mainComponents/About.jsx'
+import MyGallery from './mainComponents/MyGallery.jsx'
 import Skills from './mainComponents/Skills.jsx'
 
-
-const Main = ({ aboutRef, skillsRef, onCvClick}) => {
+const Main = ({ aboutRef, skillsRef, onCvClick }) => {
 
   return (
-
     // Contêiner principal do conteúdo.
     <main className='main-content'> 
       
