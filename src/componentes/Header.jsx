@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback, useMemo }from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 import logoRaiSpace from '../assets/img/Logo.svg'
 import useIsMobile from '../hooks/useIsMobile'; // Hook personalizado para detectar se é mobile.
@@ -8,6 +8,8 @@ import useIsMobile from '../hooks/useIsMobile'; // Hook personalizado para detec
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faXmark } from '@fortawesome/free-solid-svg-icons'; // Importa o ícone de menu (hamburguer) e o menu X.
 import { faFigma, faGithub } from '@fortawesome/free-brands-svg-icons';
+
+import Navbar from './Navbar';
 
 const mobileMenuVariants = {
   hidden: { opacity: 0, x: '100%' },
@@ -81,11 +83,11 @@ const Header = ({ onAboutClick, onSkillsClick, onContactClick }) => {
       <div className='header__left'>
 
         {/* Link do logo para a página inicial. */}
-        <a onClick={handleHomeClick} className='header__logo-link'>
+        <Link to="/" className='header__logo-link'>
 
           {/* Imagem do logo. */}
           <img className='header__logo' src={logoRaiSpace} alt='Logo Raideri Space Art'  />
-        </a>
+        </Link>
       </div>
 
       {/* Seção "Work In Progress" */}
@@ -135,31 +137,7 @@ const Header = ({ onAboutClick, onSkillsClick, onContactClick }) => {
 
       {/* Menu desktop: visível apenas se não for mobile. */}
       {!isMobile && (
-        <nav className='header__text'>
-
-          <button className='button__common' onClick={handlePortfolioClick}> 
-            Portfólio 
-          </button> 
-
-          {/* Renderização Condicional dos botões */}
-          {isPortfolioPage ? ( // Se estiver na página do portfólio
-            <button className='button__common' onClick={handleHomeClick}> 
-              Home 
-            </button>
-          ) : ( // Se estiver na página inicial
-            <>
-              <button className='button__common' onClick={() => handleNavigationClick(onAboutClick)}> 
-                Sobre 
-              </button>
-              <button className='button__common' onClick={() => handleNavigationClick(onSkillsClick)}> 
-                Competências 
-              </button>
-            </>
-          )}
-          <button className='button__pink' onClick={() => handleNavigationClick(onContactClick)}> 
-            Contato 
-          </button>
-        </nav>
+        <Navbar {...{ isPortfolioPage, handleHomeClick, handleNavigationClick, onAboutClick, onSkillsClick, handlePortfolioClick, onContactClick }} />
       )}
 
       {/* Animação do menu mobile com Framer Motion. */}
@@ -176,26 +154,8 @@ const Header = ({ onAboutClick, onSkillsClick, onContactClick }) => {
               transition={{duration:0.24}}
             >
 
-              <button className='button__common' onClick={handlePortfolioClick}> 
-                Portfólio 
-              </button>
-              {/* Renderização condicional dos botões no menu mobile */}
-              {isPortfolioPage ? (
-                <button className='button__common' onClick={handleHomeClick}> Home </button>
-              ) : (
-                <>
-                  <button className='button__common' onClick={() => handleNavigationClick(onAboutClick)}> 
-                    Sobre 
-                  </button>
-                  <button className='button__common' onClick={() => handleNavigationClick(onSkillsClick)}> 
-                    Competências 
-                  </button>
-                </>
-              )}
+              <Navbar {...{ isPortfolioPage, handleHomeClick, handleNavigationClick, onAboutClick, onSkillsClick, handlePortfolioClick, onContactClick }} />
 
-              <button className='button__pink' onClick={() => handleNavigationClick(onContactClick)}>
-                Contato 
-              </button>
             </motion.nav>
 
             {/* Overlay do menu para fechar ao clicar fora. */}           

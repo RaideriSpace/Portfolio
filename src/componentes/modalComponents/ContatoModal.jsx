@@ -1,11 +1,13 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faWhatsapp, faLinkedin, faBehance, faGithub } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
 
-const Contato = ({ onClose }) => { // Adiciona as props
+import useModalCloseOnEsc from '../../hooks/useModalCloseOnEsc';
+
+const ContatoModal = ({ isOpen, onClose }) => { // Adiciona as props
   
   // Animação de descida/subida
   const modalVariants = {
@@ -27,6 +29,8 @@ const Contato = ({ onClose }) => { // Adiciona as props
         ease: 'easeOut'
       } }, 
   }
+
+  useModalCloseOnEsc(true, onClose)
 
   return (
 
@@ -123,4 +127,4 @@ const Contato = ({ onClose }) => { // Adiciona as props
   );
 };
 
-export default Contato;
+export default ContatoModal;

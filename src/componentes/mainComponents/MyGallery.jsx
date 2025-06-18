@@ -19,16 +19,13 @@ const MyGallery = () => {
   }, [navigate]);
 
   return (
-    <>
-      <div className='gallery'>
+    <div className='gallery'>
       
-        <Carousel />
-        <button className='button__pink' onClick={handlePortfolioClick} aria-label='Ir para a página de portfólio'> 
-          Portfólio 
-        </button>
-      </div>
-      
-    </>
+      <Carousel />
+      <button className='button__pink' onClick={handlePortfolioClick} aria-label='Ir para a página de portfólio'> 
+        Portfólio 
+      </button>
+    </div>
   )
 }
 

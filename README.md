@@ -1,6 +1,6 @@
 # 🚀 Portfólio - Lucas Alves Pinheiro
 
-Bem-vindo(a) ao repositório do meu portfólio pessoal! Este projeto é uma vitrine interativa das minhas habilidades e projetos como UX/UI Designer e Desenvolvedor Front-end. Ele foi cuidadosamente elaborado para oferecer uma experiência de usuário intuitiva e visualmente atraente, utilizando as melhores práticas de desenvolvimento web.
+Bem-vindo(a) ao repositório do meu portfólio pessoal! Este projeto é uma vitrine interativa das minhas habilidades e projetos como Desenvolvedor Front-end e UX/UI Designer. Ele foi cuidadosamente elaborado para oferecer uma experiência de usuário intuitiva e visualmente atraente, utilizando as melhores práticas de desenvolvimento web.
 
 Acesse o portfólio online: [https://portfolio-eight-wine-50.vercel.app/](https://portfolio-eight-wine-50.vercel.app/)
 
@@ -11,8 +11,9 @@ Este portfólio foi desenvolvido com foco em:
 * **Design Responsivo:** Adaptável a diversas telas (desktop, tablet, mobile) para garantir uma experiência consistente.
 * **Animações Suaves:** Utiliza `framer-motion` para transições e interações fluidas e elegantes.
 * **Modularidade:** Estruturado em componentes React para facilitar a manutenção e escalabilidade.
-* **Acessibilidade:** Preocupação em criar interfaces utilizáveis por todos.
+* **Acessibilidade (A11y):** Desenvolvido com foco em padrões de acessibilidade (ARIA), garantindo que a interface seja utilizável por todos, incluindo usuários de tecnologias assistivas.
 * **Performance Otimizada:** Ferramentas modernas de build e boas práticas de código garantem um carregamento rápido e uma execução eficiente.
+* **Experiência do Usuário (UX) Aprimorada:** Modais interativos com fechamento via overlay/tecla Escape e animações contextuais (como barras de progresso animadas ao entrar em visualização) elevam a usabilidade.
 
 ## 🎨 Design
 
@@ -26,6 +27,7 @@ O design completo deste portfólio, desde a concepção até o protótipo final 
 Este projeto foi construído com as seguintes tecnologias e ferramentas:
 
 * **React:** Biblioteca JavaScript para construção de interfaces de usuário.
+* **React Router DOM:** Para gerenciamento de rotas e navegação na SPA (Single Page Application).
 * **Vite:** Ferramenta de build de nova geração que oferece uma experiência de desenvolvimento extremamente rápida.
 * **JavaScript (ES6+):** Linguagem de programação principal.
 * **HTML5:** Estrutura semântica do conteúdo.
@@ -115,51 +117,53 @@ Certifique-se de ter o [Node.js](https://nodejs.org/en/) (versão 18 ou superior
     A estrutura do projeto segue uma organização modular para facilitar o desenvolvimento e a manutenção:
 
     .
-    ├── public/                 # Arquivos estáticos (favicon, etc.)
+    ├── public/                     # Arquivos estáticos (favicon, etc.)
     ├── src/
-    │   ├── assets/             # Imagens, fontes, outros recursos
+    │   ├── assets/                 # Imagens, fontes, outros recursos
     │   │   ├── fonts/
     │   │   ├── img/
     │   │   └── ...
-    │   ├── componentes/        # Componentes reutilizáveis da UI
+    │   ├── componentes/            # Componentes reutilizáveis da UI
     │   │   ├── Header.jsx
-    │   │   ├── Main.jsx
+    │   │   ├── Home.jsx            # Renomeado de Main.jsx
     │   │   ├── Footer.jsx
-    │   │   ├── mainComponents/ # Componentes específicos da seção principal (Main.jsx)
+    │   │   ├── mainComponents/     # Componentes específicos da página Home
     │   │   │   ├── About.jsx
     │   │   │   ├── Skills.jsx
     │   │   │   ├── MyGallery.jsx
     │   │   │   ├── Carousel.jsx
     │   │   │   └── ...
-    │   │   ├── portfolioComponents/ # Componentes específicos da página de portfólio
+    │   │   ├── portfolioComponents/# Componentes específicos da página de portfólio
     │   │   │   ├── SubHeader.jsx
-    │   │   │   ├── PortfolioBanner.jsx  
-    │   │   │   ├── PortfolioOpen.jsx  
+    │   │   │   ├── PortfolioBanner.jsx
+    │   │   │   ├── PortfolioOpen.jsx
     │   │   │   └── ...
-    │   │   └── modalComponents/ # Componentes de modal
+    │   │   └── modalComponents/    # Componentes de modal (ex: CvModal, Contato)
     │   │       ├── CvModal.jsx
-    │   │       ├── Contato.jsx
+    │   │       ├── ContatoModal.jsx
     │   │       └── ...
-    │   ├── styles/             # Folhas de estilos e variáveis 
+    │   ├── styles/                 # Folhas de estilos e variáveis CSS
     │   │   ├── index.css
     │   │   ├── portfolio.css
     │   │   └── variables.css
-    │   ├── data/               # Dados estáticos ou mocks de dados
+    │   ├── data/                   # Dados estáticos ou mocks de dados
     │   │   ├── cardsData.js
     │   │   └── cvData.js
-    │   ├── hooks/              # Custom Hooks React
+    │   ├── hooks/                  # Custom Hooks React para lógica reutilizável
     │   │   ├── useIsMobile.js
     │   │   ├── useBodyScrollLock.js
-    │   │   └── useScrollToTop.js
-    │   ├── App.jsx             # Componente raiz da aplicação
-    │   ├── main.jsx            # Ponto de entrada da aplicação
+    │   │   ├── useScrollToTop.js
+    │   │   ├── useModalCloseOnEscape.js # Novo hook para fechar modal com Escape
+    │   │   └── ...
+    │   ├── App.jsx                 # Componente raiz da aplicação, orquestra rotas e estado global
+    │   ├── main.jsx                # Ponto de entrada da aplicação (renderização do React)
     │   └── ...
-    ├── .eslintrc.cjs           # Configuração do ESLint
-    ├── .gitignore              # Arquivos e pastas a serem ignorados pelo Git
-    ├── index.html              # Arquivo HTML principal
-    ├── package.json            # Metadados do projeto e dependências
-    ├── vite.config.js          # Configuração do Vite
-    └── README.md               # Este arquivo!
+    ├── .eslintrc.cjs               # Configuração do ESLint
+    ├── .gitignore                  # Arquivos e pastas a serem ignorados pelo Git
+    ├── index.html                  # Arquivo HTML principal
+    ├── package.json                # Metadados do projeto e dependências
+    ├── vite.config.js              # Configuração do Vite
+    └── README.md                   # Este arquivo!
 
 ## 🤝 Contribuição
 

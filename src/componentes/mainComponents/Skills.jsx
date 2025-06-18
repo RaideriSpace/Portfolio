@@ -7,31 +7,27 @@ const skillsData = [
 const Skills = React.forwardRef((_, ref) => {
 
   return (
-    <>
-      {/* Contêiner principal da seção de habilidades. A ref é atribuída a esta div. */}
-      <section ref={ref}>
-        <div className='skills'>
-          <h2 className='subtitle'>
-            Competências
-          </h2>
+    <section ref={ref}> {/* Contêiner principal da seção de habilidades. A ref é atribuída a esta div. */}
+      <div className='skills'>
+        <h2 className='subtitle'>
+          Competências
+        </h2>
 
-          <div className='skills__container'>
-            <ul className='skills__list'>
-              {skillsData.map((skill, index) => (
-                <li key={index} className='skills__list-item'>
-                  {skill} {index < skillsData.length - 1 && <em> • </em>}
-                </li>
-              ))}
-            </ul>
-          </div>
+        <div className='skills__container'>
+          <ul className='skills__list'>
+            {skillsData.map((skill, index) => (
+              <li key={index} className='skills__list-item'>
+                {skill} {index < skillsData.length - 1 && <em> • </em>}
+              </li>
+            ))}
+          </ul>
         </div>
+      </div>
         
-        {/* Elemento para onda/divisória visual. */}
-        <div className='skills__wave'></div> 
-      </section>
-    </>
+      {/* Elemento para onda/divisória visual. */}
+      <div className='skills__wave'></div> 
+    </section>
   )
-
 });
 
 export default Skills

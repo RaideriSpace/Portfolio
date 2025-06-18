@@ -1,11 +1,11 @@
 import React from 'react';
 
 // Importa os componentes filhos da pasta mainComponents.
-import About from './mainComponents/About.jsx'
-import MyGallery from './mainComponents/MyGallery.jsx'
-import Skills from './mainComponents/Skills.jsx'
+import About from '../componentes/mainComponents/About.jsx'
+import MyGallery from '../componentes/mainComponents/MyGallery.jsx'
+import Skills from '../componentes/mainComponents/Skills.jsx'
 
-const Main = ({ aboutRef, skillsRef, onCvClick }) => {
+const Home = ({ aboutRef, skillsRef, onCvClick }) => {
 
   return (
     // Contêiner principal do conteúdo.
@@ -21,4 +21,4 @@ const Main = ({ aboutRef, skillsRef, onCvClick }) => {
   )
 }
 
-export default Main
+export default Home

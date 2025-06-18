@@ -1,5 +1,9 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { motion, AnimatePresence} from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
+
+import useModalCloseOnEsc from '../../hooks/useModalCloseOnEsc';
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronUp, faChevronDown, faXmark } from '@fortawesome/free-solid-svg-icons';
 
@@ -44,13 +48,16 @@ const CvModal = ({ isOpen, onClose }) => {
     () => experienceData.find((exp) => exp.isHighlighted)?.id || null
   );
 
-  // Ref para a seção de idiomas para usar o useInView
-  const languagesSectionRef = useRef(null);
-
-  // Anima a barra de progresso apenas quando a seção de idiomas está visível.
-  const isInView = true;
+  // Ref para a seção de idiomas para usar o useInView e anima a barra de progresso.
+  const [ languagesSectionRef, isInView ] = useInView({
+    threshold: 0,
+    triggerOnce: true,
+  });
 
   // --- Efeitos Colaterais ---
+
+  // Fechar o modal com o Esc.
+  useModalCloseOnEsc(true, onClose);
 
   // Adicionar/remover no body o "no scroll" quando estiver aberto.
   useEffect(() => {
@@ -60,9 +67,14 @@ const CvModal = ({ isOpen, onClose }) => {
     return () => {
       document.body.classList.remove('body--no--scroll');
     };
+
   }, [isOpen]); // Só executa quando isOpen muda.
 
   // --- Funções de Manipulação ---
+
+  // Função para fechar o modal com o "Esc"
+  
+
   // Função para alternar a aba ativa.
   const handleTabClick = useCallback((tabName) => {
     setActiveTab(tabName);

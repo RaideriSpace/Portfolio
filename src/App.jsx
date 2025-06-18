@@ -1,26 +1,27 @@
-import React, { useRef, useState, useCallback } from 'react'
+import React, { useRef, useCallback } from 'react'
+import { AnimatePresence } from 'framer-motion'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 
 // Importa os componentes filhos estruturais
-import Contato from './componentes/modalComponents/Contato'
+import ContatoModal from './componentes/modalComponents/ContatoModal'
 import CvModal from './componentes/modalComponents/CvModal'
 import Footer from './componentes/Footer'
 import Header from './componentes/Header'
-import Main from './componentes/Main'
+import Home from './pages/Home'
 import Portfolio from './pages/Portfolio'
 
 // Importar os hooks
 import useBodyScrollLock from './hooks/useBodyScrollLock'
-import { AnimatePresence } from 'framer-motion'
+import useModal from './hooks/useModal'
 
 const App = () => {
 
   const aboutRef = useRef(null);
   const skillsRef = useRef(null);
 
-  // Estado para controlar a visibilidade dos modais.
-  const [isContactModalOpen, setIsContactModalOpen] = useState(false) 
-  const [isCvModalOpen, setIsCvModalOpen] = useState(false) 
+  // Funções para lidar com os modais.
+  const { isOpen: isContactModalOpen, openModal: handleOpenContactModal, closeModal: handleCloseContactModal } = useModal();
+  const { isOpen: isCvModalOpen, openModal: handleOpenCvModal, closeModal: handleCloseCvModal } = useModal();
 
   // Scroll desabilitado quando um modal abre.
   useBodyScrollLock(isContactModalOpen || isCvModalOpen);
@@ -32,21 +33,6 @@ const App = () => {
 
   const handleSkillsClick = useCallback(() => {
     skillsRef.current?.scrollIntoView({ behavior: 'smooth' });
-  }, []);
-
-  // Função para abrir e fechar os modais.
-  const handleOpenContactModal = useCallback(() => {
-    setIsContactModalOpen(true);
-  }, []);
-  const handleCloseContactModal = useCallback(() => {
-    setIsContactModalOpen(false);
-  }, []);
-
-  const handleOpenCvModal = useCallback(() => {
-    setIsCvModalOpen(true);
-  }, []);
-  const handleCloseCvModal = useCallback(() => {
-    setIsCvModalOpen(false);
   }, []);
  
   return (
@@ -62,7 +48,7 @@ const App = () => {
         <Route
           path='/'
           element={
-            <Main
+            <Home
               aboutRef={aboutRef}
               skillsRef={skillsRef}
               onContactClick={handleOpenContactModal}
@@ -79,10 +65,10 @@ const App = () => {
 
       <Footer />
 
-      {/* Renderiza o componente Contato condicionalmente */}
+      {/* Renderiza o componente ContatoModal condicionalmente */}
       <AnimatePresence>
         {isContactModalOpen && (
-          <Contato onClose={handleCloseContactModal} /> // Passa a função de fechar
+          <ContatoModal onClose={handleCloseContactModal} /> // Passa a função de fechar
         )}
       </AnimatePresence>
 

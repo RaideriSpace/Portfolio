@@ -4,10 +4,7 @@ const useBodyScrollLock = (isLocked) => {
   useEffect(() =>{
     // Verifica se o ambiente é de navegador antes de manipular o DOM
     if (typeof window !== 'undefined') {
-      isLocked ? (document.body.classList.add('body--no--scroll')
-      ) : (
-        document.body.classList.remove('body--no--scroll')
-      );
+      document.body.classList.toggle('body--no--scroll', isLocked);
     }
 
     // Garante que a classe seja removida quando o hook for desemontado ou quando isLocked for false.
