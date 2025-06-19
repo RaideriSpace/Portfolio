@@ -1,26 +1,22 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
-const PortfolioBanner = ({
-  id,
-  title,
-  image,
-  clipPathId,
-  isActive,
-  onClick,
-  colorClass
-}) => {
+const PortfolioBanner = ({ bannerText, bannerImage, mainColor}) => {
+  if (!bannerImage) {
+    return null;
+  }
+
   return (
-    <motion.div
-      className={`portfolio-banner ${isActive ? 'active' : ''} ${colorClass}`}
-      layout
-      transition={{ type: "spring", stiffness: 200, damping: 20 }}
-      onClick={()=> onClick(id)}
-    >
-      <img src={image} alt={title} className='portfolio-banner__image' />
-      <div className='portfolio-banner__overlay'></div>
-      <h2 className='portfolio-banner__title'>{title}</h2>
-    </motion.div>
+    <div className='portfolio-banner'>
+      <div
+        className='portfolio-banner__img'
+        style={{ backgroundImage: `url(${bannerImage})`}}
+      >
+        <p className='portfolio-banner__text' style={{ color: mainColor }}>
+          {bannerText}
+        </p>
+      </div>
+    </div>
   )
 }
 

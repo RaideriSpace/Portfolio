@@ -29,7 +29,7 @@ const Header = ({ onAboutClick, onSkillsClick, onContactClick }) => {
 
   // Verifica se a rota atual é a página de portfólio
   const isPortfolioPage = useMemo(
-    () => location.pathname === '/portfolio' || location.pathname === '/portfolioselected',
+    () => location.pathname != '/',
     [location.pathname]
   ); 
   

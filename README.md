@@ -134,7 +134,7 @@ Certifique-se de ter o [Node.js](https://nodejs.org/en/) (versão 18 ou superior
     │   │   │   ├── Carousel.jsx
     │   │   │   └── ...
     │   │   ├── portfolioComponents/# Componentes específicos da página de portfólio
-    │   │   │   ├── SubHeader.jsx
+    │   │   │   ├── SubNavbar.jsx
     │   │   │   ├── PortfolioBanner.jsx
     │   │   │   ├── PortfolioOpen.jsx
     │   │   │   └── ...

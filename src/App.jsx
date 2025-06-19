@@ -57,8 +57,11 @@ const App = () => {
           }
         />
 
-        {/* Rota para a página de Portfólio */}
+        {/* Rota para a página geral do Portfólio */}
         <Route path='/portfolio' element={<Portfolio />} />
+
+        {/* Rota para a página de cada categoria */}
+        <Route path='/portfolio/:categoryName' element={<Portfolio />} />
 
         {/* Futuras rotas aqui */}
       </Routes>
