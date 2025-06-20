@@ -7,33 +7,17 @@ const PaperGrid = ({ tagColor, boxColor }) => {
 
   return (
     <div className='portfolio-grid'> 
-      <AnimatePresence mode='wait'>
-        {paperData.length > 0 ? (
-          paperData.map( project => (
-            <motion.div
-              key={project.id}
-              initial='hidden'
-              animate='visible'
-              exit='exit'
-              className='portfolio-grid__item'
-              layout
-            >
-              <PortfolioItem project={project} tagColor={tagColor} boxColor={boxColor}/>
-            </motion.div>
-          ))
-        ) : (
-          <motion.div
-            key='no-design-projects'
-            initial='hidden'
-            animate='visible'
-            exit='exit'
-            variants={projectItemVariants}
-            className='no-projects-message'
-          >
-            <p> Nenhum projeto encontrado. </p>
-          </motion.div>
-        )}
-      </AnimatePresence>
+      {paperData.length > 0 ? (
+        paperData.map( project => (
+          <div key={project.id} className='portfolio-grid__item'>
+            <PortfolioItem project={project} tagColor={tagColor} boxColor={boxColor}/>
+          </div>
+        ))
+      ) : (
+        <div key='no-design-projects' className='no-projects-message'>
+          <p> Nenhum projeto encontrado. </p>
+        </div>
+      )}
     </div>
   );
 }

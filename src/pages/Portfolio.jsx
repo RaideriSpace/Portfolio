@@ -91,7 +91,7 @@ const Portfolio = () => {
           >
             <h1>{currentCategoryInfo.bannerText}</h1>
           </motion.div>
-        )};
+        )}
       </AnimatePresence>
 
       {SelectedGridComponent && (

@@ -13,33 +13,17 @@ const ThreedGrid = ({ tagColor, boxColor }) => {
 
   return (
     <div className='portfolio-grid'>
-      <AnimatePresence mode='wait'>
-        {sortedProjects.length > 0 ? (
-          sortedProjects.map( project => (
-            <motion.div 
-              key={project.id} 
-              initial='hidden' 
-              animate='visible' 
-              exit='exit' 
-              layout
-              className='portfolio-grid__item'
-            >
-              <PortfolioItem project={project} tagColor={tagColor} boxColor={boxColor} />
-            </motion.div>
-          ))
-        ) : (
-          <motion.div 
-            key="no-threed-projects" 
-            initial='hidden' 
-            animate='visible' 
-            exit='exit' 
-            variants={projectItemVariants} 
-            className='no-projects-message'
-          >
-            <p> Nenhum projeto de Modelagem 3D encontrado. </p>
-          </motion.div>
-        )}
-      </AnimatePresence>
+      {sortedProjects.length > 0 ? (
+        sortedProjects.map( project => (
+          <div key={project.id} className='portfolio-grid__item'>
+            <PortfolioItem project={project} tagColor={tagColor} boxColor={boxColor} />
+          </div>
+        ))
+      ) : (
+        <div key="no-threed-projects" className='no-projects-message'>
+          <p> Nenhum projeto de Modelagem 3D encontrado. </p>
+        </div>
+      )}
     </div>
   );
 }

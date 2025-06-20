@@ -12,34 +12,18 @@ const DevGrid = ({ tagColor, boxColor }) => {
   }, [devData])
 
   return (
-    <div className='portfolio-grid'> 
-      <AnimatePresence mode='wait'>
-        {sortedProjects.length > 0 ? (
-          sortedProjects.map( project => (
-            <motion.div
-              key={project.id}
-              initial='hidden'
-              animate='visible'
-              exit='exit'
-              className='portfolio-grid__item'
-              layout
-            >
-              <PortfolioItem project={project} tagColor={tagColor} boxColor={boxColor}/>
-            </motion.div>
-          ))
-        ) : (
-          <motion.div
-            key='no-dev-projects'
-            initial='hidden'
-            animate='visible'
-            exit='exit'
-            variants={projectItemVariants}
-            className='no-projects-message'
-          >
-            <p> Nenhum projeto encontrado. </p>
-          </motion.div>
-        )}
-      </AnimatePresence>
+    <div className='portfolio-grid'>
+      {sortedProjects.length > 0 ? (
+        sortedProjects.map( project => (
+          <div key={project.id} className='portfolio-grid__item'>
+            <PortfolioItem project={project} tagColor={tagColor} boxColor={boxColor}/>
+          </div>
+        ))
+      ) : (
+        <div key='no-dev-projects' className='no-projects-message'>
+          <p> Nenhum projeto encontrado. </p>
+        </div>
+      )}
     </div>
   );
 }
