@@ -408,7 +408,7 @@ export const designData = [
 import arthasTb from '../assets/img/Paper/ArthasTb.svg'
 import thrallTb from '../assets/img/Paper/ThrallTb.svg'
 import sylvanasTb from '../assets/img/Paper/SylvanasTb.svg'
-import opgraveTb from '../assets/img/Paper/OpGraveTb.svg'
+import opgraveTb from '../assets/img/Paper/OPGraveTb.svg'
 import usoppTb from '../assets/img/Paper/UsoppTb.svg'
 import totoroTb from '../assets/img/Paper/TotoroTb.svg'
 
