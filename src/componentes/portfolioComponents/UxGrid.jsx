@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import PortfolioItem from './PortfolioItem';
 import { uxData } from '../../data/portfolioData';
 
-const UXGrid = ({ tagColor, boxColor }) => {
+const UxGrid = ({ tagColor, boxColor }) => {
 
   const sortedProjects = useMemo(() => {
     return [...uxData].sort((a,b) => {
@@ -43,4 +43,4 @@ const UXGrid = ({ tagColor, boxColor }) => {
   );
 }
 
-export default UXGrid
+export default UxGrid
