@@ -1,12 +1,16 @@
 import React, { useState, useCallback, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
+
 import cardsCarousel from '../../data/cardsData'; // Importa os dados do carrossel.
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleRight, faAngleLeft } from '@fortawesome/free-solid-svg-icons';
 
 const Carousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const totalItems = cardsCarousel.length;
+  const navigate = useNavigate();
 
   // Função para atualizar o indice, garantindo o loop.
   const updateIndex = useCallback(
@@ -32,7 +36,15 @@ const Carousel = () => {
         // Normaliza para que a diferença seja sempre positiva dentro do totalItems.
         const diff = (clickedIndex - currentIndex + totalItems) % totalItems;
 
-        if (diff === 1) { // Clicar no próximo (direita)
+        // Clicar no cartão do meio.
+        if(diff === 0) {
+          const currentCard = cardsCarousel[currentIndex];
+          if (currentCard && currentCard.portfolioCategoryName) {
+            navigate(`/portfolio/${currentCard.portfolioCategoryName}`);
+          } else {
+            console.warn('Cartão central não possui portfolioCategoryName para navegação.')
+          }
+        } else if (diff === 1) { // Clicar no próximo (direita)
             goToNext();
         } else if (diff === totalItems -1) { // Clicar no anterior (esquerda) 
             goToPrev(); 
@@ -40,10 +52,8 @@ const Carousel = () => {
             goTo2Next();
         } else if (diff === totalItems - 2) { // Clicou no segundo anterior (mais fundo da esquerda)
             goTo2Prev();
-        } else if (diff === 0){
-          console.log('Cartão central foi clicado: ', cardsCarousel[currentIndex]);
-        }
-    }, [currentIndex, totalItems, goToNext, goToPrev, goTo2Next, goTo2Prev]);
+        } 
+    }, [currentIndex, totalItems, goToNext, goToPrev, goTo2Next, goTo2Prev, navigate]);
 
   // Função para calcular as propriedades de transformação (posição, escala, opacidade) para cada cartão.
     // Baseado no índice atual e no índice do item.
@@ -68,7 +78,7 @@ const Carousel = () => {
           rotateY = 0,
           opacity = 1,
           textOpacity = 1,
-          !isClickable; // O cartão ativo não deve ser clicável para navegação por enquanto.
+          isClickable;
 
         } else if (offset === 1) { 
           // Pirmeiro da Direita
@@ -118,7 +128,7 @@ const Carousel = () => {
           rotateY = 0,
           opacity = 0,
           textOpacity = 0.6,
-          isClickable;
+          !isClickable;
         }
 
         return { x, scale, zIndex, rotateY, opacity, textOpacity, isClickable };

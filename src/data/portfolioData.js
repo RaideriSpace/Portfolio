@@ -25,12 +25,14 @@ export const uiData = [
     tags: [
       "Notificação", 
       "Storys",
+      "Pefil",
       "Atualização Push",
       "Timeline",
+      "Interativo",
       "Mobile"
     ],
-    description: "Descrição do Projeto",
-    link: "/",
+    description: "Um aplicativo de rede social moderno e prático, com funções de storys, atualização por “push” e perfis.",
+    link: "https://www.figma.com/proto/0MWjKzgncI7kq4UZDTAHPR/Portf%C3%B3lio---Lucas-Alves-Pinheiro?node-id=3174-5728&viewport=-9700%2C-6119%2C0.37&t=if8NxY9W8DGCHojL-0&scaling=scale-down&content-scaling=fixed&starting-point-node-id=3174%3A5728&hide-ui=1",
   },
   {
     id: "ui-002",
@@ -44,8 +46,8 @@ export const uiData = [
       "Menu Push",
       "Mobile",
     ],
-    description: "Descrição do Projeto",
-    link: "/",
+    description: "Um aplicativo para teste de algumas ações como “Push” para deletar e menu lateral por push, muito usados nos aplicativos atualmente.",
+    link: "https://www.figma.com/proto/0MWjKzgncI7kq4UZDTAHPR/Portf%C3%B3lio---Lucas-Alves-Pinheiro?node-id=3174-5503&viewport=-4524%2C-2027%2C0.18&t=if8NxY9W8DGCHojL-0&scaling=scale-down&content-scaling=fixed&starting-point-node-id=3174%3A5537&hide-ui=1",
   },
   {
     id: 'ui-003',
@@ -60,8 +62,8 @@ export const uiData = [
       "Design Interativo",
       "Mobile",
     ],
-    description: "Descrição do Projeto",
-    link: "/",
+    description: "Uma réplica do aplicativo do Spotify, o design minimalista prioriza a experiência do usuário e a descoberta musical",
+    link: "https://www.figma.com/proto/0MWjKzgncI7kq4UZDTAHPR/Portf%C3%B3lio---Lucas-Alves-Pinheiro?node-id=3174-3567&viewport=-4374%2C-1317%2C0.18&t=if8NxY9W8DGCHojL-0&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=3174%3A3565&hide-ui=1",
   },
   {
     id: "ui-004",
@@ -76,8 +78,8 @@ export const uiData = [
       "Orçamentação",
       "Mapa",
     ],
-    description: "Descrição do Projeto",
-    link: "/",
+    description: "Para aprimoramento pessoal, fiz a criação dessa Landing Page com base em um briefing de um site de mudanças que quer passar a sensação de segurança, simples e confiável.",
+    link: "https://www.figma.com/proto/0MWjKzgncI7kq4UZDTAHPR/Portf%C3%B3lio---Lucas-Alves-Pinheiro?node-id=3174-4720&viewport=-2088%2C-1530%2C0.13&t=if8NxY9W8DGCHojL-0&scaling=scale-down-width&content-scaling=fixed&starting-point-node-id=3174%3A4720&hide-ui=1",
   },
   {
     id: "ui-005",
@@ -92,8 +94,8 @@ export const uiData = [
       "Carrossel",
       "Agenda",
     ],
-    description: "Descrição do Projeto",
-    link: "/",
+    description: "Para atender um briefing com estilo visual moderno e minimalista, com um toque de elegância, visa um público alvo com interesse em moda e estilo urbano. ",
+    link: "https://www.figma.com/proto/0MWjKzgncI7kq4UZDTAHPR/Portf%C3%B3lio---Lucas-Alves-Pinheiro?node-id=3174-4063&viewport=-1277%2C-400%2C0.08&t=if8NxY9W8DGCHojL-0&scaling=scale-down-width&content-scaling=fixed&starting-point-node-id=3174%3A4063&hide-ui=1",
   },
   {
     id: "ui-006",
@@ -110,8 +112,8 @@ export const uiData = [
       "Benchmark",
       "Pixel Perfect",
     ],
-    description: "Descrição do Projeto",
-    link: "/",
+    description: "Projeto proposto pela EBAC, realizei a junção das marcas SumUp e Pix, a fim de promover ao usuário da SumUp a nova forma de pagamento.",
+    link: "https://www.figma.com/design/331apB2Kc62c0FIP51Ztcj/EBAC?node-id=68-2&t=yAHkcnWk9Q98dOZx-1",
   },
   {
     id: "ui-007",
@@ -126,7 +128,7 @@ export const uiData = [
       "Style Guide",
       "Design Interativo",
     ],
-    description: "Descrição do Projeto",
+    description: "Junto de outros voluntários, buscamos melhorar o design do site da Bike Anjo, com base em entrevistas com usuários para que seja mais agradável e funcional",
     link: "/",
   },
 ];
@@ -149,10 +151,11 @@ export const devData = [
     tags: [
       "JavaScript", 
       "HTML",
-      "CSS"
+      "CSS",
+      "Jogos"
     ],
-    description: "Descrição do Projeto",
-    link: "/",
+    description: "Focado em JavaScript para criar jogos interativos no navegador, explorei desde a lógica de tomada de decisão com alert/prompt até a manipulação do DOM para quizzes visuais.",
+    link: "https://github.com/RaideriSpace/Alura_ImersaoDev",
   },
   {
     id: "dev-002",
@@ -162,11 +165,13 @@ export const devData = [
     tags: [
       "Flutter", 
       "JavaScript",
-      "HTML",
       "CSS",
+      "Mobile",
+      "React Native",
+      "Firebase Studio",
     ],
-    description: "Descrição do Projeto",
-    link: "/",
+    description: "Realizado em uma imersão Mobile da Alura, o propósito foi criar um aplicativo mobile de fastfood, com a tela de login, a tela de restaurantes e cardápio.",
+    link: "https://studio.firebase.google.com/fluttertechtaste2-51801203",
   },
   {
     id: "dev-003",
@@ -181,10 +186,9 @@ export const devData = [
       "CSS",
       "Git",
       "Express",
-      "jQuery"
     ],
-    description: "Descrição do Projeto",
-    link: "/",
+    description: "Recriei a página inicial do Spotify, com músicas selecionáveis, play e pause, atualização da barra de progresso e próxima música.",
+    link: "https://github.com/RaideriSpace/Deploy_Spotify_Site",
   },
   {
     id: "dev-004",
@@ -201,8 +205,8 @@ export const devData = [
       "Framer Motion",
       "ESLint"
     ],
-    description: "Descrição do Projeto",
-    link: "/",
+    description: "Uma vitrine interativa e responsiva de minhas habilidades em Desenvolvimento Front-end e UX/UI Design, acessível online. Apresenta design otimizado (criado no Figma), animações fluidas com Framer Motion, modularidade e foco em acessibilidade e performance.",
+    link: "https://github.com/RaideriSpace/Portfolio",
   },
   {
     id: "dev-005",
@@ -212,12 +216,14 @@ export const devData = [
     tags: [
       "HTML",
       "CSS",
+      "JavaScript",
       "Bootstrap",
       "jQuery",
-      "Animação"
+      "PHP",
+      "EcmaScript",
     ],
-    description: "Descrição do Projeto",
-    link: "/",
+    description: "Projeto pessoal de re-design focado em otimizar a experiência do usuário para uma empresa de TI. Desenvolvido com HTML5, CSS3, JavaScript (incluindo jQuery e Bootstrap), e PHP para formulários, ele oferece suporte técnico, consultoria e segurança cibernética com um design responsivo e interativo.",
+    link: "https://github.com/RaideriSpace/TRSquad_LP",
   },
   {
     id: "dev-006",
@@ -226,15 +232,14 @@ export const devData = [
     status: "Em andamento",
     tags: [
       "React",
-      "React Hooke Form",
-      "Context API",
-      "Vite",
       "Node",
       "Express",
-      "MongoDB"
+      "MongoDB",
+      "Autenticação",
+      "Full-Stack",
     ],
-    description: "Descrição do Projeto",
-    link: "/",
+    description: "Este projeto é uma aplicação full-stack de autenticação de usuários. Ele implementa registro, login seguro com JWT, proteção de rotas e persistência de sessão, sendo uma solução completa para gestão de usuários.",
+    link: "https://github.com/RaideriSpace/register-app",
   },
 ]
 
@@ -258,12 +263,12 @@ export const designData = [
     img: roomTb,
     status: "Finalizado",
     tags: [
-      "JavaScript", 
-      "HTML",
-      "CSS"
+      "Photoshop", 
+      "Digital Color",
+      "Ambiente"
     ],
     description: "Descrição do Projeto",
-    link: "/",
+    link: "#",
   },
   {
     id: "art-002",
@@ -271,13 +276,13 @@ export const designData = [
     img: emotesTb,
     status: "Finalizado",
     tags: [
-      "Flutter", 
-      "JavaScript",
-      "HTML",
-      "CSS",
+      "Photoshop", 
+      "Digital Color",
+      "Emotes",
+      "Redes Sociais",
     ],
     description: "Descrição do Projeto",
-    link: "/",
+    link: "#",
   },
   {
     id: "art-003",
@@ -285,17 +290,14 @@ export const designData = [
     img: projectTb,
     status: "Finalizado",
     tags: [
-      "JavaScript", 
-      "React",
-      "Vite",
-      "MongoDb",
-      "CSS",
-      "Git",
-      "Express",
-      "jQuery"
+      "Photoshop", 
+      "Digital Color",
+      "Medalhas",
+      "Tier",
+      "Comercial",
     ],
     description: "Descrição do Projeto",
-    link: "/",
+    link: "#",
   },
   {
     id: "art-004",
@@ -303,17 +305,13 @@ export const designData = [
     img: miumiwuTb,
     status: "Em andamento",
     tags: [
-      "JavaScript", 
-      "React",
-      "Vite",
-      "CSS",
-      "HTML",
-      "Git",
-      "Framer Motion",
-      "ESLint"
+      "Photoshop",
+      "Rede Social",
+      "Emotes",
+      "Streamer",
     ],
     description: "Descrição do Projeto",
-    link: "/",
+    link: "#",
   },
   {
     id: "art-005",
@@ -321,16 +319,14 @@ export const designData = [
     img: joohTb,
     status: "Em andamento",
     tags: [
-      "React",
-      "React Hooke Form",
-      "Context API",
-      "Vite",
-      "Node",
-      "Express",
-      "MongoDB"
+      "Logo",
+      "Photoshop",
+      "Estética",
+      "Moodboard",
+      "Paleta de Cores",
     ],
     description: "Descrição do Projeto",
-    link: "/",
+    link: "#",
   },
   {
     id: "art-006",
@@ -338,16 +334,13 @@ export const designData = [
     img: bysarahTb,
     status: "Em andamento",
     tags: [
-      "React",
-      "React Hooke Form",
-      "Context API",
-      "Vite",
-      "Node",
-      "Express",
-      "MongoDB"
+      "Logo",
+      "Photoshop",
+      "Costura",
+      "Moodboard",
     ],
     description: "Descrição do Projeto",
-    link: "/",
+    link: "#",
   },
   {
     id: "art-007",
@@ -355,16 +348,13 @@ export const designData = [
     img: florefioTb,
     status: "Em andamento",
     tags: [
-      "React",
-      "React Hooke Form",
-      "Context API",
-      "Vite",
-      "Node",
-      "Express",
-      "MongoDB"
+      "Photoshop",
+      "Logo",
+      "Moodboard",
+      "Costura",
     ],
     description: "Descrição do Projeto",
-    link: "/",
+    link: "#",
   },
   {
     id: "art-008",
@@ -372,16 +362,14 @@ export const designData = [
     img: bfashionTb,
     status: "Em andamento",
     tags: [
-      "React",
-      "React Hooke Form",
-      "Context API",
-      "Vite",
-      "Node",
-      "Express",
-      "MongoDB"
+      "Photoshop",
+      "Revista",
+      "Premier Studio",
+      "Estilização",
+      "Moda"
     ],
     description: "Descrição do Projeto",
-    link: "/",
+    link: "#",
   },
   {
     id: "art-009",
@@ -389,16 +377,14 @@ export const designData = [
     img: mysticmistTb,
     status: "Em andamento",
     tags: [
-      "React",
-      "React Hooke Form",
-      "Context API",
-      "Vite",
-      "Node",
-      "Express",
-      "MongoDB"
+      "Photoshop",
+      "Logo",
+      "Paleta de Cores",
+      "Moodboard",
+      "Artesanato"
     ],
     description: "Descrição do Projeto",
-    link: "/",
+    link: "#",
   },
   {
     id: "art-010",
@@ -406,16 +392,14 @@ export const designData = [
     img: raispaceTb,
     status: "Em andamento",
     tags: [
-      "React",
-      "React Hooke Form",
-      "Context API",
-      "Vite",
-      "Node",
-      "Express",
-      "MongoDB"
+      "Photoshop",
+      "Logo",
+      "Paleta de Cores",
+      "Moodboard",
+      "Tech & Design"
     ],
     description: "Descrição do Projeto",
-    link: "/",
+    link: "#",
   },
 ]
 
@@ -476,12 +460,15 @@ export const threedData = [
     img: marioTb,
     status: "Ajustando",
     tags: [
-      "JavaScript", 
-      "HTML",
-      "CSS"
+      "Blender",
+      "Textura",
+      "Sombra",
+      "ColorMap",
+      "Animação",
+      "Jogos"
     ],
     description: "Descrição do Projeto",
-    link: "/",
+    link: "#",
   },
   {
     id: "td-002",
@@ -489,13 +476,14 @@ export const threedData = [
     img: needleTb,
     status: "Ajustando",
     tags: [
-      "Flutter", 
-      "JavaScript",
-      "HTML",
-      "CSS",
+      "Blender",
+      "Textura",
+      "Sombra",
+      "ColorMap",
+      "Costura"
     ],
     description: "Descrição do Projeto",
-    link: "/",
+    link: "#",
   },
   {
     id: "td-003",
@@ -503,14 +491,10 @@ export const threedData = [
     img: ecopontoTb,
     status: "Finalizado",
     tags: [
-      "JavaScript", 
-      "React",
-      "Vite",
-      "MongoDb",
-      "CSS",
-      "Git",
-      "Express",
-      "jQuery"
+      "SketchUp",
+      "Sombra",
+      "Comercial",
+      "Ecológico",
     ],
     description: "Descrição do Projeto",
     link: "/",
@@ -521,14 +505,12 @@ export const threedData = [
     img: sugardonutTb,
     status: "Em andamento",
     tags: [
-      "JavaScript", 
-      "React",
-      "Vite",
-      "CSS",
-      "HTML",
-      "Git",
-      "Framer Motion",
-      "ESLint"
+      "Blender",
+      "Textura",
+      "Sombra",
+      "ColorMap",
+      "Comida",
+      "Jogo"
     ],
     description: "Descrição do Projeto",
     link: "/",
@@ -539,13 +521,12 @@ export const threedData = [
     img: chocodonutTb,
     status: "Em andamento",
     tags: [
-      "React",
-      "React Hooke Form",
-      "Context API",
-      "Vite",
-      "Node",
-      "Express",
-      "MongoDB"
+      "Blender",
+      "Textura",
+      "Sombra",
+      "ColorMap",
+      "Comida",
+      "Jogo"
     ],
     description: "Descrição do Projeto",
     link: "/",
@@ -558,6 +539,7 @@ import effettivoTb from '../assets/img/UX/Effettivo.svg'
 import gestaoTb from '../assets/img/UX/Gestao.svg'
 import railinkTb from '../assets/img/UX/RaiLink.svg'
 import itauTb from '../assets/img/UX/Itau.svg'
+import { m } from 'framer-motion'
 
 export const uxData = [
   {
@@ -566,11 +548,13 @@ export const uxData = [
     img: railinkTb,
     status: "Ajustando",
     tags: [
-      "JavaScript", 
-      "HTML",
-      "CSS"
+      "Benchmark",
+      "User Research",
+      "Persona",
+      "Mapa de Empatia",
+      "Design Thinking"
     ],
-    description: "Descrição do Projeto",
+    description: "Proposta: Diminuir o tempo de uso do celular pela metade ao remover o tempo de troca entre aplicativos e diminuindo a redundância de postagens iguais em diferentes redes.",
     link: "/",
   },
   {
@@ -579,12 +563,13 @@ export const uxData = [
     img: effettivoTb,
     status: "Ajustando",
     tags: [
-      "Flutter", 
-      "JavaScript",
-      "HTML",
-      "CSS",
+      "User Research",
+      "Entrevista de Usuário",
+      "Persona",
+      "Design Thinking",
+      "Ciclo de UX",
     ],
-    description: "Descrição do Projeto",
+    description: "Proposta: Buscamos melhorar a adesão dos dashboards pelos usuários para aumentar os usuários de 5 para 150",
     link: "/",
   },
   {
@@ -593,16 +578,14 @@ export const uxData = [
     img: gestaoTb,
     status: "Finalizado",
     tags: [
-      "JavaScript", 
-      "React",
-      "Vite",
-      "MongoDb",
-      "CSS",
-      "Git",
-      "Express",
-      "jQuery"
+      "Formulação da hipótese", 
+      "User Research",
+      "Validação da hipótese",
+      "Design Thinkg",
+      "Entrevista com usuário",
+      "IA"
     ],
-    description: "Descrição do Projeto",
+    description: "Proposta: Buscamos ajudar a gestão do negócio de micro e pequenos empreendedores, com um produto que facilite a organização e ajude a identificar riscos e oportunidades.",
     link: "/",
   },
   {
@@ -611,14 +594,11 @@ export const uxData = [
     img: itauTb,
     status: "Em andamento",
     tags: [
-      "JavaScript", 
-      "React",
-      "Vite",
-      "CSS",
-      "HTML",
-      "Git",
-      "Framer Motion",
-      "ESLint"
+      "Benchmark",
+      "User Research",
+      "Persona",
+      "Mapa de Empatia",
+      "Design Thinking"
     ],
     description: "Descrição do Projeto",
     link: "/",
@@ -669,9 +649,9 @@ export const categories = [
     boxColor: "var(--secondary-ex-light)", 
   },
   {
-    name: "web-designer",
-    label: "Web Designer",
-    bannerText: "Web Designer",
+    name: "web-design",
+    label: "Web Design",
+    bannerText: "Web Design",
     bannerImage: bannerDev,
     mainColor: "var(--tertiary-light)",
     textColor: "var(--tertiary-ex-dark)",

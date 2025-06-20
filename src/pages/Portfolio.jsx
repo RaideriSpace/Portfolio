@@ -7,23 +7,23 @@ import '../styles/portfolio.css'
 import SubNavbar from '../componentes/portfolioComponents/SubNavbar'
 import PortfolioBanner from '../componentes/portfolioComponents/PortfolioBanner';
 
-import UiGrid from '../componentes/portfolioComponents/UIGrid';
+import UIGrid from '../componentes/portfolioComponents/UIGrid';
 import DevGrid from '../componentes/portfolioComponents/DevGrid';
 import DesignGrid from '../componentes/portfolioComponents/DesignGrid';
 import PaperGrid from '../componentes/portfolioComponents/PaperGrid';
 import ThreedGrid from '../componentes/portfolioComponents/threedGrid';
-import UxGrid from '../componentes/portfolioComponents/UXGrid';
+import UXGrid from '../componentes/portfolioComponents/UXGrid';
 import AllProjectsGrid from '../componentes/portfolioComponents/AllProjectsGrid';
 
 import { categories, allProjectsData, projectDataMap } from '../data/portfolioData';
 
 const gridComponentsMap = {
-  'ui-design': UiGrid,
-  'web-designer': DevGrid,
+  'ui-design': UIGrid,
+  'web-design': DevGrid,
   'digital-art': DesignGrid,
   'paper': PaperGrid,
   '3d-modeling': ThreedGrid,
-  'ux-design': UxGrid,
+  'ux-design': UXGrid,
 }
 
 const Portfolio = () => {

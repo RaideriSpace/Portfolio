@@ -112,25 +112,7 @@
   }
 
   .portfolio-banner__text {
-    /* Propriedades comuns ao texto do banner */
     text-shadow: -1px -1px 5px rgba(0, 0, 0, 0.5);
-    /* Sombra para o texto */
-  }
-
-  .pink-gradient {
-    /* Adapte este gradiente para o seu design */
-    background: linear-gradient(to right, var(--secondary-ex-light), var(--secondary-light));
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-
-  .blue-gradient {
-    /* Adapte este gradiente para o seu design */
-    background: linear-gradient(to right, var(--tertiary-ex-light), var(--tertiary-light));
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
   }
 
 /*
@@ -186,13 +168,11 @@
     height: 425px;
     border-radius: 8px;
     overflow: hidden;
-    position: relative; /* Para posicionar o top */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para os cards */
-    transition: transform 0.3s ease; /* Animação ao passar o mouse */
+    transition: transform 0.3s ease;
   }
 
   .portfolio__project:hover {
-    transform: translateY(-5px); /* Efeito de elevação ao passar o mouse */
+    transform: translateY(-5px);
   }
 
   .portfolio__project-top {
@@ -217,8 +197,7 @@
   .portfolio__project-img {
     width: 100%;
     height: 300px;
-    object-fit: cover;
-    display: block;
+    background-size: cover;
   }
 
   .portfolio__project-bottom {
@@ -226,7 +205,8 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 8px 4px;
+    text-align: center;
+    padding: 8px 8px;
     gap: 8px;
   }
 

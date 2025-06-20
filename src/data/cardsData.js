@@ -10,37 +10,43 @@ const cardsCarousel = [
         id: 1, 
         src: uiCard, 
         alt: 'Card-UI', 
-        title: 'UI Design'
+        title: 'UI Design',
+        portfolioCategoryName: 'ui-design'
     },
     { 
         id: 2, 
         src: devCard, 
         alt: 'Card-Dev', 
-        title: 'Web Design'
+        title: 'Web Design',
+        portfolioCategoryName: 'web-design'
     },
     { 
         id: 3, 
         src: designCard, 
         alt: 'Card-Design', 
-        title: 'Arte Digital'
+        title: 'Arte Digital',
+        portfolioCategoryName: 'digital-art'
     },
     { 
         id: 4, 
         src: paperCard, 
         alt: 'Card-Paper', 
-        title: 'Papel'
+        title: 'Papel',
+        portfolioCategoryName: 'paper'
     },
     { 
         id: 5, 
         src: threeDCard, 
         alt: 'Card-3D', 
-        title: 'Modelagem 3D'
+        title: 'Modelagem 3D',
+        portfolioCategoryName: '3d-modeling'
     },
     { 
         id: 6, 
         src: uxCard, 
         alt: 'Card-UX', 
-        title: 'UX Design'
+        title: 'UX Design',
+        portfolioCategoryName: 'ux-design'
     },
 ]
 
