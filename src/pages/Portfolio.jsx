@@ -11,7 +11,7 @@ import UiGrid from '../componentes/portfolioComponents/UiGrid';
 import DevGrid from '../componentes/portfolioComponents/DevGrid';
 import DesignGrid from '../componentes/portfolioComponents/DesignGrid';
 import PaperGrid from '../componentes/portfolioComponents/PaperGrid';
-import ThreedGrid from '../componentes/portfolioComponents/threedGrid';
+import ThreedGrid from '../componentes/portfolioComponents/ThreedGrid';
 import UxGrid from '../componentes/portfolioComponents/UxGrid';
 import AllProjectsGrid from '../componentes/portfolioComponents/AllProjectsGrid';
 
