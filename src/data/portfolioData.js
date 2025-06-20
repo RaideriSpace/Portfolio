@@ -4,7 +4,7 @@ import bannerDev from '../assets/img/Dev/Banner.svg'
 import bannerDesign from '../assets/img/Design/Banner.svg' 
 import bannerPaper from '../assets/img/Paper/Banner.svg' 
 import banner3D from '../assets/img/3D/Banner.svg' 
-import bannerUx from '../assets/img/Ux/Banner.svg' 
+import bannerUx from '../assets/img/UX/Banner.svg' 
 
 // --- Database dos projetos UI Design ---
 
