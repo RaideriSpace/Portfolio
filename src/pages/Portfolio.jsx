@@ -23,7 +23,7 @@ const gridComponentsMap = {
   'digital-art': DesignGrid,
   'paper': PaperGrid,
   '3d-modeling': ThreedGrid,
-  'ux-design': UxGrid,
+  'ux-design': UXGrid,
 }
 
 const Portfolio = () => {
