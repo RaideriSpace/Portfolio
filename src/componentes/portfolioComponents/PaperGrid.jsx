@@ -15,6 +15,7 @@ const PaperGrid = ({ tagColor, boxColor }) => {
               initial='hidden'
               animate='visible'
               exit='exit'
+              className='portfolio-grid__item'
               layout
             >
               <PortfolioItem project={project} tagColor={tagColor} boxColor={boxColor}/>

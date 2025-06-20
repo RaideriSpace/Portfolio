@@ -21,9 +21,12 @@ const gridComponentsMap = {
   'ui-design': UiGrid,
   'web-design': DevGrid,
   'digital-art': DesignGrid,
-  'paper': PaperGrid,
   '3d-modeling': ThreedGrid,
   'ux-design': UxGrid,
+}
+
+const gridPaperMap = {
+  'paper': PaperGrid,
 }
 
 const Portfolio = () => {
@@ -65,24 +68,24 @@ const Portfolio = () => {
         {!isGeneralPortfolioPage ? (
           <motion.div 
             key={currentCategoryInfo.name + '-banner'}
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -10 }}
+            initial={{ opacity: 0, x: -10 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: 10 }}
             transition={{ duration: 0.3 }}
           >
             <PortfolioBanner
               bannerImage={currentCategoryInfo.bannerImage}
               bannerText={currentCategoryInfo.bannerText}
-              textColor={currentCategoryInfo.textColor}
+              mainShadow={currentCategoryInfo.mainShadow}
               mainColor={currentCategoryInfo.mainColor}
             />          
          </motion.div>
         ) : (
           <motion.div
             key="general-portfolio-header"
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -10 }}
+            initial={{ opacity: 0, x: -10 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: 10 }}
             transititon={{ duration: 0.3 }}
             className='portfolio-general-header'
           >

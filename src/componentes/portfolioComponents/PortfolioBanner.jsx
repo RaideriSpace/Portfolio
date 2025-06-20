@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
-const PortfolioBanner = ({ bannerText, bannerImage, mainColor}) => {
+const PortfolioBanner = ({ bannerText, bannerImage, mainColor, mainShadow }) => {
   if (!bannerImage) {
     return null;
   }
@@ -12,7 +12,7 @@ const PortfolioBanner = ({ bannerText, bannerImage, mainColor}) => {
         className='portfolio-banner__img'
         style={{ backgroundImage: `url(${bannerImage})`}}
       >
-        <p className='portfolio-banner__text' style={{ color: mainColor }}>
+        <p style={{ color: mainColor, textShadow: `0px 0px 3px ${mainShadow}`}}>
           {bannerText}
         </p>
       </div>

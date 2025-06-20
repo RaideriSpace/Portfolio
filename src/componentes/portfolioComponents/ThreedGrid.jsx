@@ -22,6 +22,7 @@ const ThreedGrid = ({ tagColor, boxColor }) => {
               animate='visible' 
               exit='exit' 
               layout
+              className='portfolio-grid__item'
             >
               <PortfolioItem project={project} tagColor={tagColor} boxColor={boxColor} />
             </motion.div>

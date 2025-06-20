@@ -8,14 +8,26 @@
 
 /*
   * ========================================
+  * 1.1. Central da Página Portfólio
+  * ========================================
+*/
+
+.portfolio-main {
+  width: 100vw;
+}
+
+/*
+  * ========================================
   * 2. Sub-navbar
   * ========================================
 */
 
   .sub-navbar {
+    justify-self: center;
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: var(--spacing-s);
     background-color: var(--dark-dark);
     width: 100vw;
     height: auto;
@@ -25,11 +37,13 @@
 
 
   .sub-navbar__list {
+    justify-self: center;
     display: flex;
     list-style: none;
     flex-wrap: wrap;
     width: 90vw;
-    padding: 0 40px;
+    max-width: 1600px;
+    padding: 0 var(--spacing-xl);
     justify-content: space-between;
   }
 
@@ -37,9 +51,6 @@
   .sub-navbar__list li:nth-child(even) {
     text-align: center;
     font-size: 14px;
-    transition:
-      color 240ms ease,
-      font-size 240ms ease;
   }
 
   .sub-navbar__list li:nth-child(odd) {
@@ -65,81 +76,37 @@
     display: grid;
     place-items: center;
     text-align: center;
+    
   }
 
   .sub-navbar__item .active {
     color: white;
     font-size: 16px;
     font-weight: bold;
+    transition:
+      color var(--transition-speed-normal) var(--transition-ease),
+      font-size var(--transition-speed-normal) var(--transition-ease);
   }
 
-/*
+  /*
  * ========================================
- * 3. Banner do Portfólio
- * ========================================
-*/
-
-  .portfolio-banner {
-    width: 100vw;
-    max-width: 1800px;
-    height: 250px;
-    padding: 0 40px;
-  }
-
-  .portfolio-banner__img{
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    padding: 53px;
-    font-family: 'spaceregular';
-    font-size: 4rem;
-    border-radius: 16px;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-  }
-
-  .portfolio-banner__text .blue{
-    color: var(--tertiary-ex-light);
-    text-shadow: -1px -1px 5px var(--tertiary-ex-dark) ;
-  }
-
-  .portfolio-banner__text .pink{
-    color: var(--secondary-ex-light);
-    text-shadow: -1px -1px 5px var(--secondary-ex-dark) ;
-  }
-
-  .portfolio-banner__text {
-    text-shadow: -1px -1px 5px rgba(0, 0, 0, 0.5);
-  }
-
-/*
- * ========================================
- * 4. Cabeçalho da página geral (Novo)
+ * 4. Cabeçalho da página geral
  * ========================================
 */
 
 .portfolio-general-header {
+  justify-self: center;
+  width: 100vw;
   text-align: center;
-  padding: 80px 20px;
-  /* Ajuste o padding */
+  padding: var(--spacing-xxxl) var(--spacing-m);
   background-color: var(--dark-dark);
-  /* Ou a cor de fundo que preferir */
-  color: white;
-  /* Cor do texto */
-  margin-bottom: 50px;
-  /* Espaço antes da grade */
 }
 
 .portfolio-general-header h1 {
   font-size: 3rem;
-  margin-bottom: 15px;
+  margin-bottom: var(--spacing-s);
   font-family: 'spaceregular';
-  /* Mantenha a fonte consistente */
-  color: var(--primary-color);
-  /* Ou outra cor/gradiente para o título geral */
+  font-weight: 200;
 }
 
 .portfolio-general-header p {
@@ -149,49 +116,90 @@
 
 /*
  * ========================================
+ * 3. Banner do Portfólio
+ * ========================================
+*/
+
+  .portfolio-banner {
+    justify-self: center;
+    width: 100vw;
+    max-width: 2000px;
+    height: 250px;
+    padding: 0 var(--spacing-xl);
+  }
+
+  .portfolio-banner__img{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding: var(--spacing-xxl);
+    font-family: 'spaceregular';
+    font-size: 4rem;
+    border-radius: var(--border-radius-m);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+/*
+ * ========================================
  * 5. Projetos
  * ========================================
 */
 
   .portfolio-grid {
+    max-width: 2000px;
+    justify-self: center;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
-    margin: 40px;
-    gap: 42px;
-    color: black;
+    margin: var(--spacing-xl);
+    gap: var(--spacing-xl);
+    color: var(--dark-dark);
   }
 
   .portfolio__project {
+    position: relative;
     width: 575px;
-    height: 425px;
-    border-radius: 8px;
+    height: 300px;
+    border-radius: var(--border-radius-s);
     overflow: hidden;
-    transition: transform 0.3s ease;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: transform var(--transition-speed-slow) var(--transition-ease);
   }
 
   .portfolio__project:hover {
     transform: translateY(-5px);
   }
 
+  .portfolio__project-data {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-between;
+  }
+
   .portfolio__project-top {
-    position: absolute;
+    width: fit-content;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 8px;
-    gap: 16px;
-    border-radius: 8px 0 8px;
-    z-index: 1;
+    padding: var(--spacing-xs);
+    gap: var(--spacing-s);
+    border-radius: var(--border-radius-s) 0 var(--border-radius-s);
   }
 
   .portfolio__project-title {
-    font-size: 1rem;
+    font-size: 1em;
   }
 
   .portfolio__project-status {
-    font-size: 0.5rem;
+    font-size: 0.5em;
   }
 
   .portfolio__project-img {
@@ -201,34 +209,155 @@
   }
 
   .portfolio__project-bottom {
+    opacity: 0;
+    transition: opacity 300ms ease;
+  }
+
+  .portfolio__project:hover .portfolio__project-bottom {
+    opacity: 1;
+  }
+
+  .portfolio__project-content {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: 8px 8px;
-    gap: 8px;
+    border-radius: var(--border-radius-s);
+    padding: var(--border-radius-s);
+    gap: var(--border-radius-s);
   }
 
   .portfolio__project-tags {
-    font-size: 1rem;
+    font-size: 1em;
     font-weight: bold;
   }
 
-  /* .portfolio__project-tags span:not(:last-child)::after {
-    content: ' • ';
-    color: var(--auxiliary2-dark); /* Cor do separador 
-  } */
-
   .portfolio__project-description {
-    font-size: 0.875rem;
+    font-size: 0.875em;
     font-weight: 500;
   }
 
   .no-projects-message {
     text-align: center;
-    padding: 50px;
-    font-size: 1.5rem;
+    padding: var(--spacing-xxl);
+    font-size: 1.5em;
     color: var(--auxiliary1-dark);
   }
   
+    /*
+   * ========================================
+   * 13. Media Queries (Ordenadas do maior para o menor)
+   * ========================================
+   */
+
+    @media (max-width: 1272px) {
+      
+      .portfolio-banner {
+        padding: 0 var(--spacing-m);
+      }
+
+      .portfolio-grid {
+        margin: var(--spacing-m);
+      }
+
+      .portfolio__project {
+        width: 450px;
+      }
+    }
+  
+    /* Desktop Médio / Tablets maiores (1000px) */
+    @media (max-width: 1000px) {
+        
+      .portfolio-main {
+        font-size: 14px;
+      }
+
+      .portfolio-banner {
+        padding: 0 var(--spacing-s);
+      }
+  
+      .portfolio-grid {
+        margin: var(--spacing-s);
+      }
+  
+      .portfolio__project {
+        width: 340px;
+        height:fit-content;
+        background-size: contain;
+        background-position: top;
+        overflow: visible;
+      }
+
+      .portfolio__project-data {
+        gap: 130px;
+      }
+
+      .portfolio__project-content {
+        height: 160px;
+      }
+
+      .portfolio__project-bottom {
+        opacity: 1;
+      }
+    }
+  
+    /* Tablets / Mobile Landscape (768px) */
+    @media (max-width: 768px) {
+
+      .sub-navbar{
+        width: 100%;
+      }
+
+      .sub-navbar__list {
+        padding: 0;
+        justify-content: center;
+      }
+
+      .sub-navbar__item {
+        padding: 0 var(--spacing-m);
+      }
+
+      .portfolio-banner {
+        width: 100%;
+        padding: 0;
+      }
+
+      .portfolio-banner__img {
+        width: 100%;
+        border-radius: 0 0 var(--spacing-s) var(--spacing-s);
+      }
+
+      .portfolio-grid {
+        width: 100%;
+      }
+
+      .portfolio-grid__item {
+        display: flex;
+        justify-content: center;
+      }
+
+      .portfolio__project {
+        width: 80%;
+        background-color: var(--primary);
+      }
+
+      .portfolio__project-content {
+        height: fit-content;
+        padding: var(--spacing-s);
+      }
+
+    }
+  
+    /* Mobile Portrait (480px) */
+    @media (max-width: 480px) {
+
+      .sub-navbar__list {
+        width: 100vw;
+      }
+
+      .sub-navbar__item {
+        width: 150px;
+      }
+
+    }
