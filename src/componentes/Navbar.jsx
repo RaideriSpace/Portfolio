@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 const Navbar = ({ isPortfolioPage, handleHomeClick, handleNavigationClick, onAboutClick, onSkillsClick, handlePortfolioClick, onContactClick }) => (
-  <nav>
+  <nav className='navbar'>
     <Link to="/portfolio" className='button__common' onClick={handlePortfolioClick}> 
       Portfólio 
     </Link> 

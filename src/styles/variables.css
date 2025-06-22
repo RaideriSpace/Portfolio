@@ -98,6 +98,7 @@
    */
 
   --z-index-base: 1;
+  --z-index-arrow: 4;
   --z-index-menu-overlay: 18;
   --z-index-menu-mobile-icon: 20;
   --z-index-header: 100;
