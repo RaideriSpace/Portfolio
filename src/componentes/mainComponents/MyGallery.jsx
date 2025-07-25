@@ -1,32 +1,34 @@
-import React, { useCallback } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useCallback } from "react";
+import { useNavigate } from "react-router-dom";
 
-import Carousel from './Carousel'; // Importa o componente Carousel.
+import Carousel from "./Carousel"; // Importa o componente Carousel.
 
 const MyGallery = () => {
-
   const navigate = useNavigate();
 
   const handlePortfolioClick = useCallback(() => {
-    navigate('/portfolio'); // Navega para a página de portfólio
+    navigate("/portfolio"); // Navega para a página de portfólio
     setTimeout(() => {
       window.scrollTo({
-        top: 0, 
+        top: 0,
         left: 0,
-        behavior: 'smooth'
+        behavior: "smooth",
       });
     }, 0);
   }, [navigate]);
 
   return (
-    <div className='gallery'>
-      
+    <div className="gallery">
       <Carousel />
-      <button className='button__pink' onClick={handlePortfolioClick} aria-label='Ir para a página de portfólio'> 
-        Portfólio 
+      <button
+        className="button__pink"
+        onClick={handlePortfolioClick}
+        aria-label="Ir para a página de portfólio"
+      >
+        Portfólio
       </button>
     </div>
-  )
-}
+  );
+};
 
-export default MyGallery
+export default MyGallery;

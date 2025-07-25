@@ -539,7 +539,6 @@ import effettivoTb from '../assets/img/UX/Effettivo.svg'
 import gestaoTb from '../assets/img/UX/Gestao.svg'
 import railinkTb from '../assets/img/UX/RaiLink.svg'
 import itauTb from '../assets/img/UX/Itau.svg'
-import { m } from 'framer-motion'
 
 export const uxData = [
   {
@@ -651,9 +650,9 @@ export const categories = [
     boxColor: "var(--secondary-ex-light)", 
   },
   {
-    name: "web-design",
-    label: "Web Design",
-    bannerText: "Web Design",
+    name: "web-dev",
+    label: "Web Dev",
+    bannerText: "Web Dev",
     bannerImage: bannerDev,
     mainColor: "var(--tertiary-light)",
     mainShadow: "var(--tertiary-dark)",

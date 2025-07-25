@@ -335,6 +335,7 @@
       .portfolio-grid__item {
         display: flex;
         justify-content: center;
+        min-width: 100vw;
       }
 
       .portfolio__project {
