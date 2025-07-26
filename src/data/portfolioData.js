@@ -141,6 +141,9 @@ import registerappTb from '../assets/img/Dev/RegisterApp.svg'
 import spotifywebTb from '../assets/img/Dev/Spotify.svg'
 import techtastyTb from '../assets/img/Dev/TechTasty.svg'
 import trsTb from '../assets/img/Dev/TRSquad.svg'
+import ecommerceTb from '../assets/img/Dev/e-commerce.svg'
+import contabancariaTb from '../assets/img/Dev/contabancaria.svg'
+import pythonTb from '../assets/img/Dev/python.svg'
 
 export const devData = [
   {
@@ -148,13 +151,9 @@ export const devData = [
     title: "WebGames",
     img: gamesTb,
     status: "Ajustando",
-    tags: [
-      "JavaScript", 
-      "HTML",
-      "CSS",
-      "Jogos"
-    ],
-    description: "Focado em JavaScript para criar jogos interativos no navegador, explorei desde a lógica de tomada de decisão com alert/prompt até a manipulação do DOM para quizzes visuais.",
+    tags: ["JavaScript", "HTML", "CSS", "Jogos"],
+    description:
+      "Focado em JavaScript para criar jogos interativos no navegador, explorei desde a lógica de tomada de decisão com alert/prompt até a manipulação do DOM para quizzes visuais.",
     link: "https://github.com/RaideriSpace/Alura_ImersaoDev",
   },
   {
@@ -163,14 +162,15 @@ export const devData = [
     img: techtastyTb,
     status: "Ajustando",
     tags: [
-      "Flutter", 
+      "Flutter",
       "JavaScript",
       "CSS",
       "Mobile",
       "React Native",
       "Firebase Studio",
     ],
-    description: "Realizado em uma imersão Mobile da Alura, o propósito foi criar um aplicativo mobile de fastfood, com a tela de login, a tela de restaurantes e cardápio.",
+    description:
+      "Realizado em uma imersão Mobile da Alura, o propósito foi criar um aplicativo mobile de fastfood, com a tela de login, a tela de restaurantes e cardápio.",
     link: "https://studio.firebase.google.com/fluttertechtaste2-51801203",
   },
   {
@@ -178,16 +178,9 @@ export const devData = [
     title: "Spotify Web",
     img: spotifywebTb,
     status: "Finalizado",
-    tags: [
-      "JavaScript", 
-      "React",
-      "Vite",
-      "MongoDb",
-      "CSS",
-      "Git",
-      "Express",
-    ],
-    description: "Recriei a página inicial do Spotify, com músicas selecionáveis, play e pause, atualização da barra de progresso e próxima música.",
+    tags: ["JavaScript", "React", "Vite", "MongoDb", "CSS", "Git", "Express"],
+    description:
+      "Recriei a página inicial do Spotify, com músicas selecionáveis, play e pause, atualização da barra de progresso e próxima música.",
     link: "https://github.com/RaideriSpace/Deploy_Spotify_Site",
   },
   {
@@ -196,16 +189,17 @@ export const devData = [
     img: portfolioTb,
     status: "Em andamento",
     tags: [
-      "JavaScript", 
+      "JavaScript",
       "React",
       "Vite",
       "CSS",
       "HTML",
       "Git",
       "Framer Motion",
-      "ESLint"
+      "ESLint",
     ],
-    description: "Uma vitrine interativa e responsiva de minhas habilidades em Desenvolvimento Front-end e UX/UI Design, acessível online. Apresenta design otimizado (criado no Figma), animações fluidas com Framer Motion, modularidade e foco em acessibilidade e performance.",
+    description:
+      "Uma vitrine interativa e responsiva de minhas habilidades em Desenvolvimento Front-end e UX/UI Design, acessível online. Apresenta design otimizado (criado no Figma), animações fluidas com Framer Motion, modularidade e foco em acessibilidade e performance.",
     link: "https://github.com/RaideriSpace/Portfolio",
   },
   {
@@ -222,11 +216,49 @@ export const devData = [
       "PHP",
       "EcmaScript",
     ],
-    description: "Projeto pessoal de re-design focado em otimizar a experiência do usuário para uma empresa de TI. Desenvolvido com HTML5, CSS3, JavaScript (incluindo jQuery e Bootstrap), e PHP para formulários, ele oferece suporte técnico, consultoria e segurança cibernética com um design responsivo e interativo.",
+    description:
+      "Projeto pessoal de re-design focado em otimizar a experiência do usuário para uma empresa de TI. Desenvolvido com HTML5, CSS3, JavaScript (incluindo jQuery e Bootstrap), e PHP para formulários, ele oferece suporte técnico, consultoria e segurança cibernética com um design responsivo e interativo.",
     link: "https://github.com/RaideriSpace/TRSquad_LP",
   },
   {
     id: "dev-006",
+    title: "Python Projects Hub",
+    img: pythonTb,
+    status: "Finalizado",
+    tags: [
+      "Python",
+      "IA",
+      "DataScience",
+      "Jupyter",
+      "Machine Learning",
+      "Chatbot",
+    ],
+    description:
+      "Este projeto é um hub de aplicações Python com foco em automação, inteligência artificial e interfaces. Inclui automação de tarefas com PyAutoGUI, IA com Streamlit e Gemini, e um modelo preditivo de score de crédito.",
+    link: "https://github.com/RaideriSpace/Python_Projects_Hub",
+  },
+  {
+    id: "dev-007",
+    title: "Conta Bancaria - Terminal",
+    img: contabancariaTb,
+    status: "Finalizado",
+    tags: ["TypeScript", "JavaScript", "Lógica de Programação", "CRUD"],
+    description:
+      "Projeto de Lógica de programação realizado durante o bootcamp da Generation Brasil, utilizando Typescript para criar o gerenciamento de um banco que roda pelo terminal, com cadastro de clientes, exclusão, pesquisa, listagem e atualização de dados.",
+    link: "https://github.com/RaideriSpace/conta_bancaria",
+  },
+  {
+    id: "dev-008",
+    title: "E-Commerce - Terminal",
+    img: ecommerceTb,
+    status: "Finalizado",
+    tags: ["TypeScript", "JavaScript", "Lógica de Programação", "CRUD"],
+    description:
+      "Projeto de Lógica de programação realizado durante o bootcamp da Generation Brasil, utilizando TypeScript para criar um e-commerce que roda pelo terminal, com cadastro de produtos, carrinho, atualização, listagem e exclusão de itens.",
+    link: "https://github.com/RaideriSpace/projeto_final_bloco_01",
+  },
+  {
+    id: "dev-009",
     title: "Register App",
     img: registerappTb,
     status: "Em andamento",
@@ -237,11 +269,13 @@ export const devData = [
       "MongoDB",
       "Autenticação",
       "Full-Stack",
+      "MUI",
     ],
-    description: "Este projeto é uma aplicação full-stack de autenticação de usuários. Ele implementa registro, login seguro com JWT, proteção de rotas e persistência de sessão, sendo uma solução completa para gestão de usuários.",
+    description:
+      "Aplicação full-stack de autenticação de usuários. Ele implementa registro, login seguro com JWT, proteção de rotas e persistência de sessão, sendo uma solução completa para gestão de usuários.",
     link: "https://github.com/RaideriSpace/register-app",
   },
-]
+];
 
 // --- Database dos projetos Design ---
 
@@ -405,12 +439,29 @@ export const designData = [
 
 // --- Database dos projetos Paper ---
 
-import arthasTb from '../assets/img/Paper/ArthasTb.svg'
-import thrallTb from '../assets/img/Paper/ThrallTb.svg'
-import sylvanasTb from '../assets/img/Paper/SylvanasTb.svg'
-import opgraveTb from '../assets/img/Paper/OPGraveTb.svg'
-import usoppTb from '../assets/img/Paper/UsoppTb.svg'
-import totoroTb from '../assets/img/Paper/TotoroTb.svg'
+import arthasTb from '../assets/img/Paper/Tb/ArthasTb.svg'
+import thrallTb from "../assets/img/Paper/Tb/ThrallTb.svg";
+import sylvanasTb from "../assets/img/Paper/Tb/SylvanasTb.svg";
+import opgraveTb from "../assets/img/Paper/Tb/OPGraveTb.svg";
+import usoppTb from "../assets/img/Paper/Tb/UsoppTb.svg";
+import totoroTb from "../assets/img/Paper/Tb/TotoroTb.svg";
+import angelbeatsTb from "../assets/img/Paper/Tb/AngelBeatsTb.svg";
+import dragonTb from '../assets/img/Paper/Tb/DragonTb.svg'
+import gnarTb from "../assets/img/Paper/Tb/GnarTb.svg";
+import hearthTb from "../assets/img/Paper/Tb/HearthTb.svg";
+import jinxTb from "../assets/img/Paper/Tb/JinxTb.svg";
+import kaminaTb from "../assets/img/Paper/Tb/KaminaTb.svg";
+import luluTb from "../assets/img/Paper/Tb/LuluTb.svg";
+import mikuTb from "../assets/img/Paper/Tb/MikuTb.svg";
+import mushuTb from "../assets/img/Paper/Tb/MushuTb.svg";
+import ninaTb from "../assets/img/Paper/Tb/NinaTb.svg";
+import petterTb from "../assets/img/Paper/Tb/PetterTb.svg";
+import philosophTb from "../assets/img/Paper/Tb/PhilosophTb.svg";
+import porinxTb from "../assets/img/Paper/Tb/PorinxTb.svg";
+import porivenTb from "../assets/img/Paper/Tb/PorivenTb.svg";
+import truthTb from "../assets/img/Paper/Tb/TruthTb.svg";
+import wolfsTb from "../assets/img/Paper/Tb/WolfsTb.svg";
+import yournameTb from "../assets/img/Paper/Tb/YourNameTb.svg";
 
 export const paperData = [
   {
@@ -420,30 +471,115 @@ export const paperData = [
   },
   {
     id: "paper-002",
-    title: "Arthas, The Lich King - WoW",
+    title: "Thrall - WoW",
     img: thrallTb,
   },
   {
     id: "paper-003",
-    title: "Arthas, The Lich King - WoW",
+    title: "Sylvanas Wildrunner - WoW",
     img: sylvanasTb,
   },
   {
     id: "paper-004",
-    title: "Arthas, The Lich King - WoW",
+    title: "Ace & Newgate Grave - One Piece",
     img: opgraveTb,
   },
   {
     id: "paper-005",
-    title: "Arthas, The Lich King - WoW",
+    title: "Klabautermann - One Piece",
     img: usoppTb,
   },
   {
     id: "paper-006",
-    title: "Arthas, The Lich King - WoW",
+    title: "Tonari no Totoro",
     img: totoroTb,
   },
-]
+  {
+    id: "paper-007",
+    title: "The Truth - FMA",
+    img: truthTb,
+  },
+  {
+    id: "paper-008",
+    title: "Nina - FMA",
+    img: ninaTb,
+  },
+  {
+    id: "paper-009",
+    title: "Pedra Filosofal - FMA",
+    img: philosophTb,
+  },
+  {
+    id: "paper-010",
+    title: "Peter Pan",
+    img: petterTb,
+  },
+  {
+    id: "paper-011",
+    title: "Kimi no na wa",
+    img: yournameTb,
+  },
+  {
+    id: "paper-012",
+    title: "Draw With Me",
+    img: hearthTb,
+  },
+  {
+    id: "paper-013",
+    title: "Hatsune Miku - Romeo & Cinderella",
+    img: mikuTb,
+  },
+  {
+    id: "paper-014",
+    title: "Mushu - Mulan",
+    img: mushuTb,
+  },
+  {
+    id: "paper-015",
+    title: "Chinese Dragon",
+    img: dragonTb,
+  },
+  {
+    id: "paper-016",
+    title: "Jinx - LoL",
+    img: jinxTb,
+  },
+  {
+    id: "paper-017",
+    title: "Lulu - LoL",
+    img: luluTb,
+  },
+  {
+    id: "paper-018",
+    title: "Gnar - LoL",
+    img: gnarTb,
+  },
+  {
+    id: "paper-019",
+    title: "Poro Jinx - LoL",
+    img: porinxTb,
+  },
+  {
+    id: "paper-020",
+    title: "Poro Riven - LoL",
+    img: porivenTb,
+  },
+  {
+    id: "paper-021",
+    title: "Wolfs",
+    img: wolfsTb,
+  },
+  {
+    id: "paper-022",
+    title: "My Soul, Your Beats! - Angel Beats",
+    img: angelbeatsTb,
+  },
+  {
+    id: "paper-023",
+    title: "Kamina e Simon - TTGL",
+    img: kaminaTb,
+  },
+];
 
 // --- Database dos projetos 3D ---
 
@@ -635,7 +771,7 @@ export const categories = [
     mainColor: "var(--primary)",
     mainShadow: "var(--primary-ex-dark)",
     textColor: "var(--primary-ex-dark)",
-    projectDataKey: 'allProjectsData',
+    projectDataKey: allProjectsData,
     boxColor: "var(--primary-ex-light)",
   },
   {
@@ -646,7 +782,7 @@ export const categories = [
     mainColor: "var(--secondary)",
     mainShadow: "var(--secondary-ex-dark)",
     textColor: "var(--secondary-ex-dark)",
-    projectDataKey: "uiData",
+    projectDataKey: uiData,
     boxColor: "var(--secondary-ex-light)", 
   },
   {
@@ -657,7 +793,7 @@ export const categories = [
     mainColor: "var(--tertiary-light)",
     mainShadow: "var(--tertiary-dark)",
     textColor: "var(--tertiary-ex-dark)",
-    projectDataKey: "devData",
+    projectDataKey: devData,
     boxColor: "var(--tertiary-ex-light)",
   },
   {
@@ -668,7 +804,7 @@ export const categories = [
     mainColor: "var(--secondary)",
     mainShadow: "var(--secondary-ex-dark)",
     textColor: "var(--secondary-ex-dark)",
-    projectDataKey: "designData",
+    projectDataKey: designData,
     boxColor: "var(--secondary-ex-light)", 
   },
   {
@@ -679,7 +815,7 @@ export const categories = [
     mainColor: "var(--tertiary-light)",
     mainShadow: "var(--tertiary-ex-dark)",
     textColor: "var(--tertiary-ex-dark)",
-    projectDataKey: "paperData",
+    projectDataKey: paperData,
     boxColor: "var(--tertiary-ex-light)",
   },
   {
@@ -690,7 +826,7 @@ export const categories = [
     mainColor: "var(--secondary)",
     mainShadow: "var(--secondary-ex-dark)",
     textColor: "var(--secondary-ex-dark)",
-    projectDataKey: "threedData",
+    projectDataKey: threedData,
     boxColor: "var(--secondary-ex-light)", 
   },
   {
@@ -701,7 +837,7 @@ export const categories = [
     mainColor: "var(--tertiary-light)",
     mainShadow: "var(--tertiary-ex-dark)",
     textColor: "var(--tertiary-ex-dark)",
-    projectDataKey: "uxData",
+    projectDataKey: uxData,
     boxColor: "var(--tertiary-ex-light)",
   },
 ];

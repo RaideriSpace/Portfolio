@@ -116,54 +116,64 @@ Certifique-se de ter o [Node.js](https://nodejs.org/en/) (versão 18 ou superior
     
     A estrutura do projeto segue uma organização modular para facilitar o desenvolvimento e a manutenção:
 
-    .
-    ├── public/                     # Arquivos estáticos (favicon, etc.)
-    ├── src/
-    │   ├── assets/                 # Imagens, fontes, outros recursos
-    │   │   ├── fonts/
-    │   │   ├── img/
-    │   │   └── ...
-    │   ├── componentes/            # Componentes reutilizáveis da UI
-    │   │   ├── Header.jsx
-    │   │   ├── Home.jsx            # Renomeado de Main.jsx
-    │   │   ├── Footer.jsx
-    │   │   ├── mainComponents/     # Componentes específicos da página Home
-    │   │   │   ├── About.jsx
-    │   │   │   ├── Skills.jsx
-    │   │   │   ├── MyGallery.jsx
-    │   │   │   ├── Carousel.jsx
-    │   │   │   └── ...
-    │   │   ├── portfolioComponents/# Componentes específicos da página de portfólio
-    │   │   │   ├── SubNavbar.jsx
-    │   │   │   ├── PortfolioBanner.jsx
-    │   │   │   ├── PortfolioOpen.jsx
-    │   │   │   └── ...
-    │   │   └── modalComponents/    # Componentes de modal (ex: CvModal, Contato)
-    │   │       ├── CvModal.jsx
-    │   │       ├── ContatoModal.jsx
-    │   │       └── ...
-    │   ├── styles/                 # Folhas de estilos e variáveis CSS
-    │   │   ├── index.css
-    │   │   ├── portfolio.css
-    │   │   └── variables.css
-    │   ├── data/                   # Dados estáticos ou mocks de dados
-    │   │   ├── cardsData.js
-    │   │   └── cvData.js
-    │   ├── hooks/                  # Custom Hooks React para lógica reutilizável
-    │   │   ├── useIsMobile.js
-    │   │   ├── useBodyScrollLock.js
-    │   │   ├── useScrollToTop.js
-    │   │   ├── useModalCloseOnEscape.js # Novo hook para fechar modal com Escape
-    │   │   └── ...
-    │   ├── App.jsx                 # Componente raiz da aplicação, orquestra rotas e estado global
-    │   ├── main.jsx                # Ponto de entrada da aplicação (renderização do React)
-    │   └── ...
-    ├── .eslintrc.cjs               # Configuração do ESLint
-    ├── .gitignore                  # Arquivos e pastas a serem ignorados pelo Git
-    ├── index.html                  # Arquivo HTML principal
-    ├── package.json                # Metadados do projeto e dependências
-    ├── vite.config.js              # Configuração do Vite
-    └── README.md                   # Este arquivo!
+.
+├── src/
+│   ├── assets/                 # Imagens, fontes, outros recursos
+│   │   ├── fonts/
+│   │   └── img/
+│   │       ├── UI/
+│   │       ├── Dev/
+│   │       ├── Design/
+│   │       ├── Paper/
+│   │       │   └── Tb/         # Thumbnails para Paper (como ArthasTb.svg)
+│   │       ├── 3D/
+│   │       └── UX/
+│   │
+│   ├── componentes/            # Componentes reutilizáveis
+│   │   ├── common/             # Componentes genéricos (ex: ModalOverlay)
+│   │   ├── layout/             # Componentes de layout (ex: SubNavbar, Header, Footer)
+│   │   ├── modals/             # Componentes de modal (ContatoModal, CvModal)
+│   │   ├── portfolio/          # Componentes específicos do portfólio (grids, itens, banner)
+│   │   │   ├── PortfolioItem.jsx  # Item genérico para grids
+│   │   │   ├── PortfolioGrid.jsx  # Grid genérico (anteriormente GenericPortfolioGrid)
+│   │   │   ├── PaperItem.jsx      # Item específico para Paper
+│   │   │   ├── PaperGrid.jsx      # Grid específico para Paper
+│   │   │   └── PortfolioBanner.jsx
+│   │   └── sections/           # Seções de conteúdo maiores (ex: About, Skills, MyGallery, Carousel)
+│   │       ├── About.jsx
+│   │       ├── Skills.jsx
+│   │       ├── MyGallery.jsx
+│   │       └── Carousel.jsx
+│   │
+│   ├── data/                   # Dados da aplicação (listas de projetos, categorias, etc.)
+│   │   └── portfolioData.js    # Contém 'uiData', 'devData', 'paperData', 'categories', etc.
+│   │
+│   ├── hooks/                  # Custom Hooks React para lógica reutilizável
+│   │   ├── useIsMobile.js
+│   │   ├── useBodyScrollLock.js
+│   │   ├── useScrollToTop.js
+│   │   └── useModalCloseOnEscape.js
+│   │
+│   ├── pages/                  # Componentes de página (rotas principais)
+│   │   ├── Home.jsx
+│   │   ├── About.jsx           # Se a página About.jsx está em `pages/`
+│   │   ├── Contact.jsx         # Se a página Contact.jsx está em `pages/`
+│   │   └── Portfolio.jsx       # Página principal do Portfólio (gerencia grids e visão geral)
+│   │
+│   ├── styles/                 # Folhas de estilos e variáveis CSS
+│   │   ├── index.css
+│   │   ├── portfolio.css
+│   │   └── variables.css
+│   │
+│   ├── App.jsx                 # Componente raiz da aplicação, orquestra rotas e estado global
+│   └── main.jsx                # Ponto de entrada da aplicação (renderização do React)
+│  
+├── .eslintrc.cjs               # Configuração do ESLint
+├── .gitignore                  # Arquivos e pastas a serem ignorados pelo Git
+├── index.html                  # Arquivo HTML principal
+├── package.json                # Metadados do projeto e dependências
+├── vite.config.js              # Configuração do Vite
+└── README.md                   # Este arquivo!
 
 ## 🤝 Contribuição
 

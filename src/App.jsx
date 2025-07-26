@@ -3,10 +3,10 @@ import { AnimatePresence } from "framer-motion";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 // Importa os componentes filhos estruturais
-import ContatoModal from "./componentes/modalComponents/ContatoModal";
-import CvModal from "./componentes/modalComponents/CvModal";
-import Footer from "./componentes/Footer";
-import Header from "./componentes/Header";
+import ContatoModal from "./componentes/modals/ContatoModal";
+import CvModal from "./componentes/modals/CvModal";
+import Footer from "./componentes/layout/Footer";
+import Header from "./componentes/layout/Header";
 import Home from "./pages/Home";
 import Portfolio from "./pages/Portfolio";
 

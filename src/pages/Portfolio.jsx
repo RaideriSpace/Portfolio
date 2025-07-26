@@ -5,33 +5,16 @@ import { AnimatePresence, motion } from "framer-motion";
 
 import "../styles/portfolio.css";
 
-import SubNavbar from "../componentes/portfolioComponents/SubNavbar";
-import PortfolioBanner from "../componentes/portfolioComponents/PortfolioBanner";
+import SubNavbar from "../componentes/layout/SubNavbar";
+import PortfolioBanner from "../componentes/portfolio/PortfolioBanner";
+import PortfolioGrid from "../componentes/portfolio/PortfolioGrid";
+import PaperGrid from "../componentes/portfolio/PaperGrid";
 
-import UiGrid from "../componentes/portfolioComponents/UiGrid";
-import DevGrid from "../componentes/portfolioComponents/DevGrid";
-import DesignGrid from "../componentes/portfolioComponents/DesignGrid";
-import PaperGrid from "../componentes/portfolioComponents/PaperGrid";
-import ThreedGrid from "../componentes/portfolioComponents/ThreedGrid";
-import UxGrid from "../componentes/portfolioComponents/UxGrid";
-import AllProjectsGrid from "../componentes/portfolioComponents/AllProjectsGrid";
+import { categories } from "../data/portfolioData";
 
-import {
-  categories,
-  allProjectsData
-} from "../data/portfolioData";
-
-const gridComponentsMap = {
-  "ui-design": UiGrid,
-  "web-dev": DevGrid,
-  "digital-art": DesignGrid,
-  "3d-modeling": ThreedGrid,
-  "ux-design": UxGrid,
+const specificGridsMap = {
+  paper: PaperGrid,
 };
-
-// const gridPaperMap = {
-//   paper: PaperGrid,
-// };
 
 const Portfolio = () => {
   const { categoryName } = useParams();
@@ -53,11 +36,14 @@ const Portfolio = () => {
     return categoryName;
   }, [categoryName, location.pathname, navigate]);
 
-  const currentCategoryInfo = useMemo(() => {
-    return categories.find((cat) => cat.name === activeCategory);
-  }, [activeCategory]);
+  const GridToRender = specificGridsMap[activeCategory] || PortfolioGrid;
 
-  const SelectedGridComponent = gridComponentsMap[activeCategory];
+  const currentCategoryInfo = useMemo(() => {
+    return (
+      categories.find((cat) => cat.name === activeCategory) ||
+      categories.find((cat) => cat.name === "all")
+    );
+  }, [activeCategory]);
 
   const isGeneralPortfolioPage = activeCategory === "all";
 
@@ -98,24 +84,27 @@ const Portfolio = () => {
         )}
       </AnimatePresence>
 
-      {SelectedGridComponent && (
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={activeCategory + "-grid"}
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: 10 }}
-            transititon={{ duration: 0.3 }}
-            className="portfolio-grid-wrapper"
-          >
-            <SelectedGridComponent
-              projects={isGeneralPortfolioPage ? allProjectsData : undefined}
-              tagColor={currentCategoryInfo.textColor}
-              boxColor={currentCategoryInfo.boxColor}
-            />
-          </motion.div>
-        </AnimatePresence>
-      )}
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={activeCategory + "-grid"}
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: 10 }}
+          transition={{ duration: 0.3 }}
+          className="portfolio-grid-wrapper"
+        >
+          <GridToRender
+            projectsData={
+              activeCategory !== "paper"
+                ? currentCategoryInfo.projectDataKey
+                : undefined
+            }
+            tagColor={currentCategoryInfo.textColor}
+            boxColor={currentCategoryInfo.boxColor}
+            noProjectsMessage={`Nenhum projeto encontrado para ${currentCategoryInfo.label}.`}
+          />
+        </motion.div>
+      </AnimatePresence>
     </main>
   );
 };

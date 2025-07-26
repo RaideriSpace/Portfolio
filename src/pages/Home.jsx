@@ -1,9 +1,9 @@
 import React from "react";
 
 // Importa os componentes filhos da pasta mainComponents.
-import About from "../componentes/mainComponents/About.jsx";
-import MyGallery from "../componentes/mainComponents/MyGallery.jsx";
-import Skills from "../componentes/mainComponents/Skills.jsx";
+import About from "../componentes/sections/About.jsx";
+import MyGallery from "../componentes/sections/MyGallery.jsx";
+import Skills from "../componentes/sections/Skills.jsx";
 
 const Home = ({ aboutRef, skillsRef, onCvClick }) => {
   return (
