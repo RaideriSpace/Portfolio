@@ -139,7 +139,7 @@ import gamesTb from '../assets/img/Dev/Games.svg'
 import portfolioTb from '../assets/img/Dev/Portfolio.svg'
 import registerappTb from '../assets/img/Dev/RegisterApp.svg'
 import spotifywebTb from '../assets/img/Dev/Spotify.svg'
-import techtastyTb from '../assets/img/Dev/TechTasty.svg'
+// import techtastyTb from '../assets/img/Dev/TechTasty.svg'
 import trsTb from '../assets/img/Dev/TRSquad.svg'
 import ecommerceTb from "../assets/img/Dev/Ecommerce.svg";
 import contabancariaTb from '../assets/img/Dev/ContaBancaria.svg'
@@ -156,23 +156,23 @@ export const devData = [
       "Focado em JavaScript para criar jogos interativos no navegador, explorei desde a lógica de tomada de decisão com alert/prompt até a manipulação do DOM para quizzes visuais.",
     link: "https://github.com/RaideriSpace/Alura_ImersaoDev",
   },
-  {
-    id: "dev-002",
-    title: "Tech Tasty",
-    img: techtastyTb,
-    status: "Ajustando",
-    tags: [
-      "Flutter",
-      "JavaScript",
-      "CSS",
-      "Mobile",
-      "React Native",
-      "Firebase Studio",
-    ],
-    description:
-      "Realizado em uma imersão Mobile da Alura, o propósito foi criar um aplicativo mobile de fastfood, com a tela de login, a tela de restaurantes e cardápio.",
-    link: "https://studio.firebase.google.com/fluttertechtaste2-51801203",
-  },
+  // {
+  //   id: "dev-002",
+  //   title: "Tech Tasty",
+  //   img: techtastyTb,
+  //   status: "Ajustando",
+  //   tags: [
+  //     "Flutter",
+  //     "JavaScript",
+  //     "CSS",
+  //     "Mobile",
+  //     "React Native",
+  //     "Firebase Studio",
+  //   ],
+  //   description:
+  //     "Realizado em uma imersão Mobile da Alura, o propósito foi criar um aplicativo mobile de fastfood, com a tela de login, a tela de restaurantes e cardápio.",
+  //   link: "https://studio.firebase.google.com/fluttertechtaste2-51801203",
+  // },
   {
     id: "dev-003",
     title: "Spotify Web",
@@ -831,8 +831,8 @@ export const categories = [
   },
   {
     name: "ux-design",
-    label: "Ux Design",
-    bannerText: "Ux Design",
+    label: "UX Design",
+    bannerText: "UX Design",
     bannerImage: bannerUx,
     mainColor: "var(--tertiary-light)",
     mainShadow: "var(--tertiary-ex-dark)",

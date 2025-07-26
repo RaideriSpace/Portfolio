@@ -87,28 +87,92 @@
 
 /*
  * ========================================
- * 4. Cabeçalho da página geral
+ * 4. Página geral de Portfólio
  * ========================================
 */
 
-.portfolio-general-header {
-  justify-self: center;
-  width: 100vw;
-  text-align: center;
-  padding: var(--spacing-xxxl) var(--spacing-m);
-  background-color: var(--dark-dark);
+
+.portfolio-general-overview-container {
+  padding-top: 8px;
 }
 
-.portfolio-general-header h1 {
-  font-size: 3rem;
-  margin-bottom: var(--spacing-s);
-  font-family: "spaceregular";
-  font-weight: 200;
+.portfolio-banner-collage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  gap: 8px;
 }
 
-.portfolio-general-header p {
-  font-size: 1.2rem;
-  opacity: 0.8;
+.collage-item {
+  width: 100%;
+  height: 150px;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: height 240ms ease, font-size 240ms ease, padding 240ms ease;
+  /* transition: clip-path 0.3s ease, box-shadow 0.3s ease; */
+  cursor: pointer;
+}
+
+.collage-item p {
+  display: flex;
+  padding: 50px;
+  font-size: 3.25em;
+  font-family: spaceregular;
+}
+
+.collage-item:hover {
+  height: 250px;
+  font-size: 1.7em;
+  padding: 50px 0 0 25%;
+}
+
+.ui-design-banner {
+  color: var(--secondary);
+  text-shadow: 2px 2px 2px var(--secondary-ex-dark);
+  background-image: url("../assets/img/UI/Banner.svg");
+  width: 90%;
+  /* clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 30%); */
+}
+
+.web-dev-banner {
+  color: var(--tertiary-light);
+  text-shadow: 2px 2px 2px var(--tertiary-ex-dark);
+  background-image: url("../assets/img/Dev/Banner.svg");
+  width: 90%;
+  /* clip-path: polygon(0% 0%, 100% 70%, 100% 100%, 0% 100%); */
+}
+
+.digital-art-banner {
+  color: var(--secondary);
+  text-shadow: 2px 2px 2px var(--secondary-ex-dark);
+  background-image: url("../assets/img/Design/Banner.svg");
+  width: 90%;
+  /* clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 30%); */
+}
+
+.paper-banner {
+  color: var(--tertiary-light);
+  text-shadow: 2px 2px 2px var(--tertiary-ex-dark);
+  background-image: url("../assets/img/Paper/Banner.svg");
+  width: 90%;
+  /* clip-path: polygon(0% 0%, 100% 70%, 100% 100%, 0% 100%); */
+}
+
+.threed-modeling-banner {
+  color: var(--secondary);
+  text-shadow: 2px 2px 2px var(--secondary-ex-dark);
+  background-image: url("../assets/img/3D/Banner.svg");
+  width: 90%;
+  /* clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 30%); */
+}
+
+.ux-design-banner {
+  color: var(--tertiary-light);
+  text-shadow: 2px 2px 2px var(--tertiary-ex-dark);
+  background-image: url("../assets/img/UX/Banner.svg");
+  width: 90%;
+  /* clip-path: polygon(0% 0%, 100% 70%, 100% 100%, 0% 100%); */
 }
 
 /*
@@ -378,7 +442,7 @@
     padding: var(--spacing-s);
   }
 
-    .portfolio-grid-paper__item {
+  .portfolio-grid-paper__item {
     width: 45%;
   }
 }
@@ -393,7 +457,7 @@
     width: 150px;
   }
 
-      .portfolio-grid-paper__item {
+  .portfolio-grid-paper__item {
     width: 100%;
   }
 }
