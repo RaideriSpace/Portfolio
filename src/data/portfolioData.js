@@ -141,9 +141,9 @@ import registerappTb from '../assets/img/Dev/RegisterApp.svg'
 import spotifywebTb from '../assets/img/Dev/Spotify.svg'
 import techtastyTb from '../assets/img/Dev/TechTasty.svg'
 import trsTb from '../assets/img/Dev/TRSquad.svg'
-import ecommerceTb from '../assets/img/Dev/e-commerce.svg'
-import contabancariaTb from '../assets/img/Dev/contabancaria.svg'
-import pythonTb from '../assets/img/Dev/python.svg'
+import ecommerceTb from '../assets/img/Dev/E-commerce.svg'
+import contabancariaTb from '../assets/img/Dev/Contabancaria.svg'
+import pythonTb from '../assets/img/Dev/Python.svg'
 
 export const devData = [
   {
