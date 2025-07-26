@@ -141,7 +141,7 @@ import registerappTb from '../assets/img/Dev/RegisterApp.svg'
 import spotifywebTb from '../assets/img/Dev/Spotify.svg'
 import techtastyTb from '../assets/img/Dev/TechTasty.svg'
 import trsTb from '../assets/img/Dev/TRSquad.svg'
-import ecommerceTb from '../assets/img/Dev/E-commerce.svg'
+import ecommerceTb from "../assets/img/Dev/Ecommerce.svg";
 import contabancariaTb from '../assets/img/Dev/Contabancaria.svg'
 import pythonTb from '../assets/img/Dev/Python.svg'
 
