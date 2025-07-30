@@ -22,20 +22,18 @@ const About = forwardRef(({ onCvClick }, ref) => {
               pessoas e processos. Mas foi quando mergulhei no universo do
               design e da tecnologia que realmente me encontrei.
               <br />
-              Hoje, sou um UX/UI Designer em formação e desenvolvedor front-end
-              em evolução constante. Me apaixonei por transformar ideias em
-              experiências — da pesquisa com usuários até o protótipo final no
-              Figma, do HTML e CSS ao comportamento de cada botão. Busco criar
-              soluções que não só funcionem, mas que façam sentido para quem
-              usa. Gosto de pensar que cada interface é uma história — e minha
-              missão é contá-la de forma simples, intuitiva e visualmente
-              impactante.
+              Hoje, sou um Desenvolvedor Full Stack em formação, com maior
+              paixão pelo Front-end e com um pouco de experiência em UX/UI
+              Design, em constante evolução. Me apaixonei por
+              transformar ideias em experiências — da pesquisa com usuários até
+              o protótipo final no Figma, do HTML e CSS ao comportamento de cada
+              botão. Busco criar soluções que não só funcionem, mas que façam
+              sentido para quem usa.
             </p>
             <button
               className="button__blue"
               onClick={handleCvButtonClick}
-              aria-label="Abrir currículo"
-            >
+              aria-label="Abrir currículo">
               Currículo
             </button>
           </div>

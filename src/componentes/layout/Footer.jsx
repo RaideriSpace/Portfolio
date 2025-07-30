@@ -20,11 +20,10 @@ const Footer = () => {
         {/* Link para o WhatsApp. */}
         <a
           className="footer__links--a"
-          href="https://wa.me/11989157255"
+          href="https://wa.me/5511989157255"
           target="_blank"
           rel="noopener noreferrer"
-          aria-label="Link para o WhatsApp de Lucas Alves Pinheiro"
-        >
+          aria-label="Link para o WhatsApp de Lucas Alves Pinheiro">
           <FontAwesomeIcon className="icons" icon={faWhatsapp} />
           <p>(11) 98915-7255</p>
         </a>
@@ -35,8 +34,7 @@ const Footer = () => {
           href="https://www.linkedin.com/in/lucasalvespinheiro/"
           target="_blank"
           rel="noopener noreferrer"
-          aria-label="Link para o perfil do LinkedIn de Lucas Alves Pinheiro"
-        >
+          aria-label="Link para o perfil do LinkedIn de Lucas Alves Pinheiro">
           <FontAwesomeIcon className="icons" icon={faLinkedin} />
           <p>/lucasalvespinheiro</p>
         </a>
@@ -45,8 +43,7 @@ const Footer = () => {
         <a
           className="footer__links--a"
           href="mailto:l.pinheiro.w@gmail.com"
-          aria-label="Enviar e-mail para Lucas Alves Pinheiro"
-        >
+          aria-label="Enviar e-mail para Lucas Alves Pinheiro">
           <FontAwesomeIcon className="icons" icon={faEnvelope} />
           <p>l.pinheiro.w@gmail.com</p>
         </a>
@@ -57,8 +54,7 @@ const Footer = () => {
           href="https://www.behance.net/raideri"
           target="_blank"
           rel="noopener noreferrer"
-          aria-label="Link para o perfil do Behance de Lucas Alves Pinheiro"
-        >
+          aria-label="Link para o perfil do Behance de Lucas Alves Pinheiro">
           <FontAwesomeIcon className="icons" icon={faBehance} />
           <p>/raideri</p>
         </a>
@@ -69,8 +65,7 @@ const Footer = () => {
           href="https://github.com/RaideriSpace"
           target="_blank"
           rel="noopener noreferrer"
-          aria-label="Link para o repositório do GitHub de Lucas Alves Pinheiro"
-        >
+          aria-label="Link para o repositório do GitHub de Lucas Alves Pinheiro">
           <FontAwesomeIcon className="icons" icon={faGithub} />
           <p>/RaideriSpace</p>
         </a>

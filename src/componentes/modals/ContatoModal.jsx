@@ -70,11 +70,10 @@ const ContatoModal = ({ onClose }) => {
             {/* Link para o WhatsApp. */}
             <a
               className="contact-modal__links"
-              href="https://wa.me/11989157255"
+              href="https://wa.me/5511989157255"
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="Link para o WhatsApp de Lucas Alves Pinheiro"
-            >
+              aria-label="Link para o WhatsApp de Lucas Alves Pinheiro">
               <FontAwesomeIcon
                 className="icons"
                 icon={faWhatsapp}
@@ -89,8 +88,7 @@ const ContatoModal = ({ onClose }) => {
               href="https://www.linkedin.com/in/lucasalvespinheiro/"
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="Link para o perfil do LinkedIn de Lucas Alves Pinheiro"
-            >
+              aria-label="Link para o perfil do LinkedIn de Lucas Alves Pinheiro">
               <FontAwesomeIcon
                 className="icons"
                 icon={faLinkedin}
@@ -105,8 +103,7 @@ const ContatoModal = ({ onClose }) => {
               href="https://www.behance.net/raideri"
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="Link para o perfil do Behance de Lucas Alves Pinheiro"
-            >
+              aria-label="Link para o perfil do Behance de Lucas Alves Pinheiro">
               <FontAwesomeIcon
                 className="icons"
                 icon={faBehance}
@@ -121,8 +118,7 @@ const ContatoModal = ({ onClose }) => {
               href="https://github.com/RaideriSpace"
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="Link para o perfil do GitHub de Lucas Alves Pinheiro"
-            >
+              aria-label="Link para o perfil do GitHub de Lucas Alves Pinheiro">
               <FontAwesomeIcon
                 className="icons"
                 icon={faGithub}
@@ -136,8 +132,7 @@ const ContatoModal = ({ onClose }) => {
           <a
             className="contact-modal__links"
             href="mailto:l.pinheiro.w@gmail.com"
-            aria-label="Enviar e-mail para Lucas Alves Pinheiro"
-          >
+            aria-label="Enviar e-mail para Lucas Alves Pinheiro">
             <FontAwesomeIcon
               className="icons"
               icon={faEnvelope}
