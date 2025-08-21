@@ -99,7 +99,7 @@ import ecommerceTb from "../assets/img/Dev/Ecommerce.svg";
 import contabancariaTb from "../assets/img/Dev/ContaBancaria.svg";
 import pythonTb from "../assets/img/Dev/Python.svg";
 import divinePizza from "../assets/img/Dev/DivinePizza.svg";
-import segTour from "../assets/img/Dev/segTour.svg";
+import segTour from "../assets/img/Dev/SegTour.svg";
 import blogPessoal from "../assets/img/Dev/BlogPessoal.svg";
 import blinTech from "../assets/img/Dev/BlinTech.svg";
 import amazonScraper from "../assets/img/Dev/AmazonScraper.svg";
