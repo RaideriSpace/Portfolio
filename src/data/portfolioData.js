@@ -244,7 +244,7 @@ export const devData = [
 
 	{
 		id: "dev-014",
-		title: "Portfólio HTML, CSS e JavaSciprt",
+		title: "Portfólio HTML, CSS e JavaScript",
 		img: portfolioVanilla,
 		status: "Finalizado",
 		tags: ["Front-End", "HTML", "CSS", "JavaScript"],
