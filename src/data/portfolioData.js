@@ -103,6 +103,7 @@ import segTour from "../assets/img/Dev/SegTour.svg";
 import blogPessoal from "../assets/img/Dev/BlogPessoal.svg";
 import blinTech from "../assets/img/Dev/BlinTech.svg";
 import amazonScraper from "../assets/img/Dev/AmazonScraper.svg";
+import portfolioVanilla from "../assets/img/Dev/PortfolioVanilla.svg";
 
 export const devData = [
 	{
@@ -243,6 +244,16 @@ export const devData = [
 
 	{
 		id: "dev-014",
+		title: "Portfólio HTML, CSS e JavaSciprt",
+		img: portfolioVanilla,
+		status: "Finalizado",
+		tags: ["Front-End", "HTML", "CSS", "JavaScript"],
+		description: "Portfólio completo realizado apenas com HTML, CSS e JavaScript sem o auxílio de bibliotecas e frameworks.",
+		link: "https://github.com/RaideriSpace/blogpessoal_react",
+	},
+
+	{
+		id: "dev-015",
 		title: "Register App",
 		img: registerappTb,
 		status: "Em andamento",

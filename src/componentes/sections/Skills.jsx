@@ -4,6 +4,7 @@ const skillsData = [
   "HTML",
   "CSS",
   "JavaScript",
+  "TypeScript",
   "ECMAScript",
   "React",
   "jQuery",
@@ -17,6 +18,7 @@ const skillsData = [
   "Python",
   "MySQL",
   "MongoDB",
+  "Jest",
   "SaaS",
   "Versionamento de código",
   "Photoshop",
@@ -42,7 +44,7 @@ const Skills = React.forwardRef((_, ref) => {
           <ul className="skills__list">
             {skillsData.map((skill, index) => (
               <li key={skill} className="skills__list-item">
-                {skill} {index < skillsData.length - 1 && <em> • </em>}
+               <span> {skill} </span> {index < skillsData.length - 1 && <em> • </em>}
               </li>
             ))}
           </ul>
