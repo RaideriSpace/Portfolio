@@ -1,5 +1,6 @@
 import React from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"; // Importa o componente FontAwesomeIcon.
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"; 
+// Importa o componente FontAwesomeIcon.
 // Importa os ícones de marcas (brands) e ícones regulares (regular) do Font Awesome.
 import {
   faWhatsapp,

@@ -93,15 +93,18 @@ import gamesTb from "../assets/img/Dev/Games.svg";
 import portfolioTb from "../assets/img/Dev/Portfolio.svg";
 import registerappTb from "../assets/img/Dev/RegisterApp.svg";
 import spotifywebTb from "../assets/img/Dev/Spotify.svg";
-// import techtastyTb from '../assets/img/Dev/TechTasty.svg'
 import trsTb from "../assets/img/Dev/TRSquad.svg";
 import ecommerceTb from "../assets/img/Dev/Ecommerce.svg";
 import contabancariaTb from "../assets/img/Dev/ContaBancaria.svg";
 import pythonTb from "../assets/img/Dev/Python.svg";
 import divinePizza from "../assets/img/Dev/DivinePizza.svg";
+import divinePizzaFront from "../assets/img/Dev/DivinePizza_Front.svg";
 import segTour from "../assets/img/Dev/SegTour.svg";
+import segTourFront from "../assets/img/Dev/SegTour_Front.svg";
 import blogPessoal from "../assets/img/Dev/BlogPessoal.svg";
+import blogPessoalFront from "../assets/img/Dev/BlogPessoal_Front.svg";
 import blinTech from "../assets/img/Dev/BlinTech.svg";
+import blinTechFront from "../assets/img/Dev/BlinTech_Front.svg";
 import amazonScraper from "../assets/img/Dev/AmazonScraper.svg";
 import portfolioVanilla from "../assets/img/Dev/PortfolioVanilla.svg";
 
@@ -194,7 +197,7 @@ export const devData = [
 	},
 	{
 		id: "dev-009",
-		title: "Divine Pizza",
+		title: "Divine Pizza - Back-End",
 		img: divinePizza,
 		status: "Finalizado",
 		tags: ["Back-End", "Node.js", "NestJS", "TypeORM", "MySQL", "Class Validator"],
@@ -203,7 +206,7 @@ export const devData = [
 	},
 	{
 		id: "dev-010",
-		title: "SegTour",
+		title: "SegTour - Back-End",
 		img: segTour,
 		status: "Finalizado",
 		tags: ["Back-End", "Node.js", "NestJS", "TypeORM", "MySQL", "Class Validator"],
@@ -223,9 +226,9 @@ export const devData = [
 	},
 	{
 		id: "dev-012",
-		title: "Blog Pessoal",
+		title: "Blog Pessoal - Back-End",
 		img: blogPessoal,
-		status: "Em andamento",
+		status: "Finalizado",
 		tags: ["Back-end", "Node.js", "NestJS", "Jest", "TypeORM", "JWT", "Swagger"],
 		description:
 			"Este é um projeto desenvolvido durante o Bloco 2 do bootcamp da Generation Brasil - Desenvolvedor Fullstack JavaScript. O sistema implementa autenticação, organização modular e versionamento de funcionalidades, seguindo boas práticas de documentação e testes.",
@@ -233,9 +236,9 @@ export const devData = [
 	},
 	{
 		id: "dev-013",
-		title: "BlinTech",
+		title: "BlinTech - Back-End",
 		img: blinTech,
-		status: "Em andamento",
+		status: "Finalizado",
 		tags: ["Back-End", "Node.js", "NestJS", "Jest", "TypeORM", "JWT", "Swagger"],
 		description:
 			"O BlinTech é uma solução digital criada para simplificar a contratação e o gerenciamento de seguros de eletrônicos. Nosso objetivo é oferecer rapidez, transparência e praticidade para consumidores e seguradoras, simplificando a proteção contra roubo, furto e danos acidentais.",
@@ -256,11 +259,54 @@ export const devData = [
 		id: "dev-015",
 		title: "Register App",
 		img: registerappTb,
-		status: "Em andamento",
+		status: "Finalizado",
 		tags: ["Full-Stack", "React", "Node", "Express", "MongoDB", "Autenticação", "MUI"],
 		description:
 			"Aplicação full-stack de autenticação de usuários. Ele implementa registro, login seguro com JWT, proteção de rotas e persistência de sessão, sendo uma solução completa para gestão de usuários.",
 		link: "https://github.com/RaideriSpace/register-app",
+	},
+
+	{
+		id: "dev-016",
+		title: "Blog Pessoal - Front-End",
+		img: blogPessoalFront,
+		status: "Finalizado",
+		tags: ["Back-end", "Node.js", "NestJS", "Jest", "TypeORM", "JWT", "Swagger"],
+		description:
+			"Este é um projeto desenvolvido durante o Bloco 2 do bootcamp da Generation Brasil - Desenvolvedor Fullstack JavaScript. O sistema implementa autenticação, organização modular e versionamento de funcionalidades, seguindo boas práticas de documentação e testes.",
+		link: "https://github.com/RaideriSpace/blogpessoal_nest",
+	},
+
+	{
+		id: "dev-017",
+		title: "Divine Pizza - Front-End",
+		img: divinePizzaFront,
+		status: "Finalizado",
+		tags: ["Front-End", "React.js", "Vite", "React Router DOM"],
+		description: "Projeto de back-end realizado com NestJS e métodos CRUD.",
+		link: "https://github.com/DevDivs-Turma-JavaScript-08/DivinePizza_Desafio_1",
+	},
+
+	{
+		id: "dev-018",
+		title: "SegTour - Front-End",
+		img: segTourFront,
+		status: "Finalizado",
+		tags: ["Front-End", "React.js", "Vite", "", "Context API", "React Router DOM", "CRUD"],
+		description:
+			"API RESTful desenvolvida com NestJS e TypeORM, voltada para o gerenciamento de clientes e seus seguros de viagem. Permite operações de CRUD completo para clientes e seguros, e realiza o cálculo automático do valor final do seguro.",
+		link: "https://github.com/DevDivs-Turma-JavaScript-08/SegTour_Desafio_2",
+	},
+
+	{
+		id: "dev-019",
+		title: "BlinTech - Front-End",
+		img: blinTechFront,
+		status: "Finalizado",
+		tags: ["Front-End", "React.js", "Vite", "", "Context API", "Framer Motion", "React Hook Form", "CRUD"],
+		description:
+			"O BlinTech é uma solução digital criada para simplificar a contratação e o gerenciamento de seguros de eletrônicos. Nosso objetivo é oferecer rapidez, transparência e praticidade para consumidores e seguradoras, simplificando a proteção contra roubo, furto e danos acidentais.",
+		link: "https://github.com/DevDivs-Turma-JavaScript-08/BlinTech_Desafio_3",
 	},
 ];
 
@@ -285,7 +331,7 @@ export const designData = [
 		status: "Finalizado",
 		tags: ["Photoshop", "Digital Color", "Ambiente"],
 		description: "Descrição do Projeto",
-		link: "#",
+		link: "/",
 	},
 	{
 		id: "art-002",
@@ -294,7 +340,7 @@ export const designData = [
 		status: "Finalizado",
 		tags: ["Photoshop", "Digital Color", "Emotes", "Redes Sociais"],
 		description: "Descrição do Projeto",
-		link: "#",
+		link: "/",
 	},
 	{
 		id: "art-003",
@@ -303,7 +349,7 @@ export const designData = [
 		status: "Finalizado",
 		tags: ["Photoshop", "Digital Color", "Medalhas", "Tier", "Comercial"],
 		description: "Descrição do Projeto",
-		link: "#",
+		link: "/",
 	},
 	{
 		id: "art-004",
@@ -312,7 +358,7 @@ export const designData = [
 		status: "Em andamento",
 		tags: ["Photoshop", "Rede Social", "Emotes", "Streamer"],
 		description: "Descrição do Projeto",
-		link: "#",
+		link: "/",
 	},
 	{
 		id: "art-005",
@@ -321,7 +367,7 @@ export const designData = [
 		status: "Em andamento",
 		tags: ["Logo", "Photoshop", "Estética", "Moodboard", "Paleta de Cores"],
 		description: "Descrição do Projeto",
-		link: "#",
+		link: "/",
 	},
 	{
 		id: "art-006",
@@ -330,7 +376,7 @@ export const designData = [
 		status: "Em andamento",
 		tags: ["Logo", "Photoshop", "Costura", "Moodboard"],
 		description: "Descrição do Projeto",
-		link: "#",
+		link: "/",
 	},
 	{
 		id: "art-007",
@@ -339,7 +385,7 @@ export const designData = [
 		status: "Em andamento",
 		tags: ["Photoshop", "Logo", "Moodboard", "Costura"],
 		description: "Descrição do Projeto",
-		link: "#",
+		link: "/",
 	},
 	{
 		id: "art-008",
@@ -348,7 +394,7 @@ export const designData = [
 		status: "Em andamento",
 		tags: ["Photoshop", "Revista", "Premier Studio", "Estilização", "Moda"],
 		description: "Descrição do Projeto",
-		link: "#",
+		link: "/",
 	},
 	{
 		id: "art-009",
@@ -357,7 +403,7 @@ export const designData = [
 		status: "Em andamento",
 		tags: ["Photoshop", "Logo", "Paleta de Cores", "Moodboard", "Artesanato"],
 		description: "Descrição do Projeto",
-		link: "#",
+		link: "/",
 	},
 	{
 		id: "art-010",
@@ -366,7 +412,7 @@ export const designData = [
 		status: "Em andamento",
 		tags: ["Photoshop", "Logo", "Paleta de Cores", "Moodboard", "Tech & Design"],
 		description: "Descrição do Projeto",
-		link: "#",
+		link: "/",
 	},
 ];
 
@@ -530,7 +576,7 @@ export const threedData = [
 		status: "Ajustando",
 		tags: ["Blender", "Textura", "Sombra", "ColorMap", "Animação", "Jogos"],
 		description: "Descrição do Projeto",
-		link: "#",
+		link: "/",
 	},
 	{
 		id: "td-002",
@@ -539,7 +585,7 @@ export const threedData = [
 		status: "Ajustando",
 		tags: ["Blender", "Textura", "Sombra", "ColorMap", "Costura"],
 		description: "Descrição do Projeto",
-		link: "#",
+		link: "/",
 	},
 	{
 		id: "td-003",
@@ -572,10 +618,9 @@ export const threedData = [
 
 // --- Database dos projetos Ux ---
 
-import effettivoTb from "../assets/img/UX/Effettivo.svg";
+import effettivo from "../assets/img/UX/Effettivo_Figma.svg";
 import gestaoTb from "../assets/img/UX/Gestao.svg";
 import railinkTb from "../assets/img/UX/RaiLink.svg";
-import itauTb from "../assets/img/UX/Itau.svg";
 
 export const uxData = [
 	{
@@ -591,31 +636,22 @@ export const uxData = [
 	{
 		id: "ux-002",
 		title: "Sempre Design - PowerBI",
-		img: effettivoTb,
-		status: "Ajustando",
-		tags: ["User Research", "Entrevista de Usuário", "Persona", "Design Thinking", "Ciclo de UX"],
-		description: "Proposta: Buscamos melhorar a adesão dos dashboards pelos usuários para aumentar os usuários de 5 para 150",
-		link: "/",
-	},
-	{
-		id: "ux-003",
-		title: "Sempre Design - Solução para Gestão",
-		img: gestaoTb,
+		img: effettivo,
 		status: "Finalizado",
-		tags: ["Formulação da hipótese", "User Research", "Validação da hipótese", "Design Thinkg", "Entrevista com usuário", "IA"],
-		description:
-			"Proposta: Buscamos ajudar a gestão do negócio de micro e pequenos empreendedores, com um produto que facilite a organização e ajude a identificar riscos e oportunidades.",
+		tags: ["User Research", "Entrevista de Usuário", "Persona", "Design Thinking", "Ciclo de UX"],
+		description: "Melhoramos a adesão dos dashboards pelos usuários e aumentamos os usuários de 5 para 75",
 		link: "/",
 	},
-	{
-		id: "ux-004",
-		title: "Itau",
-		img: itauTb,
-		status: "Em andamento",
-		tags: ["Benchmark", "User Research", "Persona", "Mapa de Empatia", "Design Thinking"],
-		description: "Descrição do Projeto",
-		link: "/",
-	},
+	// {
+	// 	id: "ux-003",
+	// 	title: "Sempre Design - Solução para Gestão",
+	// 	img: gestaoTb,
+	// 	status: "Finalizado",
+	// 	tags: ["Formulação da hipótese", "User Research", "Validação da hipótese", "Design Thinkg", "Entrevista com usuário", "IA"],
+	// 	description:
+	// 		"Proposta: Buscamos ajudar a gestão do negócio de micro e pequenos empreendedores, com um produto que facilite a organização e ajude a identificar riscos e oportunidades.",
+	// 	link: "/",
+	// },
 ];
 
 // --- Database geral de projetos ---

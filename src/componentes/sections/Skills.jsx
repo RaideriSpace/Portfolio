@@ -35,7 +35,6 @@ const skillsData = [
 const Skills = React.forwardRef((_, ref) => {
   return (
     <section ref={ref}>
-      {" "}
       {/* Contêiner principal da seção de habilidades. A ref é atribuída a esta div. */}
       <div className="skills">
         <h2 className="subtitle">Competências</h2>

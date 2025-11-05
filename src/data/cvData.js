@@ -48,83 +48,101 @@ export const educationData = [
 
 // Dados para a seção de Experiência
 export const experienceData = [
-  {
-    id: 1,
-    title: "Designer UX/UI Junior - Voluntário",
-    company: "Bike Anjo",
-    period: "03/2025 → 06/2025",
-    description: [
-      "Reuniões semanais com equipe, design de baixa-fidelidade no Figma, auxílio na elaboração do novo user flow, auxílio na definição de priorização de telas, criação fluxos de interatividade com o protótipo e comunicação com equipe de desenvolvimento.",
-    ],
-    abilities: [
-      "Redesign do site da Bike Anjo, com foco na melhoria da experiência do usuário.",
-      "Criação de user flows e mapeamento do site para otimizar a navegação e usabilidade.",
-      "Utilização de entrevistas com usuários para identificar oportunidades de melhoria.",
-    ],
-    isHighlighted: true,
-  },
+	{
+		id: 1,
+		title: "Instrutor de Desenvolvimento Front-End",
+		company: "Instituto PROA",
+		period: "09/2025 → 12/2025",
+		description: [
+			"Ministrei aulas para jovens em formação técnica, abordando introdução ao desenvolvimento web, UX/UI com Figma, HTML, CSS e JavaScript, além de versionamento com Git e GitHub. Auxiliei no desenvolvimento de projetos reais e ofereci suporte contínuo para dúvidas e dificuldades.",
+		],
+		abilities: [
+			"Didática e comunicação clara para ensino de conceitos técnicos",
+			"Domínio de ferramentas de desenvolvimento (Figma, VSCode, Git)",
+			"Paciência e empatia no suporte individualizado",
+			"Organização para criação de materiais e acompanhamento de evolução",
+			"Adaptabilidade para lecionar desde fundamentos até tópicos avançados",
+		],
+		isHighlighted: true,
+	},
 
-  {
-    id: 2,
-    title: "Designer UX/UI Junior - Voluntário",
-    company: "Sempre Design",
-    period: "03/2025 → 06/2025",
-    description: [
-      "Reunião semanal com equipe, auxilio na elaboração do contrato, auxilio na criação do padrão visual, auxilio nas entrevistas com usuários, criação de protótipos de baixa fidelidade com base nas limitações do Power BI. ",
-    ],
-    abilities: [
-      "Apoio no desenvolvimento de interfaces e dashboards de BI, com base no Ciclo de UX.",
-      "Participação em entrevistas com usuários e colaboração na criação de soluções visuais alinhadas à experiência do usuário.",
-      "Contribuição no refinamento do design responsivo e organização das telas no Figma.",
-    ],
-    isHighlighted: false,
-  },
+	{
+		id: 2,
+		title: "Designer UX/UI Junior - Voluntário",
+		company: "Bike Anjo",
+		period: "03/2025 → 06/2025",
+		description: [
+			"Reuniões semanais com equipe, design de baixa-fidelidade no Figma, auxílio na elaboração do novo user flow, auxílio na definição de priorização de telas, criação fluxos de interatividade com o protótipo e comunicação com equipe de desenvolvimento.",
+		],
+		abilities: [
+			"Redesign do site da Bike Anjo, com foco na melhoria da experiência do usuário.",
+			"Criação de user flows e mapeamento do site para otimizar a navegação e usabilidade.",
+			"Utilização de entrevistas com usuários para identificar oportunidades de melhoria.",
+		],
+		isHighlighted: true,
+	},
 
-  {
-    id: 3,
-    title: "Coordenador de Obra e Comunicação",
-    company: "Project Engenharia",
-    period: "06/2021 → 03/2025",
-    description: [
-      "Desenho de projetos 3D e 2D, coordenação de equipe de obras, acompanhamento de obras, elaboração de relatórios, orçamentos e documentos, compra de materiais e organização de estoque, auxílio na edição de imagens e auxílio na elaboração de materiais gráficos.",
-    ],
-    abilities: [
-      "Resolução de problemas, ao identificar e solucionar desafios durante a execução do serviço.",
-      "Pensamento analítico para analisar as informações, dados e métricas antes de embasar uma decisão.",
-      "Colaboração e trabalho em equipe ao estar constantemente em auxílio da equipe de mão de obra e coordenando para que saia da melhor forma possível e atenda a solicitação.",
-    ],
-    isHighlighted: false,
-  },
+	{
+		id: 3,
+		title: "Designer UX/UI Junior - Voluntário",
+		company: "Sempre Design",
+		period: "03/2025 → 06/2025",
+		description: [
+			"Reunião semanal com equipe, auxilio na elaboração do contrato, auxilio na criação do padrão visual, auxilio nas entrevistas com usuários, criação de protótipos de baixa fidelidade com base nas limitações do Power BI. ",
+		],
+		abilities: [
+			"Apoio no desenvolvimento de interfaces e dashboards de BI, com base no Ciclo de UX.",
+			"Participação em entrevistas com usuários e colaboração na criação de soluções visuais alinhadas à experiência do usuário.",
+			"Contribuição no refinamento do design responsivo e organização das telas no Figma.",
+		],
+		isHighlighted: false,
+	},
 
-  {
-    id: 4,
-    title: "Corretor Imobiliário",
-    company: "Unity Engenharia",
-    period: "01/2021 → 05/2021",
-    description: [
-      "Comunicação com leads, transmissão de materiais gráficos, contato e negociação com clientes e auxílio no treinamento da equipe com o uso do CRM.",
-    ],
-    abilities: [
-      "Comunicação ativa com leads e clientes via CRM, promovendo melhorias na jornada do usuário.",
-      "Treinamento de equipe em ferramentas digitais.",
-    ],
-    isHighlighted: false,
-  },
+	{
+		id: 4,
+		title: "Coordenador de Obra e Comunicação",
+		company: "Project Engenharia",
+		period: "06/2021 → 03/2025",
+		description: [
+			"Desenho de projetos 3D e 2D, coordenação de equipe de obras, acompanhamento de obras, elaboração de relatórios, orçamentos e documentos, compra de materiais e organização de estoque, auxílio na edição de imagens e auxílio na elaboração de materiais gráficos.",
+		],
+		abilities: [
+			"Resolução de problemas, ao identificar e solucionar desafios durante a execução do serviço.",
+			"Pensamento analítico para analisar as informações, dados e métricas antes de embasar uma decisão.",
+			"Colaboração e trabalho em equipe ao estar constantemente em auxílio da equipe de mão de obra e coordenando para que saia da melhor forma possível e atenda a solicitação.",
+		],
+		isHighlighted: false,
+	},
 
-  {
-    id: 5,
-    title: "Supervisor de Obra",
-    company: "Scave Terraplanagem",
-    period: "01/2020 → 12/2020",
-    description: [
-      "Acompanhamento de obra civil, elaboração de diário de obras, organização do time de trabalho, verificação do desempenho de produção, comunicação com o cliente e auxílio em solução de imprevistos.",
-    ],
-    abilities: [
-      "Organização de equipes e fluxos de trabalho, com foco em eficiência.",
-      "Resolução ágil de imprevistos, evidenciando criatividade e raciocínio rápido.",
-    ],
-    isHighlighted: false,
-  },
+	{
+		id: 5,
+		title: "Corretor Imobiliário",
+		company: "Unity Engenharia",
+		period: "01/2021 → 05/2021",
+		description: [
+			"Comunicação com leads, transmissão de materiais gráficos, contato e negociação com clientes e auxílio no treinamento da equipe com o uso do CRM.",
+		],
+		abilities: [
+			"Comunicação ativa com leads e clientes via CRM, promovendo melhorias na jornada do usuário.",
+			"Treinamento de equipe em ferramentas digitais.",
+		],
+		isHighlighted: false,
+	},
+
+	{
+		id: 6,
+		title: "Supervisor de Obra",
+		company: "Scave Terraplanagem",
+		period: "01/2020 → 12/2020",
+		description: [
+			"Acompanhamento de obra civil, elaboração de diário de obras, organização do time de trabalho, verificação do desempenho de produção, comunicação com o cliente e auxílio em solução de imprevistos.",
+		],
+		abilities: [
+			"Organização de equipes e fluxos de trabalho, com foco em eficiência.",
+			"Resolução ágil de imprevistos, evidenciando criatividade e raciocínio rápido.",
+		],
+		isHighlighted: false,
+	},
 ];
 
 // Dados para a seção de Cursos Complementares

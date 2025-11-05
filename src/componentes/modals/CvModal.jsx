@@ -207,14 +207,12 @@ const CvModal = ({ isOpen, onClose }) => {
                         aria-controls={`experience-details-${item.id}`}
                       >
                         <p className="cv-modal__experience-title">
-                          {" "}
-                          {item.title}{" "}
+                          {item.title}
                         </p>
                         <p className="cv-modal__experience-company">
-                          {item.company}{" "}
+                          {item.company}
                           <span className="cv-modal__experience-period">
-                            {" "}
-                            {item.period}{" "}
+                            {item.period}
                           </span>
                         </p>
                         <FontAwesomeIcon

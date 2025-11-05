@@ -20,7 +20,7 @@ export default function useIsMobile(breakpoint = 768) {
     const handleResize = () => {
       setIsMobile(window.innerWidth <= breakpoint);
     };
-
+    
     // Adiciona o event listener ao objeto 'window'
     window.addEventListener("resize", handleResize);
 
