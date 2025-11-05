@@ -274,7 +274,7 @@ export const devData = [
 		tags: ["Back-end", "Node.js", "NestJS", "Jest", "TypeORM", "JWT", "Swagger"],
 		description:
 			"Este é um projeto desenvolvido durante o Bloco 2 do bootcamp da Generation Brasil - Desenvolvedor Fullstack JavaScript. O sistema implementa autenticação, organização modular e versionamento de funcionalidades, seguindo boas práticas de documentação e testes.",
-		link: "https://github.com/RaideriSpace/blogpessoal_nest",
+		link: "https://github.com/RaideriSpace/blogpessoal_react",
 	},
 
 	{
@@ -284,7 +284,7 @@ export const devData = [
 		status: "Finalizado",
 		tags: ["Front-End", "React.js", "Vite", "React Router DOM"],
 		description: "Projeto de back-end realizado com NestJS e métodos CRUD.",
-		link: "https://github.com/DevDivs-Turma-JavaScript-08/DivinePizza_Desafio_1",
+		link: "https://github.com/DevDivs-Turma-JavaScript-08/DivinePizza_Front",
 	},
 
 	{
@@ -295,7 +295,7 @@ export const devData = [
 		tags: ["Front-End", "React.js", "Vite", "", "Context API", "React Router DOM", "CRUD"],
 		description:
 			"API RESTful desenvolvida com NestJS e TypeORM, voltada para o gerenciamento de clientes e seus seguros de viagem. Permite operações de CRUD completo para clientes e seguros, e realiza o cálculo automático do valor final do seguro.",
-		link: "https://github.com/DevDivs-Turma-JavaScript-08/SegTour_Desafio_2",
+		link: "https://github.com/DevDivs-Turma-JavaScript-08/SegTour_Front",
 	},
 
 	{
@@ -306,7 +306,7 @@ export const devData = [
 		tags: ["Front-End", "React.js", "Vite", "", "Context API", "Framer Motion", "React Hook Form", "CRUD"],
 		description:
 			"O BlinTech é uma solução digital criada para simplificar a contratação e o gerenciamento de seguros de eletrônicos. Nosso objetivo é oferecer rapidez, transparência e praticidade para consumidores e seguradoras, simplificando a proteção contra roubo, furto e danos acidentais.",
-		link: "https://github.com/DevDivs-Turma-JavaScript-08/BlinTech_Desafio_3",
+		link: "https://github.com/DevDivs-Turma-JavaScript-08/BlinTech_Front",
 	},
 ];
 
