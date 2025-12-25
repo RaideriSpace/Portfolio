@@ -107,6 +107,9 @@ import blinTech from "../assets/img/Dev/BlinTech.svg";
 import blinTechFront from "../assets/img/Dev/BlinTech_Front.svg";
 import amazonScraper from "../assets/img/Dev/AmazonScraper.svg";
 import portfolioVanilla from "../assets/img/Dev/PortfolioVanilla.svg";
+import onepieceMinimal from "../assets/img/Dev/OPMinimal.svg";
+import pokemonFastify from "../assets/img/Dev/PokemonFastify.svg";
+import bysarahRest from "../assets/img/Dev/BySarahREST.svg";
 
 export const devData = [
 	{
@@ -252,7 +255,7 @@ export const devData = [
 		status: "Finalizado",
 		tags: ["Front-End", "HTML", "CSS", "JavaScript"],
 		description: "Portfólio completo realizado apenas com HTML, CSS e JavaScript sem o auxílio de bibliotecas e frameworks.",
-		link: "https://github.com/RaideriSpace/blogpessoal_react",
+		link: "https://github.com/RaideriSpace/portfolio_gen",
 	},
 
 	{
@@ -307,6 +310,38 @@ export const devData = [
 		description:
 			"O BlinTech é uma solução digital criada para simplificar a contratação e o gerenciamento de seguros de eletrônicos. Nosso objetivo é oferecer rapidez, transparência e praticidade para consumidores e seguradoras, simplificando a proteção contra roubo, furto e danos acidentais.",
 		link: "https://github.com/DevDivs-Turma-JavaScript-08/BlinTech_Front",
+	},
+
+	{
+		id: "dev-020",
+		title: "Pokémon List Manager",
+		img: pokemonFastify,
+		status: "Finalizado",
+		tags: ["Back-End", "Node.js", "TypeScript", "Native HTTP", "API REST", "Architecture", "Python"],
+		description:
+			"Uma API estilo Pokédex construída do zero sem o uso de frameworks (como Express ou Fastify), utilizando apenas módulos nativos do Node.js. O projeto gerencia dados de mais de 1000 Pokémon, com sistema de filtros por nome, tipo e número da Pokédex, aplicando uma arquitetura sólida em camadas (Controllers, Services, Repositories).",
+		link: "https://github.com/RaideriSpace/node-ts-api-no_framework-pokemon_list-manager",
+	},
+
+	{
+		id: "dev-021",
+		title: "One Piece Minimal API",
+		img: onepieceMinimal,
+		status: "Finalizado",
+		tags: ["Back-End", "TypeScript", "Node.js", "Fastify", "API Rest", "JSON", "Mock Data"],
+		description:
+			"Uma Minimal API inspirada no universo de One Piece, desenvolvida com Fastify e TypeScript. O projeto oferece endpoints para consultar dados sobre tripulações, piratas e Akuma no Mi, utilizando uma arquitetura organizada e dados mockados para facilitar o consumo por aplicações frontend.",
+		link: "https://github.com/RaideriSpace/one_piece-minimal_api-node-fastify",
+	},
+	{
+		id: "dev-022",
+		title: "BySarah API",
+		img: bysarahRest,
+		status: "Finalizado",
+		tags: ["Back-End", "Node.js", "TypeScript", "Express", "N-Layers Architecture", "REST API", "Inventory Management"],
+		description:
+			"Uma API robusta para gerenciamento de ateliê e estoque de moda, estruturada sob o padrão de Arquitetura em Camadas (N-Layers). O projeto implementa um CRUD completo com endpoints para controle de peças, tipos de vestuário e gestão detalhada de estoque por cores, priorizando a separação de responsabilidades e escalabilidade.",
+		link: "https://github.com/RaideriSpace/bySarah_api-node-ts-express",
 	},
 ];
 

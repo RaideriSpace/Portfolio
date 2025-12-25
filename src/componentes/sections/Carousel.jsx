@@ -143,7 +143,6 @@ const Carousel = () => {
   );
 
   return (
-    <>
       <div className="carousel__container">
         <button
           className="carousel__arrow left-arrow"
@@ -224,7 +223,6 @@ const Carousel = () => {
           <FontAwesomeIcon icon={faAngleRight} />
         </button>
       </div>
-    </>
   );
 };
 

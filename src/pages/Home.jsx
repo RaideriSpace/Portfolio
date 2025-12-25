@@ -4,8 +4,12 @@ import React from "react";
 import About from "../componentes/sections/About.jsx";
 import MyGallery from "../componentes/sections/MyGallery.jsx";
 import Skills from "../componentes/sections/Skills.jsx";
+import useScrollToTop from "../hooks/useScrollToTop.jsx";
 
 const Home = ({ aboutRef, skillsRef, onCvClick }) => {
+
+  	useScrollToTop();
+
   return (
     // Contêiner principal do conteúdo.
     <main className="main-content">

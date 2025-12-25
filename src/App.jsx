@@ -13,6 +13,7 @@ import Portfolio from "./pages/Portfolio";
 // Importar os hooks
 import useBodyScrollLock from "./hooks/useBodyScrollLock";
 import useModal from "./hooks/useModal";
+import useScrollToTop from "./hooks/useScrollToTop";
 
 const App = () => {
   const aboutRef = useRef(null);
@@ -24,6 +25,7 @@ const App = () => {
     openModal: handleOpenContactModal,
     closeModal: handleCloseContactModal,
   } = useModal();
+
   const {
     isOpen: isCvModalOpen,
     openModal: handleOpenCvModal,

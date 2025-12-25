@@ -54,14 +54,14 @@ export const experienceData = [
 		company: "Instituto PROA",
 		period: "09/2025 → 12/2025",
 		description: [
-			"Ministrei aulas para jovens em formação técnica, abordando introdução ao desenvolvimento web, UX/UI com Figma, HTML, CSS e JavaScript, além de versionamento com Git e GitHub. Auxiliei no desenvolvimento de projetos reais e ofereci suporte contínuo para dúvidas e dificuldades.",
+			"Fui responsável por mentorar e capacitar novos desenvolvedores em tecnologias core como HTML5, CSS3, JavaScript (ES6+) e React, garantindo o domínio técnico da stack. Atuei de forma direta na sustentação de projetos através de code reviews rigorosos, focando na aplicação de Clean Code, acessibilidade e otimização de performance. Auxiliei na resolução de bugs complexos e ensino de técnicas avançadas de debugging e lógica de programação para a construção de interfaces eficientes. Apliquei uma gestão proativa do backlog de dúvidas técnicas, priorizando demandas críticas e assegurando a qualidade técnica e estrutural dos entregáveis dos alunos.",
 		],
 		abilities: [
-			"Didática e comunicação clara para ensino de conceitos técnicos",
-			"Domínio de ferramentas de desenvolvimento (Figma, VSCode, Git)",
-			"Paciência e empatia no suporte individualizado",
-			"Organização para criação de materiais e acompanhamento de evolução",
-			"Adaptabilidade para lecionar desde fundamentos até tópicos avançados",
+			"Mentoria técnica e capacitação em tecnologias Core (React/JS)",
+			"Análise de código e aplicação de boas práticas (Clean Code)",
+			"Resolução de problemas complexos e técnicas de Debugging",
+			"Gestão de backlog e priorização de demandas técnicas",
+			"Foco em performance, acessibilidade e qualidade de software",
 		],
 		isHighlighted: true,
 	},
@@ -147,15 +147,18 @@ export const experienceData = [
 
 // Dados para a seção de Cursos Complementares
 export const complementaryCoursesData = [
-  "Jornada Full-Stack - Hashtag - 05/2025",
-  "Imersão Mobile - Alura - 04/2025",
-  "Imersão Dev - Alura - 04/2025",
-  "Inteligência Artificial - EBAC - 07/2025",
-  "Figma - EBAC - 11/2025",
-  "Infraestrutura de Sistemas Computacionais - Estácio - 06/2024",
-  "AutoCAD 2D e 3D - Udemy - 11/2020",
-  "Desvendando o BIM - SENAI - 02/2020",
-  "Microsoft Excel - Udemy - 10/2019",
+	"Formação NodeJs Fundamentals - DIO - 30 horas - 12/2025",
+	"Jornada Full-Stack - Hashtag - 8 horas - 05/2025",
+	"Criação para Multimídia - Estácio - 06/2025",
+	"Gestão de Mídias Sociais - Estácio - 06/2025",
+	"Imersão Mobile - Alura - 3 horas - 04/2025",
+	"Imersão Dev - Alura - 4 horas - 04/2025",
+	"Inteligência Artificial - EBAC - 07/2025",
+	"Figma - EBAC - 11/2025",
+	"Infraestrutura de Sistemas Computacionais - Estácio - 06/2024",
+	"AutoCAD 2D e 3D - Udemy - 11/2020",
+	"Desvendando o BIM - SENAI - 02/2020",
+	"Microsoft Excel - Udemy - 10/2019",
 ];
 
 // Dados para a seção de Idiomas
