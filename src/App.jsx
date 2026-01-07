@@ -52,7 +52,6 @@ const App = () => {
         onContactClick={handleOpenContactModal}
       />
       <Routes>
-        {/* Rota para a página Home */}
         <Route
           path="/"
           element={
@@ -64,26 +63,18 @@ const App = () => {
             />
           }
         />
-
-        {/* Rota para a página geral do Portfólio */}
         <Route path="/portfolio" element={<Portfolio />} />
-
-        {/* Rota para a página de cada categoria */}
         <Route path="/portfolio/:categoryName" element={<Portfolio />} />
-
-        {/* Futuras rotas aqui */}
       </Routes>
 
       <Footer />
 
-      {/* Renderiza o componente ContatoModal condicionalmente */}
       <AnimatePresence>
         {isContactModalOpen && (
-          <ContatoModal onClose={handleCloseContactModal} /> // Passa a função de fechar
+          <ContatoModal onClose={handleCloseContactModal} />
         )}
       </AnimatePresence>
 
-      {/* Renderiza o componente CV condicionalmente */}
       <AnimatePresence>
         {isCvModalOpen && <CvModal onClose={handleCloseCvModal} />}
       </AnimatePresence>
