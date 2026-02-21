@@ -50,9 +50,29 @@ export const educationData = [
 export const experienceData = [
 	{
 		id: 1,
+		title: "Desenvolvedor Fullstack Jr.",
+		company: "Uliving",
+		period: "02/2026 → Atualmente",
+		description: [
+			"Atuação end-to-end no desenvolvimento de soluções web robustas e escaláveis, utilizando Angular e integrações com APIs e serviços externos, participando desde a concepção arquitetural até a entrega e evolução contínua das funcionalidades. Responsável por identificar e corrigir gargalos de performance e escalabilidade em sistemas de alto volume de requisições, desenvolver interfaces responsivas e acessíveis, aplicar boas práticas de Clean Code e modularização, além de garantir a qualidade do software por meio de testes automatizados, revisões de código, documentação técnica e colaboração ativa no crescimento técnico do time.",
+		],
+		abilities: [
+			"Desenvolvimento Fullstack end-to-end",
+			"Angular e arquitetura de aplicações escaláveis",
+			"Integração de APIs e serviços externos",
+			"Otimização de performance e escalabilidade",
+			"Criação de interfaces responsivas e acessíveis",
+			"Clean Code, modularização e reutilização de componentes",
+			"Testes automatizados, code review e garantia de qualidade",
+			"Documentação técnica e colaboração no desenvolvimento do time",
+		],
+		isHighlighted: true,
+	},
+	{
+		id: 2,
 		title: "Instrutor de Desenvolvimento Front-End",
 		company: "Instituto PROA",
-		period: "09/2025 → 12/2025",
+		period: "09/2025 → 04/2026",
 		description: [
 			"Fui responsável por mentorar e capacitar novos desenvolvedores em tecnologias core como HTML5, CSS3, JavaScript (ES6+) e React, garantindo o domínio técnico da stack. Atuei de forma direta na sustentação de projetos através de code reviews rigorosos, focando na aplicação de Clean Code, acessibilidade e otimização de performance. Auxiliei na resolução de bugs complexos e ensino de técnicas avançadas de debugging e lógica de programação para a construção de interfaces eficientes. Apliquei uma gestão proativa do backlog de dúvidas técnicas, priorizando demandas críticas e assegurando a qualidade técnica e estrutural dos entregáveis dos alunos.",
 		],
@@ -63,11 +83,11 @@ export const experienceData = [
 			"Gestão de backlog e priorização de demandas técnicas",
 			"Foco em performance, acessibilidade e qualidade de software",
 		],
-		isHighlighted: true,
+		isHighlighted: false,
 	},
 
 	{
-		id: 2,
+		id: 3,
 		title: "Designer UX/UI Junior - Voluntário",
 		company: "Bike Anjo",
 		period: "03/2025 → 06/2025",
@@ -79,11 +99,11 @@ export const experienceData = [
 			"Criação de user flows e mapeamento do site para otimizar a navegação e usabilidade.",
 			"Utilização de entrevistas com usuários para identificar oportunidades de melhoria.",
 		],
-		isHighlighted: true,
+		isHighlighted: false,
 	},
 
 	{
-		id: 3,
+		id: 4,
 		title: "Designer UX/UI Junior - Voluntário",
 		company: "Sempre Design",
 		period: "03/2025 → 06/2025",
@@ -99,7 +119,7 @@ export const experienceData = [
 	},
 
 	{
-		id: 4,
+		id: 5,
 		title: "Coordenador de Obra e Comunicação",
 		company: "Project Engenharia",
 		period: "06/2021 → 03/2025",
@@ -115,7 +135,7 @@ export const experienceData = [
 	},
 
 	{
-		id: 5,
+		id: 6,
 		title: "Corretor Imobiliário",
 		company: "Unity Engenharia",
 		period: "01/2021 → 05/2021",
@@ -130,7 +150,7 @@ export const experienceData = [
 	},
 
 	{
-		id: 6,
+		id: 7,
 		title: "Supervisor de Obra",
 		company: "Scave Terraplanagem",
 		period: "01/2020 → 12/2020",
